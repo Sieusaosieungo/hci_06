@@ -1,6 +1,6 @@
 import React from "react";
 import Headers from "./components/Header/index";
-import Siders from "./components/sider/index";
+import Siders from "./components/Sider/index";
 import BreadCrumb from "./components/BreadCrumb/index";
 import Contents from "./components/Content/index";
 import "antd/dist/antd.css";

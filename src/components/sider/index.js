@@ -1,16 +1,16 @@
-import React from "react";
-import { Layout, Menu, Icon } from 'antd';
+import React from "./node_modules/react";
+import { Layout, Menu, Icon } from "./node_modules/antd";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function Siders() {
   return (
-    <Sider width={200} style={{ background: '#fff' }}>
+    <Sider width={200} style={{ background: "#fff" }}>
       <Menu
         mode="inline"
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
-        style={{ height: '100%', borderRight: 0 }}
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+        style={{ height: "100%", borderRight: 0 }}
       >
         <SubMenu
           key="sub1"
@@ -18,7 +18,7 @@ function Siders() {
             <span>
               <Icon type="plus" />
               Thêm kế hoạch
-              </span>
+            </span>
           }
         >
           <Menu.Item key="1">Kế hoạch cá nhân</Menu.Item>
@@ -30,7 +30,7 @@ function Siders() {
             <span>
               <Icon type="laptop" />
               Quản lý kế hoạch
-              </span>
+            </span>
           }
         >
           <Menu.Item key="5">Kế hoạch Trong ngày</Menu.Item>
@@ -42,7 +42,7 @@ function Siders() {
             <span>
               <Icon type="user" />
               Nhiệm vụ của tôi
-              </span>
+            </span>
           }
         >
           <Menu.Item key="9">Nhiệm vụ cá nhân</Menu.Item>
