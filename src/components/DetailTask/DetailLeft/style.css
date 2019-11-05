@@ -1,0 +1,4 @@
+.detail-left {
+  grid-column: 1/10;
+  background-color: blue;
+}
