@@ -157,13 +157,21 @@ const Headers = () => {
                 <div className="drawer-account-avatar">
                   <div className="drawer-account-inner">
                     <div className="drawer-account-avatar">
-                      <Avatar size={80} style={{ backgroundColor: '#87d068' }} icon="user" />
+                      <Avatar
+                        size={80}
+                        style={{ backgroundColor: "#87d068" }}
+                        icon="user"
+                      />
                     </div>
                     <div className="drawer-account-info">
-                      <span className="drawer-account-username">Người dùng</span>
-                      <span className="drawer-account-email">nguoidung@gmail.com</span>
-                      <a href="#">Tài khoản</a>
-                      <a href="#">Đăng xuất</a>
+                      <span className="drawer-account-username">
+                        Người dùng
+                      </span>
+                      <span className="drawer-account-email">
+                        nguoidung@gmail.com
+                      </span>
+                      <Link to="">Tài khoản</Link>
+                      <Link to="">Đăng xuất</Link>
                     </div>
                   </div>
                 </div>
