@@ -27,7 +27,12 @@ const ListTask = ({
       <Button
         type="primary"
         size="large"
-        style={{ width: "250px", height: "40px", float: "left" }}
+        style={{
+          width: "280px",
+          height: "35px",
+          float: "left",
+          margin: "0 10px"
+        }}
         onClick={() => setState({ ...state, isShowTitleForm: true })}
       >
         <Icon type="plus" />
