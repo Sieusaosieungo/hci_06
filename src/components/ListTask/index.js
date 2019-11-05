@@ -73,7 +73,7 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
   const showListTask = (title, listTask) => {
     return (
       <div className="app-list-task">
-        <h2 className="title">{title}</h2>
+        <h2 className="list-task-title">{title}</h2>
         <div className="list-task">
           {listTask.map((taskName, index) => {
             return (
