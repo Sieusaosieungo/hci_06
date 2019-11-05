@@ -88,13 +88,13 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link to="/">Quản trị</Link>
+            <Link to="">Quản trị</Link>
           </div>
           <div className="header-center-item">
-            <Link to="/">Biểu đồ</Link>
+            <Link to="">Biểu đồ</Link>
           </div>
           <div className="header-center-item">
-            <Link to="/">Kế hoạch</Link>
+            <Link to="">Kế hoạch</Link>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const Headers = () => {
           <div className="header-tool-item notice">
             <Icon type="bell" onClick={showDrawerNotice} />
             <Badge count={199} overflowCount={99}>
-              <Link className="head-example" />
+              <Link to="" className="head-example" />
             </Badge>
             <Drawer
               title="Thông báo"

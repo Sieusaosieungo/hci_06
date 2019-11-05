@@ -4,15 +4,24 @@ import Siders from "./components/Sider/index";
 import BreadCrumb from "./components/BreadCrumb/index";
 import Contents from "./components/Content/index";
 import "antd/dist/antd.css";
-import "./index.css";
 import { Layout } from "antd";
 import "./App.css";
-import "antd/dist/antd.css";
+import { Modal } from "antd";
+import { connect } from "react-redux";
 
-function App({ children }) {
+function App({ modal, children, dispatch }) {
   return (
     <div className="App">
       <Layout>
+        <Modal
+          title={modal.title}
+          visible={modal.visible}
+          onOk={modal.onOk}
+          onCancel={modal.onCancel}
+          width="60vw"
+        >
+          {modal.Component}
+        </Modal>
         <Headers />
         <Layout>
           <Siders />
@@ -26,4 +35,10 @@ function App({ children }) {
   );
 }
 
-export default App;
+const mapStateToProps = ({ modal }) => {
+  return {
+    modal
+  };
+};
+
+export default connect(mapStateToProps)(App);

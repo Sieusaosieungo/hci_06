@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import { Icon, Button, Input, Modal } from "antd";
+import { Icon, Button, Input } from "antd";
 import { Col } from "antd";
 import "./styles.css";
+import { connect } from "react-redux";
+import { showModal, hideModal } from "../../actions/index";
 import DetailTask from "../DetailTask/index";
 
 const { TextArea } = Input;
 
-const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
+const ListTask = ({
+  title,
+  listTask,
+  addNewTask,
+  addNewListTask,
+  dispatch
+}) => {
   const [state, setState] = useState({
     isShowTitleForm: false,
     isShowTaskForm: false,
@@ -14,15 +22,6 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
     title: ""
   });
 
-  const [isShowModal, setIsShowModal] = useState(false);
-
-  const showModal = () => {
-    setIsShowModal(true);
-  };
-
-  const hideModal = () => {
-    setIsShowModal(false);
-  };
   const showForm = () => {
     return state.isShowTitleForm === false ? (
       <Button
@@ -78,22 +77,21 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
           {listTask.map((taskName, index) => {
             return (
               <div key={index}>
-                <Modal
-                  title="Chi tiết công việc"
-                  visible={isShowModal}
-                  onOk={hideModal}
-                  onCancel={hideModal}
-                  width="60vw"
-                >
-                  <DetailTask taskName={taskName} />
-                </Modal>
-
                 <Button
                   className="task"
                   size="large"
                   style={{ height: "30px", width: "100%" }}
                   key={index}
-                  onClick={showModal}
+                  onClick={() =>
+                    dispatch(
+                      showModal({
+                        title: "Chi tiết công việc",
+                        Component: <DetailTask taskName={taskName} />,
+                        onOk: () => dispatch(hideModal()),
+                        onCancel: () => dispatch(hideModal())
+                      })
+                    )
+                  }
                 >
                   <span>{taskName}</span>
                   <Icon type="edit"></Icon>
@@ -150,4 +148,4 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
     </>
   );
 };
-export default ListTask;
+export default connect()(ListTask);
