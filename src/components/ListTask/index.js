@@ -61,12 +61,12 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
   };
 
   const handleNewTask = () => {
-    addNewTask(title, state.taskName);
+    if (state.taskName) addNewTask(title, state.taskName);
     setState({ ...state, isShowTaskForm: false, taskName: "" });
   };
 
   const handleNewListTask = () => {
-    addNewListTask(state.title);
+    if (state.title) addNewListTask(state.title);
     setState({ ...state, isShowTitleForm: false, title: "" });
   };
 
@@ -144,7 +144,7 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
 
   return (
     <>
-      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
         {title ? showListTask(title, listTask) : showForm()}
       </Col>
     </>
