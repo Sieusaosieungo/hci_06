@@ -12,11 +12,11 @@
   margin-right: 15px;
 }
 
-.title {
+.header-title .title {
   flex-grow: 1;
 }
 
-.title > .title-content {
+.header-title .title > .title-content {
   margin-top: -6px;
   width: 100%;
   height: auto;
@@ -24,7 +24,7 @@
   overflow-wrap: break-word;
 }
 
-.title > textarea {
+.header-title .title > textarea {
   width: 100%;
   resize: none;
   border: none;
@@ -93,8 +93,8 @@
 .comment-title {
   display: flex;
 }
-.comment-title .title {
+.comment-title > .title {
 }
 
-.comment-title .image {
+.comment-title > .image {
 }

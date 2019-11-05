@@ -1,3 +1,77 @@
 .detail-right {
   grid-column: 10/13;
+  margin: 7px;
+}
+
+.pop-over {
+  position: absolute;
+  z-index: 100;
+  width: 17%;
+  margin-top: 3px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25),
+    0 0 0 1px rgba(9, 30, 66, 0.08);
+  overflow: hidden;
+  padding: 4px;
+}
+
+.member-title {
+  margin-top: 5px;
+  display: flex;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  right: 5px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.member-input {
+  padding: 10px;
+}
+
+.member-list {
+  background-color: rgba(9, 30, 66, 0.04);
+  margin: 5px;
+  padding: 8px;
+}
+
+.button-link:hover {
+  background-color: rgba(9, 55, 66, 0.08);
+}
+
+.button-link {
+  position: relative;
+  background-color: rgba(9, 30, 66, 0.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  color: #172b4d;
+  margin-top: 7px;
+  z-index: 90;
+}
+
+.title {
+  color: #5e6c84;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  text-transform: uppercase;
+  line-height: 20px;
+  margin-bottom: 4px;
+  padding-top: 16px;
 }
