@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import { Layout, Menu, Icon } from "./node_modules/antd";
+import React from "react";
+import { Layout, Menu, Icon } from "antd";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
