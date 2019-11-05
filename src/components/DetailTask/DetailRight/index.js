@@ -56,7 +56,7 @@ const DetailRight = props => {
       <span><Icon type="credit-card" /></span>
       <span>   Ảnh bìa</span>
     </div>
-    <h3 className="title">THAO TÁC</h3>
+    <h3 className="title-add-card">THAO TÁC</h3>
     <div className="button-link">
       <span><Icon type="arrow-right" /></span>
       <span>   Di chuyển</span>
