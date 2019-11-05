@@ -39,9 +39,9 @@ const ListTaskPage = () => {
     let result = listAllTask.map((item, index) => {
       return (
         <ListTask
+          key={index}
           title={item.title}
           listTask={item.listTask}
-          key={index}
           addNewListTask={addNewListTask}
           addNewTask={addNewTask}
         />
@@ -51,7 +51,7 @@ const ListTaskPage = () => {
   };
 
   return (
-    <Row gutter={[20, 10]} className="list-task-page">
+    <Row type="flex" gutter={[20, 10]} className="list-task-page">
       {showListAllTask()}
     </Row>
   );

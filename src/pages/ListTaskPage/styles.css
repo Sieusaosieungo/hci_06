@@ -1,0 +1,4 @@
+.list-task-page {
+  overflow: auto;
+  overflow-x: scroll;
+}

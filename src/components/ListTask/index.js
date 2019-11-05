@@ -83,6 +83,7 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
                   visible={isShowModal}
                   onOk={hideModal}
                   onCancel={hideModal}
+                  width="60vw"
                 >
                   <DetailTask taskName={taskName} />
                 </Modal>
