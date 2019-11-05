@@ -132,7 +132,7 @@ function Headers() {
           </div>
           <div className="header-right-account header-tool-item">
             <Avatar style={{ backgroundColor: '#87d068' }} icon="user" onClick={showDrawerUser} />
-            <span onClick={showDrawerUser}>Tên người dùng</span>
+            <span onClick={showDrawerUser}>Người dùng</span>
             <Drawer
               title="Tài khoản của bạn"
               width={300}
@@ -140,10 +140,17 @@ function Headers() {
               visible={state.visibleUser}
             >
               <div className="drawer-acount">
-                <div className="drawer-account-avatar">
-                  <Avatar size={80} style={{ backgroundColor: '#87d068' }} icon="user" />
+                <div className="drawer-account-inner">
+                  <div className="drawer-account-avatar">
+                    <Avatar size={80} style={{ backgroundColor: '#87d068' }} icon="user" />
+                  </div>
+                  <div className="drawer-account-info">
+                    <span className="drawer-account-username">Người dùng</span>
+                    <span className="drawer-account-email">nguoidung@gmail.com</span>
+                    <a href="#">Tài khoản</a>
+                    <a href="#">Đăng xuất</a>
+                  </div>
                 </div>
-                <div className="drawer-account-info"></div>
               </div>
             </Drawer>
           </div>

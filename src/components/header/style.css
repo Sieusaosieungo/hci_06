@@ -142,11 +142,31 @@
   top: 55px;
 }
 
-.drawer-acount {
-  display: block;
-  width: 100px;
-  background-color: rgba(224, 221, 221, 0.8);
+.ant-drawer-body {
+  padding: 0px 0px !important;
 }
 
-.drawer-account-avatar {
+.drawer-acount {
+  display: block;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.drawer-account-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-items: left;
+}
+
+.drawer-account-info {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-account-username {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
