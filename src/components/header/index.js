@@ -82,13 +82,13 @@ function Headers() {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link>Board</Link>
+            <Link>Quản trị</Link>
           </div>
           <div className="header-center-item">
-            <Link>Charts</Link>
+            <Link>Biểu đồ</Link>
           </div>
           <div className="header-center-item">
-            <Link>Schedule</Link>
+            <Link>Kế hoạch</Link>
           </div>
         </div>
       </div>
