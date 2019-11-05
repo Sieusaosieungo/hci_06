@@ -1,8 +1,8 @@
 import React from "react";
-import Headers from "./components/header/index";
+import Headers from "./components/Header/index";
 import Siders from "./components/sider/index";
-import BreadCrumb from "./components/breadCrumb/index";
-import Contents from "./components/content/index";
+import BreadCrumb from "./components/BreadCrumb/index";
+import Contents from "./components/Content/index";
 import "antd/dist/antd.css";
 import "./index.css";
 import { Layout } from "antd";
@@ -18,10 +18,9 @@ function App({ children }) {
           <Siders />
           <Layout style={{ padding: "0 24px 24px" }}>
             <BreadCrumb />
-            <Contents />
+            <Contents>{children}</Contents>
           </Layout>
         </Layout>
-        <header className="App-header">{children}</header>
       </Layout>
     </div>
   );

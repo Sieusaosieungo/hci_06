@@ -5,7 +5,7 @@ import "./style.css";
 import DetailLeft from "./DetailLeft";
 import DetailRight from "./DetailRight";
 
-const DetailTask = ({}) => {
+const DetailTask = () => {
   return (
     <div className="detail-task">
       <DetailLeft />

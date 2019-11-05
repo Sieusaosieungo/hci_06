@@ -4,18 +4,12 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
-const HomePage = loadable(() => import("../pages/HomePage/index"));
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 
 export const routes = [
   {
     path: "/",
     exact: true,
-    component: () => <HomePage />
-  },
-  {
-    path: "/list-task",
-    exact: false,
     component: () => <ListTaskPage />
   },
   {
