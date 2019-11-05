@@ -5,6 +5,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.3",
     "antd": "^3.25.0",
+    "moment": "^2.24.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",

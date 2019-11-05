@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Icon, Button, Input } from "antd";
+import { Icon, Button, Input, Modal } from "antd";
 import { Col } from "antd";
 import "./styles.css";
+import DetailTask from "../DetailTask/index";
 
 const { TextArea } = Input;
 
@@ -13,6 +14,15 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
     title: ""
   });
 
+  const [isShowModal, setIsShowModal] = useState(false);
+
+  const showModal = () => {
+    setIsShowModal(true);
+  };
+
+  const hideModal = () => {
+    setIsShowModal(false);
+  };
   const showForm = () => {
     return state.isShowTitleForm === false ? (
       <Button
@@ -67,15 +77,27 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
         <div className="list-task">
           {listTask.map((taskName, index) => {
             return (
-              <Button
-                className="task"
-                size="large"
-                style={{ height: "30px", width: "100%" }}
-                key={index}
-              >
-                <span>{taskName}</span>
-                <Icon type="edit"></Icon>
-              </Button>
+              <>
+                <Modal
+                  title="Chi tiết công việc"
+                  visible={isShowModal}
+                  onOk={hideModal}
+                  onCancel={hideModal}
+                >
+                  <DetailTask taskName={taskName} />
+                </Modal>
+
+                <Button
+                  className="task"
+                  size="large"
+                  style={{ height: "30px", width: "100%" }}
+                  key={index}
+                  onClick={showModal}
+                >
+                  <span>{taskName}</span>
+                  <Icon type="edit"></Icon>
+                </Button>
+              </>
             );
           })}
         </div>
@@ -120,9 +142,11 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
   };
 
   return (
-    <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-      {title ? showListTask(title, listTask) : showForm()}
-    </Col>
+    <>
+      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        {title ? showListTask(title, listTask) : showForm()}
+      </Col>
+    </>
   );
 };
 export default ListTask;
