@@ -8,6 +8,7 @@ import DetailRight from "./DetailRight";
 const DetailTask = ({ taskName }) => {
   return (
     <div className="detail-task">
+      {console.log("TCL: DetailTask -> taskName", taskName)}
       <DetailLeft taskName={taskName} />
       <DetailRight />
     </div>

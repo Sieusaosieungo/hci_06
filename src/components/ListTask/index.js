@@ -77,7 +77,7 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
         <div className="list-task">
           {listTask.map((taskName, index) => {
             return (
-              <>
+              <div key={index}>
                 <Modal
                   title="Chi tiết công việc"
                   visible={isShowModal}
@@ -98,7 +98,7 @@ const ListTask = ({ title, listTask, addNewTask, addNewListTask }) => {
                   <span>{taskName}</span>
                   <Icon type="edit"></Icon>
                 </Button>
-              </>
+              </div>
             );
           })}
         </div>

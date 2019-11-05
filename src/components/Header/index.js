@@ -88,13 +88,13 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link>Quản trị</Link>
+            <Link to="/">Quản trị</Link>
           </div>
           <div className="header-center-item">
-            <Link>Biểu đồ</Link>
+            <Link to="/">Biểu đồ</Link>
           </div>
           <div className="header-center-item">
-            <Link>Kế hoạch</Link>
+            <Link to="/">Kế hoạch</Link>
           </div>
         </div>
       </div>
