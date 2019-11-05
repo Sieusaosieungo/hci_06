@@ -15,7 +15,7 @@ const DetailRight = props => {
   }
 
   return <div className="detail-right">
-    <h3 className="title">THÊM VÀO THẺ</h3>
+    <h3 className="title-add-card">THÊM VÀO THẺ</h3>
     <div onClick={() => onClickMemberHandler()} className="button-link">
       <span><Icon type="user"/></span>
       <span>   Thành viên</span>   
@@ -29,7 +29,7 @@ const DetailRight = props => {
       <div className="member-input">
         <Input placeholder="Tìm kiếm các thành viên" />
       </div>
-      <div className="member-title">THÀNH VIÊN CỦA BẢNG</div>
+      <div style={{marginLeft: '10px'}}>THÀNH VIÊN CỦA BẢNG</div>
       <div className="member-list">
         <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>U</Avatar>
         <span>   Vũ Duy Mạnh (manhronado)</span>
