@@ -1,6 +1,5 @@
 .detail-task {
   display: grid;
   grid-template-columns: repeat(14, 1fr);
-  width: 60vw;
   background-color: #f4f5f7;
 }
