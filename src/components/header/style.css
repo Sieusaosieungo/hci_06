@@ -1,0 +1,152 @@
+.header {
+  display: flex;
+  justify-items: left;
+  height: 55px;
+}
+
+/* LEFT */
+.header-left {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-items: left;
+  align-items: center;
+}
+
+.header-left-img > img {
+  margin-left: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.header-left-text {
+  height: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.header-left-text-large {
+  font-size: 16px;
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  display: flex;
+  justify-items: left;
+}
+
+.header-left-text-large > i {
+  padding-top: 21px;
+  padding-left: 5px;
+}
+
+.header-left-text-small {
+  font-size: 12px;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+/* CENTER */
+.header-center {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-items: left;
+  position: relative;
+}
+
+.header-center-menu {
+  height: 100%;
+  display: flex;
+  justify-items: left;
+}
+
+.header-center-item {
+  padding: 0px 10px;
+  height: 100%;
+}
+
+.header-center-item > a {
+  height: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header-center-item:hover {
+  background-color: #052646;
+  transition: 0.5s;
+}
+
+.header-center-item:hover > a {
+  border-color: rgb(69, 2, 255);
+  border: 0px 0px 2px 0px;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* RIGHT */
+.header-right {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.header-tool {
+  height: 100%;
+  display: flex;
+  justify-items: right;
+  position: absolute;
+  right: 5px;
+}
+
+.header-tool-item:not(.header-right-account) {
+  padding: 0px 20px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-tool-item > i {
+  height: 100%;
+}
+
+.header-tool-item:hover {
+  cursor: pointer;
+  background-color: #052646;
+  transition: ease 0.5s;
+}
+
+.notice > i {
+  position: relative;
+}
+
+.ant-badge {
+  position: absolute;
+  right: -6px;
+  top: -16px;
+}
+
+.ant-badge-multiple-words {
+  padding: 0px 5px;
+}
+
+.header-right-account {
+  cursor: pointer;
+}
+
+.header-right-account > span {
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ant-drawer-content-wrapper {
+  top: 55px;
+}
+
+.drawer-acount {
+  display: block;
+  width: 100px;
+  background-color: rgba(224, 221, 221, 0.8);
+}
+
+.drawer-account-avatar {
+}
