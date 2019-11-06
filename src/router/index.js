@@ -5,12 +5,18 @@ import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
+const ProcessCheck = loadable(() => import("../pages/ProcessCheck/index"));
 
 export const routes = [
   {
     path: "/",
     exact: true,
     component: () => <ListTaskPage />
+  },
+  {
+    path: "/process",
+    exact: true,
+    component: () => <ProcessCheck />
   },
   {
     path: "*",
