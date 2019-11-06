@@ -49,7 +49,7 @@
 /* CENTER */
 .header-center {
   height: 100%;
-  width: 30%;
+  width: 45%;
   display: flex;
   justify-items: left;
   position: relative;
@@ -87,7 +87,7 @@
 /* RIGHT */
 .header-right {
   height: 100%;
-  width: 50%;
+  width: 35%;
   position: relative;
 }
 
