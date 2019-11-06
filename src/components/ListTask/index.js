@@ -31,7 +31,9 @@ const ListTask = ({
           width: "280px",
           height: "35px",
           float: "left",
-          margin: "0 10px"
+          margin: "0 10px",
+          backgroundColor: '#5aac44',
+          color: 'white'
         }}
         onClick={() => setState({ ...state, isShowTitleForm: true })}
       >
@@ -49,8 +51,8 @@ const ListTask = ({
         ></Input>
         <Button
           onClick={handleNewListTask} // đoạn này nó sẽ thêm 1 cái danh sách công việc
-          style={{ margin: "5px 3px 5px 0" }}
-          type="primary"
+          style={{ margin: "5px 3px 5px 0", backgroundColor: '#5aac44', color: 'white'}}
+          //type="primary"
         >
           <Icon type="plus" />
           Thêm danh sách
