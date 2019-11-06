@@ -88,13 +88,13 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link>Quản trị</Link>
+            <Link to="">Quản trị</Link>
           </div>
           <div className="header-center-item">
-            <Link>Biểu đồ</Link>
+            <Link to="">Biểu đồ</Link>
           </div>
           <div className="header-center-item">
-            <Link>Kế hoạch</Link>
+            <Link to="">Kế hoạch</Link>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const Headers = () => {
           <div className="header-tool-item notice">
             <Icon type="bell" onClick={showDrawerNotice} />
             <Badge count={199} overflowCount={99}>
-              <Link className="head-example" />
+              <Link to="" className="head-example" />
             </Badge>
             <Drawer
               title="Thông báo"
@@ -155,13 +155,26 @@ const Headers = () => {
             >
               <div className="drawer-acount">
                 <div className="drawer-account-avatar">
-                  <Avatar
-                    size={80}
-                    style={{ backgroundColor: "#87d068" }}
-                    icon="user"
-                  />
+                  <div className="drawer-account-inner">
+                    <div className="drawer-account-avatar">
+                      <Avatar
+                        size={80}
+                        style={{ backgroundColor: "#87d068" }}
+                        icon="user"
+                      />
+                    </div>
+                    <div className="drawer-account-info">
+                      <span className="drawer-account-username">
+                        Người dùng
+                      </span>
+                      <span className="drawer-account-email">
+                        nguoidung@gmail.com
+                      </span>
+                      <Link to="">Tài khoản</Link>
+                      <Link to="">Đăng xuất</Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="drawer-account-info"></div>
               </div>
             </Drawer>
           </div>

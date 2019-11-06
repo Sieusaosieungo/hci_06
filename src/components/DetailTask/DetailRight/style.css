@@ -6,7 +6,7 @@
 .pop-over {
   position: absolute;
   z-index: 100;
-  width: 30%;
+  width: 350px;
   margin-top: 3px;
   background: #fff;
   border-radius: 3px;
@@ -74,4 +74,30 @@
   line-height: 20px;
   margin-bottom: 4px;
   padding-top: 16px;
+}
+
+.expire-input {
+  display: flex;
+}
+
+p {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.day-input {
+  padding: 0 8px;
+}
+
+.button-success {
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }

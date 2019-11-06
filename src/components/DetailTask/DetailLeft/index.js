@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Comment, Avatar, Form, Button, List, Input } from "antd";
 import moment from "moment";
 
@@ -120,6 +120,10 @@ const DetailLeft = ({ taskName = "" }) => {
       value: e.target.value
     });
   };
+
+  useEffect(() => {
+    setTitle(taskName);
+  }, [taskName]);
 
   return (
     <div className="detail-left">
