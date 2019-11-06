@@ -6,6 +6,7 @@ import "./styles.css";
 
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 const ProcessCheck = loadable(() => import("../pages/ProcessCheck/index"));
+const WorkReport = loadable(() => import("../pages/WorkReport/index"));
 
 export const routes = [
   {
@@ -17,6 +18,11 @@ export const routes = [
     path: "/process",
     exact: true,
     component: () => <ProcessCheck />
+  },
+  {
+    path: "/workreport",
+    exact: true,
+    component: () => <WorkReport />
   },
   {
     path: "*",
