@@ -40,11 +40,12 @@ const ListTask = ({
       </Button>
     ) : (
       <>
-        <Input
-          style={{ width: "250px" }}
-          placeholder="Nhập tiêu đề danh sách ..."
-          value={state.title}
-          onChange={e => setState({ ...state, title: e.target.value })}
+          <Input
+            style={{ width: "250px" }}
+            placeholder="Nhập tiêu đề danh sách ..."
+            value={state.title}
+            onChange={e => setState({ ...state, title: e.target.value })}
+            onPressEnter={handleNewListTask}
         ></Input>
         <Button
           onClick={handleNewListTask} // đoạn này nó sẽ thêm 1 cái danh sách công việc
@@ -85,8 +86,7 @@ const ListTask = ({
                 <Button
                   className="task"
                   size="large"
-                  style={{ height: "30px", width: "100%" }}
-                  key={index}
+                  style={{ height: "30px", width: "100%"}}
                   onClick={() =>
                     dispatch(
                       showModal({
@@ -109,6 +109,7 @@ const ListTask = ({
           <>
             <TextArea
               value={state.taskName}
+              onPressEnter={handleNewTask}
               onChange={e => setState({ ...state, taskName: e.target.value })}
               placeholder="Nhập tiêu đề cho thẻ này ..."
             />
