@@ -18,7 +18,7 @@ function App({ modal, children, dispatch }) {
           visible={modal.visible}
           onOk={modal.onOk}
           onCancel={modal.onCancel}
-          width="60vw"
+          width="65vw"
         >
           {modal.Component}
         </Modal>

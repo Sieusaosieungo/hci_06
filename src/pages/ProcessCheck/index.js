@@ -4,7 +4,7 @@ import { Button, Icon } from "antd";
 
 const ProcessCheckPage = () => {
   const [state, setState] = useState({
-    newTask: true,
+    newTask: false,
     listTask: []
   });
 

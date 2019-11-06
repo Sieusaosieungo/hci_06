@@ -4,12 +4,12 @@ import { Row } from "antd";
 
 const initState = [
   {
-    title: "Dân IT",
-    listTask: ["Code", "Thiết kế"]
+    title: "Bộ phận sản xuất",
+    listTask: ["Sản xuất thuốc bột", "Sản xuất thuốc nước"]
   },
   {
-    title: "HCI_06",
-    listTask: ["Chạy deadline", "Đi học"]
+    title: "Bộ phận đảm bảo chất lượng",
+    listTask: ["Kiểm tra quy trình sản xuất", "Kiểm tra nguyên liệu đầu vào"]
   },
   {
     title: null,
