@@ -77,11 +77,11 @@ const Headers = () => {
         </div>
         <div className="header-left-text">
           <div className="header-left-text-large">
-            <span>Interface</span>
+            <span>KeHoachA</span>
             <Icon type="star" />
           </div>
           <div className="header-left-text-small">
-            <span>Interface</span>
+            <span>ThucThi</span>
           </div>
         </div>
       </div>
