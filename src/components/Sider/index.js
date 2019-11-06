@@ -12,43 +12,34 @@ function Siders() {
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
+
+        <Menu.Item key="1">
+          <Icon type="plus" />
+          Thêm kế hoạch
+          </Menu.Item>
+        <Menu.Item key="2">
+          <span>
+            <Icon type="laptop" />
+            Báo cáo công việc
+            </span>
+        </Menu.Item>
+        <Menu.Item key="3">
+          <span>
+            <Icon type="user" />
+            Kế hoạch được giao
+            </span>
+        </Menu.Item>
         <SubMenu
           key="sub1"
           title={
             <span>
-              <Icon type="plus" />
-              Thêm kế hoạch
-            </span>
-          }
-        >
-          <Menu.Item key="1">Kế hoạch cá nhân</Menu.Item>
-          <Menu.Item key="2">Kế hoạch nhóm</Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key="sub2"
-          title={
-            <span>
               <Icon type="laptop" />
-              Quản lý kế hoạch
+              Kế hoạch gần đây
             </span>
           }
         >
-          <Menu.Item key="5">Kế hoạch Trong ngày</Menu.Item>
-          <Menu.Item key="6">Kế hoạch trong tuần</Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key="sub3"
-          title={
-            <span>
-              <Icon type="user" />
-              Nhiệm vụ của tôi
-            </span>
-          }
-        >
-          <Menu.Item key="9">Nhiệm vụ cá nhân</Menu.Item>
-          <Menu.Item key="10">Nhiệm vụ nhóm</Menu.Item>
-          <Menu.Item key="11">Nhiệm vụ trong ngày</Menu.Item>
-          <Menu.Item key="12">Nhiệm vụ trong tuần</Menu.Item>
+          <Menu.Item key="5">Kế hoạch A</Menu.Item>
+          <Menu.Item key="6">Kế hoạch B</Menu.Item>
         </SubMenu>
       </Menu>
     </Sider>
