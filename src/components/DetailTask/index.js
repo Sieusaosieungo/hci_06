@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./style.css";
 
 import DetailLeft from "./DetailLeft";
 import DetailRight from "./DetailRight";
 
-const DetailTask = ({ taskName }) => {
+const DetailTask = ({ taskName = "Đi họ" }) => {
   return (
     <div className="detail-task">
       <DetailLeft taskName={taskName} />

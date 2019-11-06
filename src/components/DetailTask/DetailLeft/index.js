@@ -34,7 +34,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
   </div>
 );
 
-const DetailLeft = ({ taskName = "Đi học" }) => {
+const DetailLeft = ({ taskName = "" }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(taskName);
   const [description, setDescription] = useState("");
