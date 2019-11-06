@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout, Menu, Icon } from "antd";
+import { Link } from 'react-router-dom';
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
@@ -18,10 +19,12 @@ function Siders() {
           Thêm kế hoạch
           </Menu.Item>
         <Menu.Item key="2">
-          <span>
-            <Icon type="laptop" />
-            Báo cáo công việc
+          <Link to="workreport">
+            <span>
+              <Icon type="laptop" />
+              Báo cáo công việc
             </span>
+          </Link>
         </Menu.Item>
         <Menu.Item key="3">
           <span>
