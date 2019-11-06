@@ -31,7 +31,9 @@ const ListTask = ({
           width: "280px",
           height: "35px",
           float: "left",
-          margin: "0 10px"
+          margin: "0 10px",
+          backgroundColor: '#5aac44',
+          color: 'white'
         }}
         onClick={() => setState({ ...state, isShowTitleForm: true })}
       >
@@ -40,16 +42,17 @@ const ListTask = ({
       </Button>
     ) : (
       <>
-        <Input
-          style={{ width: "250px" }}
-          placeholder="Nhập tiêu đề danh sách ..."
-          value={state.title}
-          onChange={e => setState({ ...state, title: e.target.value })}
+          <Input
+            style={{ width: "250px" }}
+            placeholder="Nhập tiêu đề danh sách ..."
+            value={state.title}
+            onChange={e => setState({ ...state, title: e.target.value })}
+            onPressEnter={handleNewListTask}
         ></Input>
         <Button
           onClick={handleNewListTask} // đoạn này nó sẽ thêm 1 cái danh sách công việc
-          style={{ margin: "5px 3px 5px 0" }}
-          type="primary"
+          style={{ margin: "5px 3px 5px 0", backgroundColor: '#5aac44', color: 'white'}}
+          //type="primary"
         >
           <Icon type="plus" />
           Thêm danh sách
@@ -85,8 +88,7 @@ const ListTask = ({
                 <Button
                   className="task"
                   size="large"
-                  style={{ height: "30px", width: "100%" }}
-                  key={index}
+                  style={{ height: "30px", width: "100%"}}
                   onClick={() =>
                     dispatch(
                       showModal({
@@ -109,6 +111,7 @@ const ListTask = ({
           <>
             <TextArea
               value={state.taskName}
+              onPressEnter={handleNewTask}
               onChange={e => setState({ ...state, taskName: e.target.value })}
               placeholder="Nhập tiêu đề cho thẻ này ..."
             />
