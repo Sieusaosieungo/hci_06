@@ -4,25 +4,27 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
-const ProcessCheck = loadable(() => import("../pages/ProcessCheck/index"));
+const ListTask = loadable(() => import("../pages/ProcessCheck/index"));
 const WorkReport = loadable(() => import("../pages/WorkReport/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 
 export const routes = [
   {
-    path: "/process",
-    exact: true,
-    component: () => <ProcessCheck />
-  },
-  {
-    path: "/workreport",
-    exact: true,
-    component: () => <WorkReport />
-  },
-  {
     path: "/",
     exact: true,
     component: () => <DashBoard />
+  },
+  {
+    path: "/list-task",
+    component: () => <div>List task nè!</div>
+  },
+  {
+    path: "/kpi-management",
+    component: () => <div>Quản lý KPI nè</div>
+  },
+  {
+    path: "/report",
+    component: <div>Báo cáo nè</div>
   },
   {
     path: "*",
