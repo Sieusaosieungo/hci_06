@@ -106,11 +106,13 @@ const Headers = () => {
       </div>
       <div className="header-right">
         <div className="header-tool">
-          <div className="header-tool-item notice">
-            <Icon type="bell" onClick={showDrawerNotice} />
-            <Badge count={199} overflowCount={99}>
-              <Link to="" className="head-example" />
-            </Badge>
+          <div className="notice">
+            <div className="header-tool-item  notice" onClick={showDrawerNotice}>
+              <Icon type="bell" />
+              <Badge count={199} overflowCount={99}>
+                <Link to="" className="head-example" />
+              </Badge>
+            </div>
             <Drawer
               title="Thông báo"
               width={300}
