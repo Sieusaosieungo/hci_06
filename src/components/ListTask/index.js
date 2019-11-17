@@ -1,159 +1,367 @@
-import React, { useState } from "react";
-import { Icon, Button, Input } from "antd";
-import { Col } from "antd";
+import React from "react";
 import "./styles.css";
+import { Table, Input, InputNumber, Form } from "antd";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { showModal, hideModal } from "../../actions/index";
-import DetailTask from "../DetailTask/index";
+import { showModal } from "../../actions/index";
+import DetailTask from "../../pages/ListTaskPage/DetailTask/index";
 
-const { TextArea } = Input;
-
-const ListTask = ({
-  title,
-  listTask,
-  addNewTask,
-  addNewListTask,
-  dispatch
-}) => {
-  const [state, setState] = useState({
-    isShowTitleForm: false,
-    isShowTaskForm: false,
-    taskName: "",
-    title: ""
+const data = [];
+for (let i = 1; i < 100; i++) {
+  data.push({
+    index: i.toString(),
+    name: "Công việc",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
   });
+}
 
-  const showForm = () => {
-    return state.isShowTitleForm === false ? (
-      <Button
-        type="primary"
-        size="large"
-        style={{
-          width: "280px",
-          height: "35px",
-          float: "left",
-          margin: "0 10px",
-          backgroundColor: '#5aac44',
-          color: 'white'
-        }}
-        onClick={() => setState({ ...state, isShowTitleForm: true })}
-      >
-        <Icon type="plus" />
-        Thêm danh sách khác
-      </Button>
-    ) : (
-      <>
-          <Input
-            style={{ width: "250px" }}
-            placeholder="Nhập tiêu đề danh sách ..."
-            value={state.title}
-            onChange={e => setState({ ...state, title: e.target.value })}
-            onPressEnter={handleNewListTask}
-        ></Input>
-        <Button
-          onClick={handleNewListTask} // đoạn này nó sẽ thêm 1 cái danh sách công việc
-          style={{ margin: "5px 3px 5px 0", backgroundColor: '#5aac44', color: 'white'}}
-          //type="primary"
-        >
-          <Icon type="plus" />
-          Thêm danh sách
-        </Button>
-        <Button
-          type="danger"
-          onClick={() => setState({ ...state, isShowTitleForm: false })}
-        >
-          <Icon type="close"></Icon>
-        </Button>
-      </>
-    );
+const data2 = [
+  {
+    index: 1,
+    name: "Kiểm tra nguyên liệu đầu vào",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 2,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+
+  {
+    index: 3,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 4,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 5,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 6,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 7,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 8,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 9,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 10,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 11,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  }
+];
+
+const { Search } = Input;
+const EditableContext = React.createContext();
+
+class EditableCell extends React.Component {
+  getInput = () => {
+    if (this.props.inputType === "number") {
+      return <InputNumber />;
+    }
+    return <Input />;
   };
 
-  const handleNewTask = () => {
-    if (state.taskName) addNewTask(title, state.taskName);
-    setState({ ...state, isShowTaskForm: false, taskName: "" });
-  };
-
-  const handleNewListTask = () => {
-    if (state.title) addNewListTask(state.title);
-    setState({ ...state, isShowTitleForm: false, title: "" });
-  };
-
-  const showListTask = (title, listTask) => {
+  renderCell = ({ getFieldDecorator }) => {
+    const {
+      editing,
+      dataIndex,
+      title,
+      inputType,
+      record,
+      index,
+      children,
+      ...restProps
+    } = this.props;
     return (
-      <div className="app-list-task">
-        <h2 className="list-task-title">{title}</h2>
-        <div className="list-task">
-          {listTask.map((taskName, index) => {
-            return (
-              <div key={index}>
-                <Button
-                  className="task"
-                  size="large"
-                  style={{ height: "30px", width: "100%"}}
-                  onClick={() =>
-                    dispatch(
-                      showModal({
-                        title: "Chi tiết công việc",
-                        Component: <DetailTask taskName={taskName} />,
-                        onOk: () => dispatch(hideModal()),
-                        onCancel: () => dispatch(hideModal())
-                      })
-                    )
-                  }
-                >
-                  <span>{taskName}</span>
-                  <Icon type="edit"></Icon>
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-        {state.isShowTaskForm ? (
-          <>
-            <TextArea
-              value={state.taskName}
-              onPressEnter={handleNewTask}
-              onChange={e => setState({ ...state, taskName: e.target.value })}
-              placeholder="Nhập tiêu đề cho thẻ này ..."
-            />
-
-            <div className="add-new-task">
-              <Button
-                onClick={handleNewTask}
-                type="primary"
-                style={{ width: "70%" }}
-              >
-                <span style={{ float: "left" }}>
-                  <Icon type="plus" /> Thêm công việc
-                </span>
-              </Button>
-              <Button
-                style={{ marginLeft: "3px" }}
-                type="danger"
-                onClick={() => setState({ ...state, isShowTaskForm: false })}
-              >
-                <Icon type="close" />
-              </Button>
-            </div>
-          </>
+      <td {...restProps}>
+        {editing ? (
+          <Form.Item style={{ margin: 0 }}>
+            {getFieldDecorator(dataIndex, {
+              rules: [
+                {
+                  required: true,
+                  message: `Please Input ${title}!`
+                }
+              ],
+              initialValue: record[dataIndex]
+            })(this.getInput())}
+          </Form.Item>
         ) : (
-          <Button
-            onClick={() => setState({ ...state, isShowTaskForm: true })}
-            type="primary"
-          >
-            <Icon type="plus" />
-            Thêm công việc
-          </Button>
+          children
         )}
-      </div>
+      </td>
     );
   };
 
-  return (
-    <>
-      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
-        {title ? showListTask(title, listTask) : showForm()}
-      </Col>
-    </>
-  );
-};
-export default connect()(ListTask);
+  render() {
+    return (
+      <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
+    );
+  }
+}
+
+class EditableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { data: data2, editingKey: "" }; //fake data
+    this.columns = [
+      {
+        title: (
+          <div>
+            <div className="title">STT</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ), // tên cv, người phụ trách, ngày giao, deadline, trạng thái , chi tiết xóa
+        dataIndex: "index",
+        width: "5%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Tên công việc</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "name",
+        width: "25%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Người kiểm duyệt</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "censor",
+        width: "15%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Ngày tạo</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "dateStart",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Ngày hết hạn</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "dateFinish",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Trọng số</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "weight",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Trạng thái</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "status",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: <div>Xem chi tiết</div>,
+        dataIndex: "detail",
+        width: "15%",
+        editable: true,
+        render: data => {
+          return (
+            <Link
+              to="/detail-task"
+              onClick={() =>
+                this.props.dispatch(
+                  showModal({
+                    title: "Chi tiết công việc",
+                    Component: <DetailTask />
+                  })
+                )
+              }
+            >
+              {data}
+            </Link>
+          );
+        }
+      }
+    ];
+  }
+
+  isEditing = record => record.key === this.state.editingKey;
+
+  cancel = () => {
+    this.setState({ editingKey: "" });
+  };
+
+  save(form, key) {
+    form.validateFields((error, row) => {
+      if (error) {
+        return;
+      }
+      const newData = [...this.state.data];
+      const index = newData.findIndex(item => key === item.key);
+      if (index > -1) {
+        const item = newData[index];
+        newData.splice(index, 1, {
+          ...item,
+          ...row
+        });
+        this.setState({ data: newData, editingKey: "" });
+      } else {
+        newData.push(row);
+        this.setState({ data: newData, editingKey: "" });
+      }
+    });
+  }
+
+  edit(key) {
+    this.setState({ editingKey: key });
+  }
+
+  render() {
+    const components = {
+      body: {
+        cell: EditableCell
+      }
+    };
+
+    const columns = this.columns.map(col => {
+      if (!col.editable) {
+        return col;
+      }
+      return {
+        ...col,
+        onCell: record => ({
+          record,
+          inputType: col.dataIndex === "age" ? "number" : "text",
+          dataIndex: col.dataIndex,
+          title: col.title,
+          editing: this.isEditing(record)
+        })
+      };
+    });
+
+    return (
+      <EditableContext.Provider value={this.props.form}>
+        <Table
+          components={components}
+          bordered
+          dataSource={this.state.data}
+          columns={columns}
+          rowClassName="editable-row"
+          pagination={{
+            onChange: this.cancel
+          }}
+        />
+      </EditableContext.Provider>
+    );
+  }
+}
+
+const EditableFormTable = Form.create()(connect()(EditableTable));
+export default EditableFormTable;

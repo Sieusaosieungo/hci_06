@@ -7,12 +7,17 @@ import "./styles.css";
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 const Account = loadable(() => import("../pages/Account/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
+const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
 
 export const routes = [
   {
     path: "/list-task",
     exact: true,
     component: () => <ListTaskPage />
+  },
+  {
+    path: "/detail-task",
+    component: () => <DetailTask />
   },
   {
     path: "/account",
