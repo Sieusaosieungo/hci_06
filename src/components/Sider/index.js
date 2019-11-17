@@ -29,10 +29,10 @@ function Siders() {
           }
         >
           <Menu.Item key="sub2-1">
-            <Link to="/">Danh sách công việc</Link>
+            <Link to="/list-task">Danh sách công việc</Link>
           </Menu.Item>
           <Menu.Item key="sub2-2">
-            <Link to="/">Tạo công việc</Link>
+            <Link to="/create-task">Tạo công việc</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
@@ -45,7 +45,7 @@ function Siders() {
           }
         >
           <Menu.Item key="sub3-1">
-            <Link to="/">KPI bộ phận</Link>
+            <Link to="/kpi-management">KPI bộ phận</Link>
           </Menu.Item>
           <Menu.Item key="sub3-2">
             <Link to="/">KPI nhân viên</Link>

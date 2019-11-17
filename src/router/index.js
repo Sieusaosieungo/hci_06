@@ -19,6 +19,10 @@ export const routes = [
     component: () => <div>List task nè!</div>
   },
   {
+    path:"/create-task",
+    component:<div>Tạo công việc</div>
+  },
+  {
     path: "/kpi-management",
     component: () => <div>Quản lý KPI nè</div>
   },
