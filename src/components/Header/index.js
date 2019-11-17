@@ -94,19 +94,10 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link to="">Bảng</Link>
+            <Link to=""></Link>
           </div>
           <div className="header-center-item">
-            <Link to="">Biểu đồ</Link>
-          </div>
-          <div className="header-center-item">
-            <Link to="">Lịch biểu</Link>
-          </div>
-          <div className="header-center-item">
-            <Link to="/process">Kiểm tra quy trình</Link>
-          </div>
-          <div className="header-center-item">
-            <Link to="/">Giao việc cho nhân viên</Link>
+            <Link to="/process"></Link>
           </div>
         </div>
       </div>
@@ -348,7 +339,7 @@ const Headers = () => {
                 style={{ backgroundColor: "#87d068" }}
                 icon="user"
               />
-              <span>Tên người dùng</span>
+              <span>HCI 06</span>
             </div>
             <Drawer
               title="Tài khoản của bạn"
@@ -368,12 +359,12 @@ const Headers = () => {
                     </div>
                     <div className="drawer-account-info">
                       <span className="drawer-account-username">
-                        Người dùng
+                        HCI 06
                       </span>
                       <span className="drawer-account-email">
-                        nguoidung@gmail.com
+                        hci06@gmail.com
                       </span>
-                      <Link to="">Tài khoản</Link>
+                      <Link to="account">Tài khoản</Link>
                       <Link to="">Đăng xuất</Link>
                     </div>
                   </div>

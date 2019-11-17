@@ -4,29 +4,25 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
+const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
+const Account = loadable(() => import("../pages/Account/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 
 export const routes = [
   {
+    path: "/list-task",
+    exact: true,
+    component: () => <ListTaskPage />
+  },
+  {
+    path: "/account",
+    exact: true,
+    component: () => <Account />
+  },
+  {
     path: "/",
     exact: true,
     component: () => <DashBoard />
-  },
-  {
-    path: "/list-task",
-    component: () => <div>List task nè!</div>
-  },
-  {
-    path: "/create-task",
-    component: <div>Tạo công việc</div>
-  },
-  {
-    path: "/kpi-management",
-    component: () => <div>Quản lý KPI nè</div>
-  },
-  {
-    path: "/report",
-    component: <div>Báo cáo nè</div>
   },
   {
     path: "*",
