@@ -11,7 +11,7 @@ const WorkReport = () => {
     <div className="work-report">
       <div className="work-report-inner">
         <div className="work-report-title">
-          <span>Kế hoạch mới</span>
+          <span>Báo cáo công việc</span>
         </div>
         <div className="work-report-input-title">
           <Input placeholder="Tên kế hoạch" />
