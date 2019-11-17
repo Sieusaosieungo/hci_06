@@ -4,8 +4,6 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
-const ListTask = loadable(() => import("../pages/ProcessCheck/index"));
-const WorkReport = loadable(() => import("../pages/WorkReport/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 
 export const routes = [
@@ -19,8 +17,8 @@ export const routes = [
     component: () => <div>List task nè!</div>
   },
   {
-    path:"/create-task",
-    component:<div>Tạo công việc</div>
+    path: "/create-task",
+    component: <div>Tạo công việc</div>
   },
   {
     path: "/kpi-management",
