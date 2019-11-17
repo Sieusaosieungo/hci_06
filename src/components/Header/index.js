@@ -147,12 +147,13 @@ const Headers = () => {
             </Drawer>
           </div>
           <div className="header-right-account header-tool-item">
-            <Avatar
-              style={{ backgroundColor: "#87d068" }}
-              icon="user"
-              onClick={showDrawerUser}
-            />
-            <span onClick={showDrawerUser}>Tên người dùng</span>
+            <div onClick={showDrawerUser} className="header-right-account header-tool-item">
+              <Avatar
+                style={{ backgroundColor: "#87d068" }}
+                icon="user"
+              />
+              <span>Tên người dùng</span>
+            </div>
             <Drawer
               title="Tài khoản của bạn"
               width={300}

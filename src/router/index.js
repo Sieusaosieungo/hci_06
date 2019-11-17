@@ -7,6 +7,8 @@ import "./styles.css";
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 const ProcessCheck = loadable(() => import("../pages/ProcessCheck/index"));
 const WorkReport = loadable(() => import("../pages/WorkReport/index"));
+const DashBoardEmployees = loadable(() => import("../pages/DashBoardEmployee/index"));
+const DashBoardDepartments = loadable(() => import("../pages/DashBoardDepartments/index"));
 
 export const routes = [
   {
@@ -23,6 +25,16 @@ export const routes = [
     path: "/workreport",
     exact: true,
     component: () => <WorkReport />
+  },
+  {
+    path: "/dashboard-employees",
+    exact: true,
+    component: () => <DashBoardEmployees />
+  },
+  {
+    path: "/dashboard-departments",
+    exact: true,
+    component: () => <DashBoardDepartments />
   },
   {
     path: "*",
