@@ -1,25 +1,137 @@
 import React from "react";
 import "./styles.css";
-import { Table, Input, InputNumber, Popconfirm, Form, Icon } from "antd";
+import { Table, Input, InputNumber, Form } from "antd";
+import { Link } from "react-router-dom";
 
-const data = [
-  {
-    key: 0,
-    name: <Input />,
-    age: <Input />,
-    address: <Input />,
-    operation: <Input />
-  }
-];
+const data = [];
 for (let i = 1; i < 100; i++) {
   data.push({
-    key: i.toString(),
-    name: "a",
-    age: 32,
-    address: `London Park no. ${i}`
+    index: i.toString(),
+    name: "Công việc",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
   });
 }
 
+const data2 = [
+  {
+    index: 1,
+    name: "Kiểm tra nguyên liệu đầu vào",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 2,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+
+  {
+    index: 3,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 4,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 5,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 6,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 7,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 8,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 9,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 10,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 11,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  }
+];
+
+const { Search } = Input;
 const EditableContext = React.createContext();
 
 class EditableCell extends React.Component {
@@ -72,32 +184,93 @@ class EditableCell extends React.Component {
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data, editingKey: "" };
+    this.state = { data: data2, editingKey: "" }; //fake data
     this.columns = [
       {
-        title: "Name",
-        dataIndex: "name",
-        width: "25%",
-        className: "columns",
+        title: (
+          <div>
+            <div className="title">STT</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ), // tên cv, người phụ trách, ngày giao, deadline, trạng thái , chi tiết xóa
+        dataIndex: "index",
+        width: "5%",
         editable: true
       },
       {
-        title: "age",
-        dataIndex: "age",
+        title: (
+          <div>
+            <div className="title">Tên công việc</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "name",
+        width: "25%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Người kiểm duyệt</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "censor",
         width: "15%",
         editable: true
       },
       {
-        title: "address",
-        dataIndex: "address",
-        width: "40%",
+        title: (
+          <div>
+            <div className="title">Ngày tạo</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "dateStart",
+        width: "10%",
         editable: true
       },
       {
-        title: "operation",
-        dataIndex: "operation",
-        width: "40%",
+        title: (
+          <div>
+            <div className="title">Ngày hết hạn</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "dateFinish",
+        width: "10%",
         editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Trọng số</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "weight",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Trạng thái</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "status",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: <div>Xem chi tiết</div>,
+        dataIndex: "detail",
+        width: "15%",
+        editable: true,
+        render: data => {
+          return <Link to="/detail-task">{data}</Link>;
+        }
       }
     ];
   }

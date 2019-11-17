@@ -5,7 +5,6 @@ import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
-const WorkReport = loadable(() => import("../pages/WorkReport/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 
 export const routes = [
