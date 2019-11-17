@@ -1,0 +1,30 @@
+.detail-task {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.criteria {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 7px;
+  padding: 0.8rem;
+  margin: 0.5rem 2rem;
+  max-width: 50%;
+}
+
+.attach-file {
+  text-decoration: underline;
+}
+
+.attach-file:hover {
+  text-decoration: underline;
+  color: violet;
+}
+
+.detail-value {
+  font-weight: 8;
+}
+
+.task-detail-title {
+  font-size: 24px;
+}
+
