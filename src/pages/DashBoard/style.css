@@ -1,0 +1,15 @@
+.chartContainer {
+  display: flex;
+}
+
+.item1 {
+  width: 50%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.item2 {
+  width: 50%;
+  height: 100%;
+  padding: 0.5rem;
+}
