@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Icon, Avatar, Badge, Drawer } from "antd";
+import { Layout, Icon, Avatar, Badge, Drawer, Popconfirm, Button, message } from "antd";
 import { Link } from "react-router-dom";
 import "./style.css";
 const { Header } = Layout;
@@ -65,6 +65,12 @@ const Headers = () => {
     });
   };
 
+  function confirm() {
+    message.success('Đã xóa thông báo thành công');
+  }
+
+  const text = "Bạn có chắc chắn muốn xóa thông báo?";
+
   return (
     <Header className="header" style={{ lineHeight: "55px", height: "55px" }}>
       <div className="logo" />
@@ -115,11 +121,199 @@ const Headers = () => {
             </div>
             <Drawer
               title="Thông báo"
-              width={300}
+              width={400}
               onClose={onCloseNotice}
               visible={state.visibleNotice}
             >
-              <div />
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
+                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                  </div>
+                  <span className="notice-element-date">11:21:40 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT01 Vũ Duy Mạnh </span>
+                    <span className="notice-element-info">báo cáo kiểm tra bộ phận SX02</span>
+                  </div>
+                  <span className="notice-element-date">11:19:29 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
+                    <span className="notice-element-info">cập nhật tiến độ kiểm tra bộ phận SX02</span>
+                  </div>
+                  <span className="notice-element-date">10:12:28 - 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT04 Nguyễn Việt Hùng </span>
+                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                  </div>
+                  <span className="notice-element-date">10:07:10 - 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
+                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                  </div>
+                  <span className="notice-element-date">9:48:28 - 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT05 Trần Trung Huỳnh </span>
+                    <span className="notice-element-info">xin phép nghỉ làm ngày 31-10-2019</span>
+                  </div>
+                  <span className="notice-element-date">7:22:15 - 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
+                    <span className="notice-element-info">báo cáo kiểm tra bộ phận SX01</span>
+                  </div>
+                  <span className="notice-element-date">16:38:21 - 30/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
+                    <span className="notice-element-info">vừa nộp báo cáo tháng 10</span>
+                  </div>
+                  <span className="notice-element-date">11:21:40 - 31/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
+              <div className="notice-element">
+                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
+                <div className="notice-element-inner">
+                  <div className="notice-element-content">
+                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
+                    <span className="notice-element-info">báo cáo kết quả kiểm tra bộ phận SX10</span>
+                  </div>
+                  <span className="notice-element-date">11:21:40 - 29/10/2019</span>
+                </div>
+                <Popconfirm
+                  placement="topRight"
+                  title={text}
+                  onConfirm={confirm}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button style={{ border: '0px' }}>
+                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  </Button>
+                </Popconfirm>
+              </div>
             </Drawer>
           </div>
           <div className="header-tool-item setting">
