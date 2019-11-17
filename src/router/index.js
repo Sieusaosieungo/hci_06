@@ -1,47 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import loadable from '@loadable/component';
-import { Switch, Route } from 'react-router-dom';
-import './styles.css';
+import React from "react";
+import PropTypes from "prop-types";
+import loadable from "@loadable/component";
+import { Switch, Route } from "react-router-dom";
+import "./styles.css";
 
-<<<<<<< HEAD
 const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
+// const WorkReport = loadable(() => import('../pages/WorkReport/index'));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
-=======
-const ListTaskPage = loadable(() => import('../pages/ListTaskPage/index'));
-const WorkReport = loadable(() => import('../pages/WorkReport/index'));
-const DashBoard = loadable(() => import('../pages/DashBoard/index'));
-const DetailTask = loadable(() => import('../pages/ListTaskPage/DetailTask'));
->>>>>>> 3c0b4676e8c83fefa4737e78a7244cf49d78a916
+const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
 
 export const routes = [
   {
-    path: '/',
+    path: "/",
     exact: true,
     component: () => <DashBoard />
   },
   {
-    path: '/list-task',
+    path: "/list-task",
     component: () => <ListTaskPage />
   },
   {
-    path: '/detail-task',
+    path: "/detail-task",
     component: () => <DetailTask />
   },
   {
-    path: '/create-task',
+    path: "/create-task",
     component: <div>Tạo công việc</div>
   },
   {
-    path: '/kpi-management',
+    path: "/kpi-management",
     component: () => <div>Quản lý KPI nè</div>
   },
   {
-    path: '/report',
+    path: "/report",
     component: <div>Báo cáo nè</div>
   },
   {
-    path: '*',
+    path: "*",
     component: class NotFound extends React.PureComponent {
       static propTypes = {
         staticContext: PropTypes.object
@@ -57,7 +52,7 @@ export const routes = [
 
       render() {
         return (
-          <div className='not-found'>
+          <div className="not-found">
             <b>Lỗi 404|Trang không tồn tại!</b>
           </div>
         );

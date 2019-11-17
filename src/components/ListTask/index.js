@@ -2,6 +2,9 @@ import React from "react";
 import "./styles.css";
 import { Table, Input, InputNumber, Form } from "antd";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { showModal } from "../../actions/index";
+import DetailTask from "../../pages/ListTaskPage/DetailTask/index";
 
 const data = [];
 for (let i = 1; i < 100; i++) {
@@ -269,7 +272,21 @@ class EditableTable extends React.Component {
         width: "15%",
         editable: true,
         render: data => {
-          return <Link to="/detail-task">{data}</Link>;
+          return (
+            <Link
+              to="/detail-task"
+              onClick={() =>
+                this.props.dispatch(
+                  showModal({
+                    title: "Chi tiết công việc",
+                    Component: <DetailTask />
+                  })
+                )
+              }
+            >
+              {data}
+            </Link>
+          );
         }
       }
     ];
@@ -346,5 +363,5 @@ class EditableTable extends React.Component {
   }
 }
 
-const EditableFormTable = Form.create()(EditableTable);
+const EditableFormTable = Form.create()(connect()(EditableTable));
 export default EditableFormTable;
