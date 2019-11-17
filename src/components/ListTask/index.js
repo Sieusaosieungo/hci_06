@@ -1,159 +1,177 @@
-import React, { useState } from "react";
-import { Icon, Button, Input } from "antd";
-import { Col } from "antd";
+import React from "react";
 import "./styles.css";
-import { connect } from "react-redux";
-import { showModal, hideModal } from "../../actions/index";
-import DetailTask from "../DetailTask/index";
+import { Table, Input, InputNumber, Popconfirm, Form, Icon } from "antd";
 
-const { TextArea } = Input;
-
-const ListTask = ({
-  title,
-  listTask,
-  addNewTask,
-  addNewListTask,
-  dispatch
-}) => {
-  const [state, setState] = useState({
-    isShowTitleForm: false,
-    isShowTaskForm: false,
-    taskName: "",
-    title: ""
+const data = [
+  {
+    key: 0,
+    name: <Input />,
+    age: <Input />,
+    address: <Input />,
+    operation: <Input />
+  }
+];
+for (let i = 1; i < 100; i++) {
+  data.push({
+    key: i.toString(),
+    name: "a",
+    age: 32,
+    address: `London Park no. ${i}`
   });
+}
 
-  const showForm = () => {
-    return state.isShowTitleForm === false ? (
-      <Button
-        type="primary"
-        size="large"
-        style={{
-          width: "280px",
-          height: "35px",
-          float: "left",
-          margin: "0 10px",
-          backgroundColor: '#5aac44',
-          color: 'white'
-        }}
-        onClick={() => setState({ ...state, isShowTitleForm: true })}
-      >
-        <Icon type="plus" />
-        Thêm danh sách khác
-      </Button>
-    ) : (
-      <>
-          <Input
-            style={{ width: "250px" }}
-            placeholder="Nhập tiêu đề danh sách ..."
-            value={state.title}
-            onChange={e => setState({ ...state, title: e.target.value })}
-            onPressEnter={handleNewListTask}
-        ></Input>
-        <Button
-          onClick={handleNewListTask} // đoạn này nó sẽ thêm 1 cái danh sách công việc
-          style={{ margin: "5px 3px 5px 0", backgroundColor: '#5aac44', color: 'white'}}
-          //type="primary"
-        >
-          <Icon type="plus" />
-          Thêm danh sách
-        </Button>
-        <Button
-          type="danger"
-          onClick={() => setState({ ...state, isShowTitleForm: false })}
-        >
-          <Icon type="close"></Icon>
-        </Button>
-      </>
-    );
+const EditableContext = React.createContext();
+
+class EditableCell extends React.Component {
+  getInput = () => {
+    if (this.props.inputType === "number") {
+      return <InputNumber />;
+    }
+    return <Input />;
   };
 
-  const handleNewTask = () => {
-    if (state.taskName) addNewTask(title, state.taskName);
-    setState({ ...state, isShowTaskForm: false, taskName: "" });
-  };
-
-  const handleNewListTask = () => {
-    if (state.title) addNewListTask(state.title);
-    setState({ ...state, isShowTitleForm: false, title: "" });
-  };
-
-  const showListTask = (title, listTask) => {
+  renderCell = ({ getFieldDecorator }) => {
+    const {
+      editing,
+      dataIndex,
+      title,
+      inputType,
+      record,
+      index,
+      children,
+      ...restProps
+    } = this.props;
     return (
-      <div className="app-list-task">
-        <h2 className="list-task-title">{title}</h2>
-        <div className="list-task">
-          {listTask.map((taskName, index) => {
-            return (
-              <div key={index}>
-                <Button
-                  className="task"
-                  size="large"
-                  style={{ height: "30px", width: "100%"}}
-                  onClick={() =>
-                    dispatch(
-                      showModal({
-                        title: "Chi tiết công việc",
-                        Component: <DetailTask taskName={taskName} />,
-                        onOk: () => dispatch(hideModal()),
-                        onCancel: () => dispatch(hideModal())
-                      })
-                    )
-                  }
-                >
-                  <span>{taskName}</span>
-                  <Icon type="edit"></Icon>
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-        {state.isShowTaskForm ? (
-          <>
-            <TextArea
-              value={state.taskName}
-              onPressEnter={handleNewTask}
-              onChange={e => setState({ ...state, taskName: e.target.value })}
-              placeholder="Nhập tiêu đề cho thẻ này ..."
-            />
-
-            <div className="add-new-task">
-              <Button
-                onClick={handleNewTask}
-                type="primary"
-                style={{ width: "70%" }}
-              >
-                <span style={{ float: "left" }}>
-                  <Icon type="plus" /> Thêm công việc
-                </span>
-              </Button>
-              <Button
-                style={{ marginLeft: "3px" }}
-                type="danger"
-                onClick={() => setState({ ...state, isShowTaskForm: false })}
-              >
-                <Icon type="close" />
-              </Button>
-            </div>
-          </>
+      <td {...restProps}>
+        {editing ? (
+          <Form.Item style={{ margin: 0 }}>
+            {getFieldDecorator(dataIndex, {
+              rules: [
+                {
+                  required: true,
+                  message: `Please Input ${title}!`
+                }
+              ],
+              initialValue: record[dataIndex]
+            })(this.getInput())}
+          </Form.Item>
         ) : (
-          <Button
-            onClick={() => setState({ ...state, isShowTaskForm: true })}
-            type="primary"
-          >
-            <Icon type="plus" />
-            Thêm công việc
-          </Button>
+          children
         )}
-      </div>
+      </td>
     );
   };
 
-  return (
-    <>
-      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
-        {title ? showListTask(title, listTask) : showForm()}
-      </Col>
-    </>
-  );
-};
-export default connect()(ListTask);
+  render() {
+    return (
+      <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
+    );
+  }
+}
+
+class EditableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { data, editingKey: "" };
+    this.columns = [
+      {
+        title: "Name",
+        dataIndex: "name",
+        width: "25%",
+        className: "columns",
+        editable: true
+      },
+      {
+        title: "age",
+        dataIndex: "age",
+        width: "15%",
+        editable: true
+      },
+      {
+        title: "address",
+        dataIndex: "address",
+        width: "40%",
+        editable: true
+      },
+      {
+        title: "operation",
+        dataIndex: "operation",
+        width: "40%",
+        editable: true
+      }
+    ];
+  }
+
+  isEditing = record => record.key === this.state.editingKey;
+
+  cancel = () => {
+    this.setState({ editingKey: "" });
+  };
+
+  save(form, key) {
+    form.validateFields((error, row) => {
+      if (error) {
+        return;
+      }
+      const newData = [...this.state.data];
+      const index = newData.findIndex(item => key === item.key);
+      if (index > -1) {
+        const item = newData[index];
+        newData.splice(index, 1, {
+          ...item,
+          ...row
+        });
+        this.setState({ data: newData, editingKey: "" });
+      } else {
+        newData.push(row);
+        this.setState({ data: newData, editingKey: "" });
+      }
+    });
+  }
+
+  edit(key) {
+    this.setState({ editingKey: key });
+  }
+
+  render() {
+    const components = {
+      body: {
+        cell: EditableCell
+      }
+    };
+
+    const columns = this.columns.map(col => {
+      if (!col.editable) {
+        return col;
+      }
+      return {
+        ...col,
+        onCell: record => ({
+          record,
+          inputType: col.dataIndex === "age" ? "number" : "text",
+          dataIndex: col.dataIndex,
+          title: col.title,
+          editing: this.isEditing(record)
+        })
+      };
+    });
+
+    return (
+      <EditableContext.Provider value={this.props.form}>
+        <Table
+          components={components}
+          bordered
+          dataSource={this.state.data}
+          columns={columns}
+          rowClassName="editable-row"
+          pagination={{
+            onChange: this.cancel
+          }}
+        />
+      </EditableContext.Provider>
+    );
+  }
+}
+
+const EditableFormTable = Form.create()(EditableTable);
+export default EditableFormTable;
