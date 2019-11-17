@@ -1,0 +1,68 @@
+.account {
+  padding: 2rem 6rem;
+  width: 100%;
+  display: flex;
+}
+
+.account-info {
+  width: 100%;
+}
+
+.account-info > span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.account-info-inner {
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px rgb(189, 189, 189);
+}
+
+.aii-element {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0rem;
+}
+
+.aii-left {
+  width: 25%;
+}
+
+.aii-left > span {
+  font-weight: bold;
+}
+
+.aii-center {
+  width: 50%;
+}
+
+.aii-right {
+  width: 25%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-end;
+  justify-items: flex-end;
+  padding-right: 2rem;
+}
+
+.aii-right > i {
+  display: none;
+  padding: 0rem 0.5rem;
+}
+.aii-right:hover {
+  color: green;
+}
+
+.aii-right:hover > i {
+  display: inline;
+}
+
+.account-info-footer {
+  padding: 0.5rem 1rem;
+}
