@@ -13,27 +13,12 @@ function Siders() {
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
-
-        <SubMenu
-          key="sub1"
-          title={
-            <span>
-              <Icon type="pie-chart" />
-              Bảng điều khiển
-            </span>
-          }
-        >
-          <Menu.Item key="sub1-1">
-            <Link to="dashboard-employees">
-              KPI nhân viên
+        <Menu.Item key="11">
+          <Link to="/">
+            <Icon type="pie-chart" />
+            Bảng điều khiển
             </Link>
-          </Menu.Item>
-          <Menu.Item key="sub1-2">
-            <Link to="dashboard-departments">
-              KPI bộ phận
-            </Link>
-          </Menu.Item>
-        </SubMenu>
+        </Menu.Item>
         <SubMenu
           key="sub2"
           title={

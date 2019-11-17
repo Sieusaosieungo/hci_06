@@ -4,18 +4,11 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
-const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 const ProcessCheck = loadable(() => import("../pages/ProcessCheck/index"));
 const WorkReport = loadable(() => import("../pages/WorkReport/index"));
-const DashBoardEmployees = loadable(() => import("../pages/DashBoardEmployee/index"));
-const DashBoardDepartments = loadable(() => import("../pages/DashBoardDepartments/index"));
+const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 
 export const routes = [
-  {
-    path: "/",
-    exact: true,
-    component: () => <ListTaskPage />
-  },
   {
     path: "/process",
     exact: true,
@@ -27,14 +20,9 @@ export const routes = [
     component: () => <WorkReport />
   },
   {
-    path: "/dashboard-employees",
+    path: "/",
     exact: true,
-    component: () => <DashBoardEmployees />
-  },
-  {
-    path: "/dashboard-departments",
-    exact: true,
-    component: () => <DashBoardDepartments />
+    component: () => <DashBoard />
   },
   {
     path: "*",
