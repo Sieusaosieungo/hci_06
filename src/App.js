@@ -8,6 +8,7 @@ import { Layout } from "antd";
 import "./App.css";
 import { Modal } from "antd";
 import { connect } from "react-redux";
+import { hideModal } from "./actions/index";
 
 function App({ modal, children, dispatch }) {
   return (
@@ -17,7 +18,7 @@ function App({ modal, children, dispatch }) {
           title={modal.title}
           visible={modal.visible}
           onOk={modal.onOk}
-          onCancel={modal.onCancel}
+          onCancel={() => dispatch(hideModal())}
           width="65vw"
         >
           {modal.Component}
