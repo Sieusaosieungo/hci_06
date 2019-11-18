@@ -83,7 +83,7 @@ const ReportDetail = props => {
           <span className="rid-content">85.587%</span>
         </div>
         <div className="rdi-element">
-          <span className="rdi-title">Kế quả đạt được</span>
+          <span className="rdi-title">Kết quả kiểm tra chất lượng</span>
           <div className="rid-content-table">
             <div className='rid-content-left ridc ridc-title'>
               <p>Kiểm tra thiết bị sản xuất</p>
