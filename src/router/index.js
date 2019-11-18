@@ -4,10 +4,16 @@ import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
-const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
-// const WorkReport = loadable(() => import('../pages/WorkReport/index'));
+const ListTaskDepartment = loadable(() =>
+  import("../pages/ListTaskPage/index")
+);
+const ListTaskEmployee = loadable(() =>
+  import("../pages/ListTaskPage/ListTaskEmployee/index")
+);
+const Account = loadable(() => import("../pages/Account/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
+const CreateTaskPage = loadable(() => import("../pages/CreateTaskPage/index"));
 
 export const routes = [
   {
@@ -16,24 +22,24 @@ export const routes = [
     component: () => <DashBoard />
   },
   {
-    path: "/list-task",
-    component: () => <ListTaskPage />
+    path: "/list-task-department",
+    component: () => <ListTaskDepartment />
+  },
+  {
+    path: "/list-task-employee",
+    component: () => <ListTaskEmployee />
   },
   {
     path: "/detail-task",
     component: () => <DetailTask />
   },
   {
+    path: "/account",
+    component: () => <Account />
+  },
+  {
     path: "/create-task",
-    component: <div>Tạo công việc</div>
-  },
-  {
-    path: "/kpi-management",
-    component: () => <div>Quản lý KPI nè</div>
-  },
-  {
-    path: "/report",
-    component: <div>Báo cáo nè</div>
+    component: () => <CreateTaskPage />
   },
   {
     path: "*",
