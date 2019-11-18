@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
 const ListTaskDepartment = loadable(() =>
-  import("../pages/ListTaskPage/index")
+  import("../pages/ListTaskPage/ListTaskDepartment/index")
 );
 const ListTaskEmployee = loadable(() =>
   import("../pages/ListTaskPage/ListTaskEmployee/index")
@@ -17,6 +17,9 @@ const CreateTaskPage = loadable(() => import("../pages/CreateTaskPage/index"));
 const WorkReport = loadable(() => import("../pages/WorkReport"));
 const ManageReport = loadable(() => import("../pages/ManageReport"));
 const CreateReport = loadable(() => import("../pages/CreateReport"));
+const ReportDetail = loadable(() =>
+  import("../pages/ManageReport/ReportDetail/index")
+);
 
 export const routes = [
   {
@@ -47,6 +50,10 @@ export const routes = [
   {
     path: "/workreport",
     component: () => <WorkReport />
+  },
+  {
+    path: "/report-detail",
+    component: () => <ReportDetail />
   },
   {
     path: "/manage-report",
