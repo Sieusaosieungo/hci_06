@@ -15,7 +15,7 @@ function Siders() {
       >
         <Menu.Item key="11">
           <Link to="/">
-            <Icon type="pie-chart" />
+            <Icon type="dashboard" />
             Bảng điều khiển
           </Link>
         </Menu.Item>
@@ -29,10 +29,10 @@ function Siders() {
           }
         >
           <Menu.Item key="sub2-1">
-            <Link to="/list-task">Công việc phòng ban</Link>
+            <Link to="/list-task-department">Công việc phòng ban</Link>
           </Menu.Item>
           <Menu.Item key="sub2-2">
-            <Link to="/create-task">Công việc nhân viên</Link>
+            <Link to="/list-task-employee">Công việc nhân viên</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu

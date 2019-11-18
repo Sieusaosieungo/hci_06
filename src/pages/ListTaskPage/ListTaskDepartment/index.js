@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import ListTask from "../../components/ListTask/index";
+import ListTask from "../../../components/ListTask/index";
 import { Row, Col } from "antd";
 
 const ListTaskPage = () => {
