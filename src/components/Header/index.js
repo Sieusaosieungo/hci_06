@@ -429,7 +429,7 @@ const Headers = () => {
               <Icon type="question-circle" theme="twoTone" />
             </div>
             <Drawer
-              title="Trợ giúp "
+              title="Trợ giúp & Hướng dẫn"
               width={300}
               onClose={onCloseHelp}
               visible={state.visibleHelp}
