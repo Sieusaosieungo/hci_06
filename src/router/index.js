@@ -14,6 +14,7 @@ const Account = loadable(() => import("../pages/Account/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
 const CreateTaskPage = loadable(() => import("../pages/CreateTaskPage/index"));
+const WorkReport = loadable(() => import("../pages/WorkReport"));
 
 export const routes = [
   {
@@ -40,6 +41,10 @@ export const routes = [
   {
     path: "/create-task",
     component: () => <CreateTaskPage />
+  },
+  {
+    path: "/workreport",
+    component: () => <WorkReport />
   },
   {
     path: "*",
