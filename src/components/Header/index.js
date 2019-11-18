@@ -403,23 +403,23 @@ const Headers = () => {
               <div className="setting-content">
                 <div className="sci">
                   <Icon type="insurance" />
-                  <Link>Cài đặt ngôn ngữ</Link>
+                  <Link to="#">Cài đặt ngôn ngữ</Link>
                 </div>
                 <div className="sci">
                   <Icon type="form" />
-                  <Link>Nhật ký thay đổi hoạt động</Link>
+                  <Link to="#">Nhật ký thay đổi hoạt động</Link>
                 </div>
                 <div className="sci">
                   <Icon type="notification" />
-                  <Link>Thông báo</Link>
+                  <Link to="#">Thông báo</Link>
                 </div>
                 <div className="sci">
                   <Icon type="team" />
-                  <Link>Nhóm dự án</Link>
+                  <Link to="#">Nhóm dự án</Link>
                 </div>
                 <div className="sci">
                   <Icon type="tool" />
-                  <Link>Tiện ích</Link>
+                  <Link to="#">Tiện ích</Link>
                 </div>
               </div>
             </Drawer>
