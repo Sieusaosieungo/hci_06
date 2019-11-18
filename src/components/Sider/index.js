@@ -45,28 +45,22 @@ function Siders() {
           }
         >
           <Menu.Item key="sub3-1">
-            <Link to="/kpi-management">KPI bộ phận</Link>
+            <a href="http://hci09.it4440.phungluan.com/danhsachKPI.html">
+              KPI bộ phận
+            </a>
           </Menu.Item>
           <Menu.Item key="sub3-2">
-            <Link to="/">KPI nhân viên</Link>
+            <a href="http://hci09.it4440.phungluan.com/ketquakpi.html">
+              KPI nhân viên
+            </a>
           </Menu.Item>
         </SubMenu>
-        <SubMenu
-          key="sub4"
-          title={
-            <span>
-              <Icon type="bar-chart" />
-              Thống kê báo cáo
-            </span>
-          }
-        >
-          <Menu.Item key="sub4-1">
-            <Link to="/">Thống kê báo cáo</Link>
-          </Menu.Item>
-          <Menu.Item key="sub4-2">
-            <Link to="workreport">Tạo báo cáo</Link>
-          </Menu.Item>
-        </SubMenu>
+        <Menu.Item key="bar-chart">
+          <Link to="/">
+            <Icon type="area-chart" />
+            Thống kê báo cáo
+          </Link>
+        </Menu.Item>
       </Menu>
     </Sider>
   );
