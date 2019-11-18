@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Icon, Avatar, Badge, Drawer, Popconfirm, Button, message } from "antd";
+import { Layout, Icon, Avatar, Badge, Drawer, Popconfirm, Button, message, Modal } from "antd";
 import { Link } from "react-router-dom";
 import "./style.css";
 const { Header } = Layout;
@@ -9,8 +9,27 @@ const Headers = () => {
     visibleNotice: false,
     visibleSetting: false,
     visibleHelp: false,
-    visibleUser: false
+    visibleUser: false,
+    visibleModalHelp: false
   });
+
+  const showModalHelp = () => {
+    setState({
+      visibleModalHelp: true,
+    });
+  };
+
+  const handleOkHelp = e => {
+    setState({
+      visibleModalHelp: false,
+    });
+  };
+
+  const handleCancelHelp = e => {
+    setState({
+      visible: false,
+    });
+  };
 
   const showDrawerNotice = () => {
     setState({
@@ -334,24 +353,34 @@ const Headers = () => {
               visible={state.visibleHelp}
             >
               <div className="help-content">
-                <div className="help-element">
-                  <Icon type="mail" />
-                  <Link>Đóng góp ý kiến của bạn về hệ thống?</Link>
+                <div className="help-element" onClick={showModalHelp}>
+                  <Icon type="question" />
+                  <Link>Làm thế nào để tạo công việc mới?</Link>
+                </div>
+                <div className="help-element" onClick={showModalHelp}>
+                  <Icon type="question" />
+                  <Link>Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
                 </div>
                 <div className="help-element">
                   <Icon type="team" />
                   <Link>Chúng tôi có thể giúp gì cho bạn?</Link>
                 </div>
-                <div className="help-element">
-                  <Icon type="question" />
-                  <Link>Làm thế nào để tạo công việc mới?</Link>
-                </div>
-                <div className="help-element">
-                  <Icon type="question" />
-                  <Link>Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
+                <div className="help-element" >
+                  <Icon type="mail" />
+                  <Link>Đóng góp ý kiến của bạn về hệ thống?</Link>
                 </div>
               </div>
             </Drawer>
+            <Modal
+              title="Hướng dẫn tạo mới công việc"
+              visible={state.visibleModalHelp}
+              onOk={handleOkHelp}
+              onCancel={handleCancelHelp}
+              width={500}
+            >
+              <iframe width={450} height={309} src="https://www.youtube.com/embed/lC6YhpnO_UQ" frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              <span>Bạn thấy thông tin có hữu ích không? <Link>Có, </Link> <Link>Không</Link></span>
+            </Modal>
           </div>
           <div className="header-right-account header-tool-item">
             <div onClick={showDrawerUser} className="header-right-account header-tool-item">

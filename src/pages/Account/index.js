@@ -15,6 +15,16 @@ const Account = () => {
             <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
           </div>
           <div className="aii-element">
+            <div className="aii-left"><span>Ngày sinh</span></div>
+            <div className="aii-center"><span>01/01/1998</span></div>
+            <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
+          </div>
+          <div className="aii-element">
+            <div className="aii-left"><span>Địa chỉ</span></div>
+            <div className="aii-center"><span>Số 1, Đại Cồ Việt, Hai Bà Trưng, Hà Nội</span></div>
+            <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
+          </div>
+          <div className="aii-element">
             <div className="aii-left"><span>Email</span></div>
             <div className="aii-center"><span>hci06@gmail.com</span></div>
             <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
