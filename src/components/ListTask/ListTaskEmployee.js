@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 // fake data
-import { dataCVPB } from "../../utils/data";
+import { dataCVNV } from "../../utils/data";
 
 const { Search } = Input;
 const EditableContext = React.createContext();
@@ -60,7 +60,7 @@ class EditableCell extends React.Component {
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: dataCVPB, editingKey: "" }; //fake data
+    this.state = { data: dataCVNV, editingKey: "" }; //fake data
     this.columns = [
       {
         title: (
@@ -69,7 +69,7 @@ class EditableTable extends React.Component {
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
         ), 
-        dataIndex: "code",
+        dataIndex: "index",
         width: "8%",
         editable: true
       },
@@ -87,18 +87,18 @@ class EditableTable extends React.Component {
       {
         title: (
           <div>
-            <div className="title">Người kiểm duyệt</div>
+            <div className="title">Người phụ trách</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
         ),
-        dataIndex: "censor",
+        dataIndex: "worker",
         width: "10%",
         editable: true
       },
       {
         title: (
           <div>
-            <div className="title">Người phụ trách</div>
+            <div className="title">Người kiểm duyệt</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
         ),
