@@ -29,7 +29,7 @@ const DashBoard = () => {
 
   const depart = [
     {
-      x: `ĐBCL`,
+      x: `KĐCL`,
       y: 98
     },
     {
@@ -99,13 +99,13 @@ const DashBoard = () => {
         <div className="dashboard-item item3">
           <Pie
             percent={88}
-            subTitle="KPI bộ phận Đảm bảo chất lượng"
+            subTitle="KPI bộ phận Kiểm định chất lượng"
             total="90%"
             height={200}
           />
         </div>
         <div className="dashboard-item item4">
-          <span>KPI bộ phận Đảm bảo chất lượng 6 tháng gần nhất</span>
+          <span>KPI bộ phận Kiểm định chất lượng 6 tháng gần nhất</span>
           <MiniArea line color="#cceafe" height={186} data={visitData} />
         </div>
         <div className="dashboard-item item5">
