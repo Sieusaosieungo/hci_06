@@ -1,120 +1,177 @@
-import React, { useState } from "react";
-import { Icon, Input, Select } from "antd";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import React, { useState } from 'react';
+import './styles.css';
+import { Form, Select, DatePicker, Input, Button } from 'antd';
+import { Col,  Popconfirm, message } from "antd";
+import TextArea from 'antd/lib/input/TextArea';
+import { hideModal } from '../../../actions/index';
+import {connect} from 'react-redux';
 
-const { Option } = Select;
+const CreateTaskEmployee = ({dispatch}) => {
+  const { Option } = Select;
+  const [selectedTypeTask, setSelectedTypeTask] = useState();
+  const [messageCheckDevice, setMessageCheckDevice] = useState(
+    'Có đầy đủ thiết bị không? Các thiết bị cần đủ: Mã số thiết bị, tem'
+  );
+  const [messageCheckVeSinh, setMessageCheckVeSinh] = useState([
+    'Kiểm tra trang phục: Quần áo, mũ, gang tay, giày dép',
+    'Kiểm tra vệ sinh khu vực sản xuất',
+    'Kiểm tra chất sát trùng và tẩy rửa'
+  ]);
 
-const CreateTaskEmployee = () => {
-  const [state, setState] = useState("0");
+  const [messageCheckProduction, setMessageCheckProduction] = useState(
+    'Kiểm tra việc áp dụng quy trình sản xuất'
+  );
 
-  const onChange = value => {
-    setState(value);
+  const formItemLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 5 }
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 12 }
+    }
   };
+  const children = [];
 
+  children.push(<Option key='Vũ Duy Mạnh'>Vũ Duy Mạnh</Option>);
+  children.push(<Option key='Lê Đình Phúc'>Lê Đình Phúc</Option>);
+  children.push(<Option key='Vũ Văn Nam'>Vũ Văn Nam</Option>);
+  children.push(<Option key='Lê Minh Nguyễn'>Lê Minh Nguyễn</Option>);
+
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
+
+  function handleChangeSelect(value) {
+    setSelectedTypeTask(value);
+  }
+
+  function handleChangeCheckDevice(value) {
+    setMessageCheckDevice(value.target.value);
+  }
+
+  function handleChangeCheckVeSinh(value) {
+    setMessageCheckVeSinh(value.target.value);
+  }
+
+  function handleChangeCheckProduction(value) {
+    setMessageCheckProduction(value.target.value);
+  }
+  function confirm() {
+    message.success('Bạn đã tạo công việc thành công !');
+    dispatch(hideModal())
+  }
   return (
-    <div className="create-task-employee">
-      <div className="">
-        <h3 style={{ display: "flex" }}>
-          <label style={{ width: "150px" }}>Tên công việc: </label>
-          <Input value="" placeholder="Tên công việc"></Input>
-        </h3>
-        <h3>Mục tiêu cần đạt được:</h3>
-        <div className="criteria">
-          <p>
-            <Icon type="check" />
-            <span> Đảm bảo chất lượng 50 quy trình</span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span> Đảm bảo chất lượng 50,000 sản phẩm đầu ra</span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span> Đảm bảo chất lượng 1000kg nguyên liệu đầu vào</span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span> Đảm bảo chất lượng 5000 bao bì</span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span> Đảm bảo số lượng hàng trả về nhỏ hơn 100 sản phẩm</span>
-          </p>
-        </div>
-        <div>
-          <h3>Người kiểm duyệt:</h3>
-          {/* <Select value={state} onChange={onChange}>
-            <Option value={"0"}>Phó phòng ĐBCL: Nguyễn Việt Hùng</Option>
-            <Option value={"1"}>Trưởng phòng ĐBCL: Vũ Duy Mạnh</Option>>
-          </Select> */}
-        </div>
-        <h3>
-          Ngày giao: <span className="detail-value">11-11-2019</span>
-        </h3>
-        <h3>
-          Deadline: <span className="detail-value">11-12-2019</span>
-        </h3>
-        <h3>
-          Trạng thái: <span className="detail-value">Đã hoàn thành</span>
-        </h3>
-        <h3>
-          Thời gian hoàn thành: <span className="detail-value">09-12-2019</span>
-        </h3>
-        <h3>
-          File đính kèm:{" "}
-          <Link to="#" className="attach-file">
-            Task-description.docx
-          </Link>
-        </h3>
-        <h3>Tiêu chí đánh giá công việc: </h3>
-        <div className="criteria">
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Đảm bảo chất lượng 50 quy trình
-            </span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Đảm bảo chất lượng 50,000 sản phẩm đầu ra
-            </span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Đảm bảo chất lượng 1000kg nguyên liệu đầu vào
-            </span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Đảm bảo chất lượng 5000 bao bì
-            </span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Đảm bảo số lượng hàng trả về nhỏ hơn 100 sản phẩm
-            </span>
-          </p>
-          <p>
-            <Icon type="check" />
-            <span className="detail-value">
-              {" "}
-              Hoàn thành công việc đúng thời hạn
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <div className='create-task-employee'>
+      <Form {...formItemLayout}>
+        <Col xl={24} lg={24} style={{ margin: '0 auto' }}>
+          <Form.Item label='Tên công việc'>
+            <Input placeholder='' />
+          </Form.Item>
+
+          <Form.Item label='Người kiểm duyệt'>
+            <Select
+              mode='tags'
+              style={{ width: '100%' }}
+              placeholder='Chọn người kiểm duyệt'
+              onChange={handleChange}
+            >
+              {children}
+            </Select>
+          </Form.Item>
+          <Form.Item label='Nhóm công việc lớn'>
+            <Select defaultValue='0' onChange={handleChangeSelect}>
+              <Option value='0'>Chọn nhóm công việc lớn</Option>
+              <Option value='1'>
+                Kiểm tra chất lượng quy trình xưởng thuốc nước thú y
+              </Option>
+              <Option value='2'>Kiểm tra chất lượng bao bì cấp 1</Option>
+              <Option value='3'>
+                Kiểm tra chất lượng quy trình xưởng thuốc bột thú y
+              </Option>
+              <Option value='4'>
+                Kiểm tra chất lượng quy trình xưởng thực phẩm chức năng
+              </Option>
+
+              <Option value='5'>Kiểm tra chất lượng bao bì cấp 2</Option>
+              <Option value='6'>Kiểm tra chất lượng nguyên liệu</Option>
+            </Select>
+          </Form.Item>
+
+          {selectedTypeTask === '1' ? (
+            <>
+              <Form.Item label='Số lần kiểm tra định kỳ 1 tháng'>
+                <Input placeholder='' />
+              </Form.Item>
+              <Form.Item label='Số lần kiểm tra đột xuất 1 tháng'>
+                <Input placeholder='' />
+              </Form.Item>
+              <Form.Item label='Kiểm tra thiết bị sản xuất'>
+                <TextArea
+                  rows={4}
+                  value={messageCheckDevice}
+                  onChange={handleChangeCheckDevice}
+                ></TextArea>
+              </Form.Item>
+              <Form.Item label='Kiểm tra vệ sinh'>
+                <TextArea
+                  rows={4}
+                  value={messageCheckVeSinh.map((item, id) => {
+                    if (id === 0) {
+                      return item;
+                    }
+                    return '\n' + item;
+                  })}
+                  onChange={handleChangeCheckVeSinh}
+                ></TextArea>
+              </Form.Item>
+              <Form.Item label='Kiểm tra quy trình sản xuất'>
+                <TextArea
+                  rows={4}
+                  value={messageCheckProduction}
+                  onChange={handleChangeCheckProduction}
+                ></TextArea>
+              </Form.Item>
+            </>
+          ) : null}
+          {selectedTypeTask === '2' ? (
+            <>
+              <Form.Item label='Số bao bì sản phẩm cần kiểm tra'>
+                <Input placeholder='' />
+              </Form.Item>
+            </>
+          ) : null}
+          <Form.Item label='Deadline' style={{ marginBottom: 0 }}>
+            <Form.Item
+              style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}
+            >
+              <DatePicker />
+            </Form.Item>
+          </Form.Item>
+        </Col>
+        <Col  xl={24} lg={24} style={{ float: 'right' }}>
+        <Popconfirm placement="top" title={"Bạn có chắc muốn tạo mới công việc không ?"} onConfirm={confirm} okText="Yes" cancelText="No">
+        <Button
+          type='primary'
+          style={{ display: 'block', marginRight: '180px' ,float:"right"}}
+          htmlType='submit'
+     
+        >
+          Tạo mới
+        </Button>
+        </Popconfirm>
+        <Button
+          type='danger'
+          style={{ float: 'right', marginRight: '10px'}}
+          onClick={()=>  dispatch(hideModal())}
+        >
+          Huỷ
+        </Button>
+        </Col>
+      </Form>
+    </div >
   );
 };
 
-export default CreateTaskEmployee;
+export default connect()(CreateTaskEmployee);

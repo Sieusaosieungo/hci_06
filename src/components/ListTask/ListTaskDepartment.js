@@ -3,8 +3,6 @@ import "./styles.css";
 import { Table, Input, InputNumber, Form } from "antd";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { showModal } from "../../actions/index";
-import DetailTask from "../../pages/ListTaskPage/DetailTask/index";
 
 // fake data
 import { dataCVPB } from "../../utils/data";
@@ -67,10 +65,10 @@ class EditableTable extends React.Component {
       {
         title: (
           <div>
-            <div className="title">Mã báo cáo</div>
+            <div className="title">Mã CV</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ), // tên cv, người phụ trách, ngày giao, deadline, trạng thái , chi tiết xóa
+        ), 
         dataIndex: "index",
         width: "8%",
         editable: true

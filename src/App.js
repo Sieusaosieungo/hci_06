@@ -1,33 +1,34 @@
-import React from "react";
-import Headers from "./components/Header/index";
-import Siders from "./components/Sider/index";
-import BreadCrumb from "./components/BreadCrumb/index";
-import Contents from "./components/Content/index";
-import "antd/dist/antd.css";
-import { Layout } from "antd";
-import "./App.css";
-import { Modal } from "antd";
-import { connect } from "react-redux";
-import { hideModal } from "./actions/index";
+import React from 'react';
+import Headers from './components/Header/index';
+import Siders from './components/Sider/index';
+import BreadCrumb from './components/BreadCrumb/index';
+import Contents from './components/Content/index';
+import 'antd/dist/antd.css';
+import { Layout } from 'antd';
+import './App.css';
+import { Modal } from 'antd';
+import { connect } from 'react-redux';
+import { hideModal } from './actions/index';
 
 function App({ modal, children, dispatch }) {
   return (
-    <div className="App">
+    <div className='App'>
       <Layout>
         <Modal
+          centered
           title={modal.title}
           visible={modal.visible}
           onOk={modal.onOk}
           onCancel={() => dispatch(hideModal())}
-          footer={null}
-          width="65vw"
+          footer={modal.footer}
+          width={modal.width}
         >
           {modal.Component}
         </Modal>
         <Headers />
         <Layout>
           <Siders />
-          <Layout style={{ padding: "0 24px 24px" }}>
+          <Layout style={{ padding: '0 24px 24px' }}>
             <BreadCrumb />
             <Contents>{children}</Contents>
           </Layout>

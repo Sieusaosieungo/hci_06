@@ -112,6 +112,76 @@ export const dataCVPB = [
   }
 ];
 
+
+export const dataCVNV = [
+  {
+    index: 1,
+    name: "Kiểm tra chất lượng quy trình xưởng thực phẩm chức năng",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Lê Đình Phúc",
+    dateStart: `18/10/2019`,
+    dateFinish: "28/11/2019",
+    weight: 0.15,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 2,
+    name: "Kiểm tra chất lượng quy trình xưởng thuốc nước thú y",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Vũ Duy Mạnh",
+    dateStart: `20/10/2019`,
+    dateFinish: "01/12/2019",
+    weight: 0.2,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 3,
+    name: "Kiểm tra chất lượng quy trình xưởng xưởng thuốc bột thú y",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Trần Trung Huỳnh",
+    dateStart: `01/09/2019`,
+    dateFinish: "11/11/2019",
+    weight: 0.3,
+    status: "Đã hoàn thành",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 4,
+    name: "Kiểm tra chất lượng bao bì cấp 2",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Phạm Đại Tài",
+    dateStart: `14/09/2019`,
+    dateFinish: "11/10/2019",
+    weight: 0.13,
+    status: "Chờ duyệt",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 5,
+    name: "Kiểm tra chất lượng bao bì cấp 1",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Lê Đình Phúc",
+    dateStart: `09/08/2019`,
+    dateFinish: "28/09/2019",
+    weight: 0.2,
+    status: "Quá hạn",
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 6,
+    name: "Kiểm tra chất lượng quy trình xưởng Thực phẩm chức năng",
+    censor: "Nguyễn Việt Hùng",
+    worker: "Vũ Duy Mạnh",
+    dateStart: `10/10/2019`,
+    dateFinish: "28/11/2019",
+    weight: 0.1,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  }
+];
+
 export const dataBCCV = [
   {
     codeReport: 1,
