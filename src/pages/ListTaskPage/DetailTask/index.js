@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { Icon, Descriptions, Badge } from 'antd';
+import { Icon, Descriptions, Badge, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
 export default function index() {
@@ -60,6 +60,19 @@ export default function index() {
           Hoàn thành công việc đúng thời hạn
         </Descriptions.Item>
       </Descriptions>
+
+      <Button
+        type='primary'
+        style={{
+          display: 'block',
+          float: 'right',
+          marginTop: '10px',
+          background: ''
+        }}
+      >
+        <Icon type='export' />
+        Xuất file báo cáo
+      </Button>
     </div>
   );
 }
