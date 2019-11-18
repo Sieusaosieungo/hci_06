@@ -117,11 +117,11 @@ export const dataBCCV = [
     codeReport: 1,
     name: "Báo cáo kiểm tra chất lượng thuốc nén",
     finishDate: "20-11-2019",
-    censor: "",
-    codeCensor: "",
+    censor: "Trần Trung Huỳnh",
+    // codeCensor: "KT_01",
     worker: "Phạm Đại Tài",
-    codeWorker: "pdt01",
-    department: "",
-    codeDepartment: ""
+    // codeWorker: "KT_02",
+    department: "Kiểm tra chất lượng",
+    completed: "85.587%",
   }
 ];

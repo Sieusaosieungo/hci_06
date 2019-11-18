@@ -1,6 +1,6 @@
 .not-found {
   font-size: 36px;
-  color: white;
+  color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
 }
