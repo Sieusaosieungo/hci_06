@@ -103,8 +103,8 @@ const Headers = () => {
       </div>
       <div className="header-right">
         <div className="header-tool">
-          <div className="notice">
-            <div className="header-tool-item  notice" onClick={showDrawerNotice}>
+          <div className="header-tool-item notice">
+            <div className="notice-button" onClick={showDrawerNotice}>
               <Icon type="bell" />
               <Badge count={199} overflowCount={99}>
                 <Link to="" className="head-example" />
@@ -308,7 +308,9 @@ const Headers = () => {
             </Drawer>
           </div>
           <div className="header-tool-item setting">
-            <Icon type="setting" onClick={showDrawerSetting} />
+            <div className="setting-element" onClick={showDrawerSetting}>
+              <Icon type="setting" />
+            </div>
             <Drawer
               title="Cài đặt"
               width={300}
@@ -319,11 +321,12 @@ const Headers = () => {
             </Drawer>
           </div>
           <div className="header-tool-item help">
-            <Icon
-              type="question-circle"
-              theme="twoTone"
-              onClick={showDrawerHelp}
-            />
+            <div className="help-button" onClick={showDrawerHelp}>
+              <Icon
+                type="question-circle"
+                theme="twoTone"
+              />
+            </div>
             <Drawer
               title="Trợ giúp "
               width={300}
