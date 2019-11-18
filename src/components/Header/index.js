@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { Layout, Icon, Avatar, Badge, Drawer, Popconfirm, Button, message, Modal } from "antd";
+import {
+  Layout,
+  Icon,
+  Avatar,
+  Badge,
+  Drawer,
+  Popconfirm,
+  Button,
+  message,
+  Modal
+} from "antd";
 import { Link } from "react-router-dom";
 import "./style.css";
 const { Header } = Layout;
@@ -15,19 +25,19 @@ const Headers = () => {
 
   const showModalHelp = () => {
     setState({
-      visibleModalHelp: true,
+      visibleModalHelp: true
     });
   };
 
   const handleOkHelp = e => {
     setState({
-      visibleModalHelp: false,
+      visibleModalHelp: false
     });
   };
 
   const handleCancelHelp = e => {
     setState({
-      visible: false,
+      visible: false
     });
   };
 
@@ -85,7 +95,7 @@ const Headers = () => {
   };
 
   function confirm() {
-    message.success('Đã xóa thông báo thành công');
+    message.success("Đã xóa thông báo thành công");
   }
 
   const text = "Bạn có chắc chắn muốn xóa thông báo?";
@@ -113,10 +123,10 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link to=""></Link>
+            <Link to="#"></Link>
           </div>
           <div className="header-center-item">
-            <Link to="/process"></Link>
+            <Link to="/"></Link>
           </div>
         </div>
       </div>
@@ -139,10 +149,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
-                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                    <span className="notice-element-name">
+                      KT02 Phạm Đại Tài{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      nộp báo cáo tháng 10
+                    </span>
                   </div>
-                  <span className="notice-element-date">11:21:40 31/10/2019</span>
+                  <span className="notice-element-date">
+                    11:21:40 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -151,8 +167,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -160,10 +176,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT01 Vũ Duy Mạnh </span>
-                    <span className="notice-element-info">báo cáo kiểm tra bộ phận SX02</span>
+                    <span className="notice-element-name">
+                      KT01 Vũ Duy Mạnh{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      báo cáo kiểm tra bộ phận SX02
+                    </span>
                   </div>
-                  <span className="notice-element-date">11:19:29 31/10/2019</span>
+                  <span className="notice-element-date">
+                    11:19:29 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -172,8 +194,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -181,10 +203,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
-                    <span className="notice-element-info">cập nhật tiến độ kiểm tra bộ phận SX02</span>
+                    <span className="notice-element-name">
+                      KT03 Lê Đình Phúc{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      cập nhật tiến độ kiểm tra bộ phận SX02
+                    </span>
                   </div>
-                  <span className="notice-element-date">10:12:28 - 31/10/2019</span>
+                  <span className="notice-element-date">
+                    10:12:28 - 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -193,8 +221,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -202,10 +230,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT04 Nguyễn Việt Hùng </span>
-                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                    <span className="notice-element-name">
+                      KT04 Nguyễn Việt Hùng{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      nộp báo cáo tháng 10
+                    </span>
                   </div>
-                  <span className="notice-element-date">10:07:10 - 31/10/2019</span>
+                  <span className="notice-element-date">
+                    10:07:10 - 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -214,8 +248,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -223,10 +257,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
-                    <span className="notice-element-info">nộp báo cáo tháng 10</span>
+                    <span className="notice-element-name">
+                      KT03 Lê Đình Phúc{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      nộp báo cáo tháng 10
+                    </span>
                   </div>
-                  <span className="notice-element-date">9:48:28 - 31/10/2019</span>
+                  <span className="notice-element-date">
+                    9:48:28 - 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -235,8 +275,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -244,10 +284,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT05 Trần Trung Huỳnh </span>
-                    <span className="notice-element-info">xin phép nghỉ làm ngày 31-10-2019</span>
+                    <span className="notice-element-name">
+                      KT05 Trần Trung Huỳnh{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      xin phép nghỉ làm ngày 31-10-2019
+                    </span>
                   </div>
-                  <span className="notice-element-date">7:22:15 - 31/10/2019</span>
+                  <span className="notice-element-date">
+                    7:22:15 - 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -256,8 +302,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -265,10 +311,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
-                    <span className="notice-element-info">báo cáo kiểm tra bộ phận SX01</span>
+                    <span className="notice-element-name">
+                      KT02 Phạm Đại Tài{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      báo cáo kiểm tra bộ phận SX01
+                    </span>
                   </div>
-                  <span className="notice-element-date">16:38:21 - 30/10/2019</span>
+                  <span className="notice-element-date">
+                    16:38:21 - 30/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -277,8 +329,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -286,10 +338,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT02 Phạm Đại Tài </span>
-                    <span className="notice-element-info">vừa nộp báo cáo tháng 10</span>
+                    <span className="notice-element-name">
+                      KT02 Phạm Đại Tài{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      vừa nộp báo cáo tháng 10
+                    </span>
                   </div>
-                  <span className="notice-element-date">11:21:40 - 31/10/2019</span>
+                  <span className="notice-element-date">
+                    11:21:40 - 31/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -298,8 +356,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -307,10 +365,16 @@ const Headers = () => {
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
-                    <span className="notice-element-name">KT03 Lê Đình Phúc </span>
-                    <span className="notice-element-info">báo cáo kết quả kiểm tra bộ phận SX10</span>
+                    <span className="notice-element-name">
+                      KT03 Lê Đình Phúc{" "}
+                    </span>
+                    <span className="notice-element-info">
+                      báo cáo kết quả kiểm tra bộ phận SX10
+                    </span>
                   </div>
-                  <span className="notice-element-date">11:21:40 - 29/10/2019</span>
+                  <span className="notice-element-date">
+                    11:21:40 - 29/10/2019
+                  </span>
                 </div>
                 <Popconfirm
                   placement="topRight"
@@ -319,8 +383,8 @@ const Headers = () => {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button style={{ border: '0px' }}>
-                    <Icon type="delete" style={{ fontSize: '18px' }} />
+                  <Button style={{ border: "0px" }}>
+                    <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
               </div>
@@ -341,10 +405,7 @@ const Headers = () => {
           </div>
           <div className="header-tool-item help">
             <div className="help-button" onClick={showDrawerHelp}>
-              <Icon
-                type="question-circle"
-                theme="twoTone"
-              />
+              <Icon type="question-circle" theme="twoTone" />
             </div>
             <Drawer
               title="Trợ giúp "
@@ -355,19 +416,19 @@ const Headers = () => {
               <div className="help-content">
                 <div className="help-element" onClick={showModalHelp}>
                   <Icon type="question" />
-                  <Link>Làm thế nào để tạo công việc mới?</Link>
+                  <Link to="/">Làm thế nào để tạo công việc mới?</Link>
                 </div>
                 <div className="help-element" onClick={showModalHelp}>
                   <Icon type="question" />
-                  <Link>Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
+                  <Link to="/">Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
                 </div>
                 <div className="help-element">
                   <Icon type="team" />
-                  <Link>Chúng tôi có thể giúp gì cho bạn?</Link>
+                  <Link to="/">Chúng tôi có thể giúp gì cho bạn?</Link>
                 </div>
-                <div className="help-element" >
+                <div className="help-element">
                   <Icon type="mail" />
-                  <Link>Đóng góp ý kiến của bạn về hệ thống?</Link>
+                  <Link to="/">Đóng góp ý kiến của bạn về hệ thống?</Link>
                 </div>
               </div>
             </Drawer>
@@ -378,16 +439,27 @@ const Headers = () => {
               onCancel={handleCancelHelp}
               width={500}
             >
-              <iframe width={450} height={309} src="https://www.youtube.com/embed/lC6YhpnO_UQ" frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-              <span>Bạn thấy thông tin có hữu ích không? <Link>Có, </Link> <Link>Không</Link></span>
+             {/* eslint-disable-next-line */}
+              <iframe
+                width={450}
+                height={309}
+                src="https://www.youtube.com/embed/lC6YhpnO_UQ"
+                frameBorder={0}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <span>
+                Bạn thấy thông tin có hữu ích không? <Link to="#">Có, </Link>{" "}
+                <Link to="#">Không</Link>
+              </span>
             </Modal>
           </div>
           <div className="header-right-account header-tool-item">
-            <div onClick={showDrawerUser} className="header-right-account header-tool-item">
-              <Avatar
-                style={{ backgroundColor: "#87d068" }}
-                icon="user"
-              />
+            <div
+              onClick={showDrawerUser}
+              className="header-right-account header-tool-item"
+            >
+              <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
               <span>HCI 06</span>
             </div>
             <Drawer
@@ -407,14 +479,14 @@ const Headers = () => {
                       />
                     </div>
                     <div className="drawer-account-info">
-                      <span className="drawer-account-username">
-                        HCI 06
-                      </span>
+                      <span className="drawer-account-username">HCI 06</span>
                       <span className="drawer-account-email">
                         hci06@gmail.com
                       </span>
-                      <Link to="account" onClick={onCloseUser}>Tài khoản</Link>
-                      <Link to="">Đăng xuất</Link>
+                      <Link to="/account" onClick={onCloseUser}>
+                        Tài khoản
+                      </Link>
+                      <Link to="#">Đăng xuất</Link>
                     </div>
                   </div>
                 </div>

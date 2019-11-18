@@ -2,8 +2,11 @@ import React from "react";
 import "./styles.css";
 import ListTask from "../../../components/ListTask/index";
 import { Row, Col, Icon, Button } from "antd";
+import CreateTaskEmployee from "../../../components/ListTask/CreateTaskEmployee/index";
+import { connect } from "react-redux";
+import { showModal } from "../../../actions/index";
 
-const ListTaskPage = () => {
+const ListTaskPage = ({ dispatch }) => {
   return (
     <Row type="flex" gutter={[20, 10]} className="list-task-page">
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
@@ -12,7 +15,17 @@ const ListTaskPage = () => {
         </label>
       </Col>
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
-        <Button type="primary">
+        <Button
+          type="primary"
+          onClick={() =>
+            dispatch(
+              showModal({
+                title: "Tạo mới công việc",
+                Component: <CreateTaskEmployee />
+              })
+            )
+          }
+        >
           <Icon type="plus-circle" />
           Tạo mới công việc
         </Button>
@@ -24,4 +37,4 @@ const ListTaskPage = () => {
   );
 };
 
-export default ListTaskPage;
+export default connect()(ListTaskPage);
