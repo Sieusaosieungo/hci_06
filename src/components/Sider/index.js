@@ -51,22 +51,12 @@ function Siders() {
             <Link to="/">KPI nhân viên</Link>
           </Menu.Item>
         </SubMenu>
-        <SubMenu
-          key="sub4"
-          title={
-            <span>
-              <Icon type="bar-chart" />
-              Thống kê báo cáo
-            </span>
-          }
-        >
-          <Menu.Item key="sub4-1">
-            <Link to="/">Thống kê báo cáo</Link>
-          </Menu.Item>
-          <Menu.Item key="sub4-2">
-            <Link to="workreport">Tạo báo cáo</Link>
-          </Menu.Item>
-        </SubMenu>
+        <Menu.Item key="sub4-1">
+          <Link to="/manage-report">
+            <Icon type="bar-chart" />
+            Quản lý báo cáo
+          </Link>
+        </Menu.Item>
       </Menu>
     </Sider>
   );
