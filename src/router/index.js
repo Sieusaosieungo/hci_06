@@ -8,11 +8,16 @@ const ListTaskPage = loadable(() => import("../pages/ListTaskPage/index"));
 const Account = loadable(() => import("../pages/Account/index"));
 const DashBoard = loadable(() => import("../pages/DashBoard/index"));
 const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
+const CreateTaskPage = loadable(() => import("../pages/CreateTaskPage/index"));
 
 export const routes = [
   {
-    path: "/list-task",
+    path: "/",
     exact: true,
+    component: () => <DashBoard />
+  },
+  {
+    path: "/list-task",
     component: () => <ListTaskPage />
   },
   {
@@ -21,13 +26,11 @@ export const routes = [
   },
   {
     path: "/account",
-    exact: true,
     component: () => <Account />
   },
   {
-    path: "/",
-    exact: true,
-    component: () => <DashBoard />
+    path: "/create-task",
+    component: () => <CreateTaskPage />
   },
   {
     path: "*",
