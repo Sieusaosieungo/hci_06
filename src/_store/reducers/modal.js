@@ -1,13 +1,14 @@
-import React from "react";
-import * as Types from "../../constants/ActionTypes";
+import React from 'react';
+import * as Types from '../../constants/ActionTypes';
 
 const initialState = {
-  title: "Modal",
+  title: 'Modal',
   visible: false,
-  okText: "OK",
+  okText: 'OK',
   onOk: () => {},
-  cancelText: "Cancel",
+  cancelText: 'Cancel',
   onCancel: () => {},
+  width: '65vw',
   Component: <div></div>
 };
 
