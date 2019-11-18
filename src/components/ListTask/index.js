@@ -272,21 +272,7 @@ class EditableTable extends React.Component {
         width: "10%",
         editable: true,
         render: data => {
-          return (
-            <Link
-              to="/detail-task"
-              onClick={() =>
-                this.props.dispatch(
-                  showModal({
-                    title: "Chi tiết công việc",
-                    Component: <DetailTask />
-                  })
-                )
-              }
-            >
-              {data}
-            </Link>
-          );
+          return <Link to="/detail-task">{data}</Link>;
         }
       }
     ];
