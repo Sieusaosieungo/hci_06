@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './styles.css';
-import { Form, Select, DatePicker, Input, Button, Col } from 'antd';
+import { Form, Select, DatePicker, Input, Button } from 'antd';
+import { Col,  Popconfirm, message } from "antd";
 import TextArea from 'antd/lib/input/TextArea';
+import { hideModal } from '../../../actions/index';
+import {connect} from 'react-redux';
 
-const CreateTaskEmployee = () => {
+const CreateTaskEmployee = ({dispatch}) => {
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState();
   const [messageCheckDevice, setMessageCheckDevice] = useState(
@@ -54,6 +57,10 @@ const CreateTaskEmployee = () => {
 
   function handleChangeCheckProduction(value) {
     setMessageCheckProduction(value.target.value);
+  }
+  function confirm() {
+    message.success('Bạn đã tạo công việc thành công !');
+    dispatch(hideModal())
   }
   return (
     <div className='create-task-employee'>
@@ -143,16 +150,28 @@ const CreateTaskEmployee = () => {
             </Form.Item>
           </Form.Item>
         </Col>
+        <Col  xl={24} lg={24} style={{ float: 'right' }}>
+        <Popconfirm placement="top" title={"Bạn có chắc muốn tạo mới công việc không ?"} onConfirm={confirm} okText="Yes" cancelText="No">
         <Button
           type='primary'
-          style={{ display: 'block', margin: '0 auto' }}
+          style={{ display: 'block', marginRight: '180px' ,float:"right"}}
           htmlType='submit'
+     
         >
           Tạo mới
         </Button>
+        </Popconfirm>
+        <Button
+          type='danger'
+          style={{ float: 'right', marginRight: '10px'}}
+          onClick={()=>  dispatch(hideModal())}
+        >
+          Huỷ
+        </Button>
+        </Col>
       </Form>
-    </div>
+    </div >
   );
 };
 
-export default CreateTaskEmployee;
+export default connect()(CreateTaskEmployee);

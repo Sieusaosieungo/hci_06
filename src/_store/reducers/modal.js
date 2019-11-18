@@ -9,6 +9,7 @@ const initialState = {
   cancelText: 'Cancel',
   onCancel: () => {},
   width: '65vw',
+  footer:null,
   Component: <div></div>
 };
 
