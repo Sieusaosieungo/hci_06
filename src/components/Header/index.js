@@ -325,12 +325,29 @@ const Headers = () => {
               onClick={showDrawerHelp}
             />
             <Drawer
-              title="Trợ giúp"
+              title="Trợ giúp "
               width={300}
               onClose={onCloseHelp}
               visible={state.visibleHelp}
             >
-              <div />
+              <div className="help-content">
+                <div className="help-element">
+                  <Icon type="mail" />
+                  <Link>Đóng góp ý kiến của bạn về hệ thống?</Link>
+                </div>
+                <div className="help-element">
+                  <Icon type="team" />
+                  <Link>Chúng tôi có thể giúp gì cho bạn?</Link>
+                </div>
+                <div className="help-element">
+                  <Icon type="question" />
+                  <Link>Làm thế nào để tạo công việc mới?</Link>
+                </div>
+                <div className="help-element">
+                  <Icon type="question" />
+                  <Link>Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
+                </div>
+              </div>
             </Drawer>
           </div>
           <div className="header-right-account header-tool-item">
@@ -364,7 +381,7 @@ const Headers = () => {
                       <span className="drawer-account-email">
                         hci06@gmail.com
                       </span>
-                      <Link to="account">Tài khoản</Link>
+                      <Link to="account" onClick={onCloseUser}>Tài khoản</Link>
                       <Link to="">Đăng xuất</Link>
                     </div>
                   </div>
