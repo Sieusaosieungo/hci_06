@@ -400,7 +400,28 @@ const Headers = () => {
               onClose={onCloseSetting}
               visible={state.visibleSetting}
             >
-              <div />
+              <div className="setting-content">
+                <div className="sci">
+                  <Icon type="insurance" />
+                  <Link>Cài đặt ngôn ngữ</Link>
+                </div>
+                <div className="sci">
+                  <Icon type="form" />
+                  <Link>Nhật ký thay đổi hoạt động</Link>
+                </div>
+                <div className="sci">
+                  <Icon type="notification" />
+                  <Link>Thông báo</Link>
+                </div>
+                <div className="sci">
+                  <Icon type="team" />
+                  <Link>Nhóm dự án</Link>
+                </div>
+                <div className="sci">
+                  <Icon type="tool" />
+                  <Link>Tiện ích</Link>
+                </div>
+              </div>
             </Drawer>
           </div>
           <div className="header-tool-item help">

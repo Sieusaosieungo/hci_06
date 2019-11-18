@@ -15,7 +15,7 @@ function Siders() {
       >
         <Menu.Item key="11">
           <Link to="/">
-            <Icon type="pie-chart" />
+            <Icon type="dashboard" />
             Bảng điều khiển
           </Link>
         </Menu.Item>
