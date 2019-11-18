@@ -22,7 +22,7 @@ const ListTaskPage = ({ dispatch }) => {
               showModal({
                 title: "Tạo mới công việc",
                 Component: <CreateTaskEmployee />,
-                width:"1300px"
+                width:"68vw"
               })
             )
           }

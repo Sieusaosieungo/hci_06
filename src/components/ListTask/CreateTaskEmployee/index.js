@@ -58,7 +58,7 @@ const CreateTaskEmployee = () => {
   return (
     <div className='create-task-employee'>
       <Form {...formItemLayout}>
-        <Col xl={24} lg={24} style={{ margin: '0 auto', paddingLeft: '230px' }}>
+        <Col xl={24} lg={24} style={{ margin: '0 auto' }}>
           <Form.Item label='Tên công việc'>
             <Input placeholder='' />
           </Form.Item>

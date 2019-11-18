@@ -137,7 +137,7 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 1,
+    index: 3,
     name: "Kiểm tra chất lượng quy trình xưởng xưởng thuốc bột thú y",
     censor: "Nguyễn Việt Hùng",
     worker: "Trần Trung Huỳnh",
@@ -148,7 +148,7 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 1,
+    index: 4,
     name: "Kiểm tra chất lượng bao bì cấp 2",
     censor: "Nguyễn Việt Hùng",
     worker: "Phạm Đại Tài",
@@ -159,7 +159,7 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 1,
+    index: 5,
     name: "Kiểm tra chất lượng bao bì cấp 1",
     censor: "Nguyễn Việt Hùng",
     worker: "Lê Đình Phúc",
@@ -170,7 +170,7 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 1,
+    index: 6,
     name: "Kiểm tra chất lượng quy trình xưởng Thực phẩm chức năng",
     censor: "Nguyễn Việt Hùng",
     worker: "Vũ Duy Mạnh",
