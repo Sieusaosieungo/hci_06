@@ -112,6 +112,20 @@ export const dataCVPB = [
   }
 ];
 
+
+export const dataCVNV = [
+  {
+    index: 1,
+    name: "Kiểm tra nguyên liệu đầu vào",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: "Đang thực hiện",
+    detail: "Xem chi tiết"
+  }
+];
+
 export const dataBCCV = [
   {
     codeReport: 1,

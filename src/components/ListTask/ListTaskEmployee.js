@@ -65,11 +65,11 @@ class EditableTable extends React.Component {
       {
         title: (
           <div>
-            <div className="title">Mã báo cáo</div>
+            <div className="title">Mã CV</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ), // tên cv, người phụ trách, ngày giao, deadline, trạng thái , chi tiết xóa
-        dataIndex: "index",
+        ), 
+        dataIndex: "code",
         width: "8%",
         editable: true
       },
@@ -81,7 +81,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "name",
-        width: "25%",
+        width: "20%",
         editable: true
       },
       {
@@ -92,7 +92,18 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "censor",
-        width: "15%",
+        width: "10%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Người phụ trách</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "censor",
+        width: "10%",
         editable: true
       },
       {
