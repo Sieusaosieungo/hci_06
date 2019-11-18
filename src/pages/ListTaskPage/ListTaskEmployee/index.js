@@ -12,7 +12,10 @@ const ListTaskPage = () => {
         </label>
       </Col>
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
-          <Button><Icon key="add"></Icon>Tạo mới công việc</Button>
+        <Button type="primary">
+          <Icon type="plus-circle" />
+          Tạo mới công việc
+        </Button>
       </Col>
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
         <ListTask />
