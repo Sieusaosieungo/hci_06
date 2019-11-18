@@ -381,7 +381,7 @@ const Headers = () => {
                       <span className="drawer-account-email">
                         hci06@gmail.com
                       </span>
-                      <Link to="account">Tài khoản</Link>
+                      <Link to="account" onClick={onCloseUser}>Tài khoản</Link>
                       <Link to="">Đăng xuất</Link>
                     </div>
                   </div>
