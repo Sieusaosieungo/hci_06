@@ -123,10 +123,10 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-            <Link to="#"></Link>
+            <a href></a>
           </div>
           <div className="header-center-item">
-            <Link to="/"></Link>
+            <a href></a>
           </div>
         </div>
       </div>
@@ -403,23 +403,23 @@ const Headers = () => {
               <div className="setting-content">
                 <div className="sci">
                   <Icon type="insurance" />
-                  <Link to="#">Cài đặt ngôn ngữ</Link>
+                  <a href>Cài đặt ngôn ngữ</a>
                 </div>
                 <div className="sci">
                   <Icon type="form" />
-                  <Link to="#">Nhật ký thay đổi hoạt động</Link>
+                  <a href>Nhật ký thay đổi hoạt động</a>
                 </div>
                 <div className="sci">
                   <Icon type="notification" />
-                  <Link to="#">Thông báo</Link>
+                  <a href>Thông báo</a>
                 </div>
                 <div className="sci">
                   <Icon type="team" />
-                  <Link to="#">Nhóm dự án</Link>
+                  <a href>Nhóm dự án</a>
                 </div>
                 <div className="sci">
                   <Icon type="tool" />
-                  <Link to="#">Tiện ích</Link>
+                  <a href>Tiện ích</a>
                 </div>
               </div>
             </Drawer>
@@ -437,19 +437,19 @@ const Headers = () => {
               <div className="help-content">
                 <div className="help-element" onClick={showModalHelp}>
                   <Icon type="question" />
-                  <Link to="/">Làm thế nào để tạo công việc mới?</Link>
+                  <a href>Làm thế nào để tạo công việc mới?</a>
                 </div>
                 <div className="help-element" onClick={showModalHelp}>
                   <Icon type="question" />
-                  <Link to="/">Tôi có thể xem nhiệm vụ của mình ở đâu?</Link>
+                  <a href>Tôi có thể xem nhiệm vụ của mình ở đâu?</a>
                 </div>
                 <div className="help-element">
                   <Icon type="team" />
-                  <Link to="/">Chúng tôi có thể giúp gì cho bạn?</Link>
+                  <a href>Chúng tôi có thể giúp gì cho bạn?</a>
                 </div>
                 <div className="help-element">
                   <Icon type="mail" />
-                  <Link to="/">Đóng góp ý kiến của bạn về hệ thống?</Link>
+                  <a href>Đóng góp ý kiến của bạn về hệ thống?</a>
                 </div>
               </div>
             </Drawer>
@@ -459,8 +459,9 @@ const Headers = () => {
               onOk={handleOkHelp}
               onCancel={handleCancelHelp}
               width={500}
+              footer={null}
             >
-             {/* eslint-disable-next-line */}
+              {/* eslint-disable-next-line */}
               <iframe
                 width={450}
                 height={309}
@@ -470,8 +471,8 @@ const Headers = () => {
                 allowFullScreen
               />
               <span>
-                Bạn thấy thông tin có hữu ích không? <Link to="#">Có, </Link>{" "}
-                <Link to="#">Không</Link>
+                Bạn thấy thông tin có hữu ích không? <a href>Có, </a>{" "}
+                <a href>Không</a>
               </span>
             </Modal>
           </div>
@@ -507,7 +508,7 @@ const Headers = () => {
                       <Link to="/account" onClick={onCloseUser}>
                         Tài khoản
                       </Link>
-                      <Link to="#">Đăng xuất</Link>
+                      <a href>Đăng xuất</a>
                     </div>
                   </div>
                 </div>

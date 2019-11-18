@@ -1,14 +1,23 @@
-import React from "react";
-import { Icon } from "antd";
+import React, { useState } from "react";
+import { Icon, Input, Select } from "antd";
 import { Link } from "react-router-dom";
 import "./styles.css";
+
+const { Option } = Select;
+
 const CreateTaskEmployee = () => {
+  const [state, setState] = useState("0");
+
+  const onChange = value => {
+    setState(value);
+  };
+
   return (
     <div className="create-task-employee">
-      <div className="detail-task">
-        <h3>
-          Tên công việc:{" "}
-          <span className="detail-value">Công việc tháng 11</span>
+      <div className="">
+        <h3 style={{ display: "flex" }}>
+          <label style={{ width: "150px" }}>Tên công việc: </label>
+          <Input value="" placeholder="Tên công việc"></Input>
         </h3>
         <h3>Mục tiêu cần đạt được:</h3>
         <div className="criteria">
@@ -33,9 +42,13 @@ const CreateTaskEmployee = () => {
             <span> Đảm bảo số lượng hàng trả về nhỏ hơn 100 sản phẩm</span>
           </p>
         </div>
-        <h3>
-          Người kiểm duyệt: <span className="detail-value">Giám đốc</span>
-        </h3>
+        <div>
+          <h3>Người kiểm duyệt:</h3>
+          {/* <Select value={state} onChange={onChange}>
+            <Option value={"0"}>Phó phòng ĐBCL: Nguyễn Việt Hùng</Option>
+            <Option value={"1"}>Trưởng phòng ĐBCL: Vũ Duy Mạnh</Option>>
+          </Select> */}
+        </div>
         <h3>
           Ngày giao: <span className="detail-value">11-11-2019</span>
         </h3>

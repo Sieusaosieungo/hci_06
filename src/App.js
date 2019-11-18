@@ -19,6 +19,7 @@ function App({ modal, children, dispatch }) {
           visible={modal.visible}
           onOk={modal.onOk}
           onCancel={() => dispatch(hideModal())}
+          footer={null}
           width="65vw"
         >
           {modal.Component}

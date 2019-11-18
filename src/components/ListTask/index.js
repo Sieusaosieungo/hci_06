@@ -263,13 +263,13 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "status",
-        width: "10%",
+        width: "15%",
         editable: true
       },
       {
         title: <div>Xem chi tiết</div>,
         dataIndex: "detail",
-        width: "15%",
+        width: "10%",
         editable: true,
         render: data => {
           return (
