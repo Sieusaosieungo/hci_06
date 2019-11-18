@@ -14,17 +14,17 @@ export default function index() {
           Giám đốc
         </Descriptions.Item>
         <Descriptions.Item label="Mục tiêu cần đạt được" span="3">
-          Đảm bảo chất lượng 50 quy trình
+          Kiểm định chất lượng 50 quy trình
           <br />
-          Đảm bảo chất lượng 50,000 sản phẩm đầu ra
+          Kiểm định chất lượng 50,000 sản phẩm đầu ra
           <br />
-          Đảm bảo chất lượng 50,000 sản phẩm đầu ra
+          Kiểm định chất lượng 50,000 sản phẩm đầu ra
           <br />
-          Đảm bảo chất lượng 1000kg nguyên liệu đầu vào
+          Kiểm định chất lượng 1000kg nguyên liệu đầu vào
           <br />
-          Đảm bảo chất lượng 5000 bao bì
+          Kiểm định chất lượng 5000 bao bì
           <br />
-          Đảm bảo số lượng hàng trả về nhỏ hơn 100 sản phẩm
+          Kiểm định số lượng hàng trả về nhỏ hơn 100 sản phẩm
           <br />
         </Descriptions.Item>
         <Descriptions.Item label="Ngày giao" span="1.5">
@@ -45,17 +45,17 @@ export default function index() {
           </Link>
         </Descriptions.Item>
         <Descriptions.Item label="Tiêu chí đánh giá công việc" span="3">
-          Đảm bảo chất lượng 50 quy trình
+          Kiểm định chất lượng 50 quy trình
           <br />
-          Đảm bảo chất lượng 50,000 sản phẩm đầu ra
+          Kiểm định chất lượng 50,000 sản phẩm đầu ra
           <br />
-          Đảm bảo chất lượng 50,000 sản phẩm đầu ra
+          Kiểm định chất lượng 50,000 sản phẩm đầu ra
           <br />
-          Đảm bảo chất lượng 1000kg nguyên liệu đầu vào
+          Kiểm định chất lượng 1000kg nguyên liệu đầu vào
           <br />
-          Đảm bảo chất lượng 5000 bao bì
+          Kiểm định chất lượng 5000 bao bì
           <br />
-          Đảm bảo số lượng hàng trả về nhỏ hơn 100 sản phẩm
+          Kiểm định số lượng hàng trả về nhỏ hơn 100 sản phẩm
           <br />
           Hoàn thành công việc đúng thời hạn
         </Descriptions.Item>
