@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import "./styles.css";
 
 const ListTaskDepartment = loadable(() =>
-  import("../pages/ListTaskPage/index")
+  import("../pages/ListTaskPage/ListTaskDepartment/index")
 );
 const ListTaskEmployee = loadable(() =>
   import("../pages/ListTaskPage/ListTaskEmployee/index")
