@@ -7,46 +7,46 @@ const DashBoard = () => {
   const salesData = [
     {
       x: `V.D Mạnh`,
-      y: 91
+      y: 98
     },
     {
       x: `P.Đ Tài`,
-      y: 96
-    },
-    {
-      x: `L.Đ Phúc`,
-      y: 94
+      y: 95
     },
     {
       x: `N.V Hùng`,
-      y: 92
+      y: 90
+    },
+    {
+      x: `L.Đ Phúc`,
+      y: 87
     },
     {
       x: `T.T Huỳnh`,
-      y: 94
+      y: 85
     }
   ];
 
   const depart = [
     {
+      x: `ĐBCL`,
+      y: 98
+    },
+    {
       x: `Sản xuất`,
-      y: 94
+      y: 95
     },
     {
       x: `Marketting`,
-      y: 91
-    },
-    {
-      x: `Kiểm tra`,
-      y: 94
+      y: 92
     },
     {
       x: `Kế toán`,
-      y: 97
+      y: 87
     },
     {
       x: `Tài chính`,
-      y: 94
+      y: 85
     }
   ];
 
@@ -90,7 +90,7 @@ const DashBoard = () => {
           <Bar
             height={250}
             color={"#1bf452a6"}
-            title=" Top KPI các bộ phận"
+            title=" Top 5 bộ phận có KPI cao nhất"
             data={depart}
           />
         </div>
@@ -99,19 +99,19 @@ const DashBoard = () => {
         <div className="dashboard-item item3">
           <Pie
             percent={88}
-            subTitle="KPI bộ phận kiểm tra"
-            total="90"
+            subTitle="KPI bộ phận Đảm bảo chất lượng"
+            total="90%"
             height={200}
           />
         </div>
         <div className="dashboard-item item4">
-          <span>KPI bộ phận kiểm tra 6 tháng gần nhất</span>
+          <span>KPI bộ phận Đảm bảo chất lượng 6 tháng gần nhất</span>
           <MiniArea line color="#cceafe" height={186} data={visitData} />
         </div>
         <div className="dashboard-item item5">
           <WaterWave
             height={200}
-            title="Độ hoàn thành công việc"
+            title="Tiến độ công việc hoàn thành"
             percent={48}
           />
         </div>
