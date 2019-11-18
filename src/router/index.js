@@ -16,6 +16,7 @@ const DetailTask = loadable(() => import("../pages/ListTaskPage/DetailTask"));
 const CreateTaskPage = loadable(() => import("../pages/CreateTaskPage/index"));
 const WorkReport = loadable(() => import("../pages/WorkReport"));
 const ManageReport = loadable(() => import("../pages/ManageReport"));
+const CreateReport = loadable(() => import("../pages/CreateReport"));
 
 export const routes = [
   {
@@ -50,6 +51,10 @@ export const routes = [
   {
     path: "/manage-report",
     component: () => <ManageReport />
+  },
+  {
+    path: "/create-report",
+    component: () => <CreateReport />
   },
   {
     path: "*",
