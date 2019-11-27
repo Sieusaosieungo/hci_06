@@ -179,7 +179,7 @@ const Headers = () => {
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
                     <span className="notice-element-name">
-                      KT01 Vũ Duy Mạnh{" "}
+                      KT01 Vũ Duy Mạnh
                     </span>
                     <span className="notice-element-info">
                       báo cáo kiểm tra bộ phận SX02

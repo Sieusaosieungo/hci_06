@@ -6,7 +6,7 @@ const { Sider } = Layout;
 
 function Siders() {
   return (
-    <Sider width={200} style={{ background: '#fff' }}>
+    <Sider collapsible width={200} style={{ background: '#fff' }}>
       <Menu
         mode='inline'
         defaultSelectedKeys={['1']}
@@ -16,16 +16,20 @@ function Siders() {
         <Menu.Item key='11'>
           <Link to='/'>
             <Icon type='dashboard' />
+           <span>
             Bảng điều khiển
+          </span>
           </Link>
         </Menu.Item>
         <SubMenu
           key='sub2'
           title={
-            <span>
+            <>
               <Icon type='laptop' />
+            <span>
               Quản lý công việc
             </span>
+          </>
           }
         >
           <Menu.Item key='sub2-1'>
@@ -38,10 +42,12 @@ function Siders() {
         <SubMenu
           key='sub3'
           title={
-            <span>
+            <>
               <Icon type='laptop' />
+            <span>
               Quản lý KPI
             </span>
+          </>
           }
         >
           <Menu.Item key="sub3-1">
@@ -58,7 +64,10 @@ function Siders() {
         <Menu.Item key="sub4-1">
           <Link to="/manage-report">
             <Icon type="bar-chart" />
+            <span>
             Quản lý báo cáo
+            </span>
+
           </Link>
         </Menu.Item>
       </Menu>

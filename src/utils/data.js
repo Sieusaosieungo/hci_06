@@ -7,6 +7,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đang thực hiện",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -17,6 +18,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
 
@@ -28,6 +30,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -38,6 +41,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -48,6 +52,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -58,6 +63,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -68,6 +74,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -78,6 +85,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -88,6 +96,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -98,6 +107,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -108,6 +118,7 @@ export const dataCVPB = [
     dateFinish: "20/11/2019",
     weight: 0.7,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   }
 ];
@@ -123,6 +134,7 @@ export const dataCVNV = [
     dateFinish: "28/11/2019",
     weight: 0.15,
     status: "Đang thực hiện",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -134,6 +146,7 @@ export const dataCVNV = [
     dateFinish: "01/12/2019",
     weight: 0.2,
     status: "Đang thực hiện",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -145,6 +158,7 @@ export const dataCVNV = [
     dateFinish: "11/11/2019",
     weight: 0.3,
     status: "Đã hoàn thành",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -156,6 +170,7 @@ export const dataCVNV = [
     dateFinish: "11/10/2019",
     weight: 0.13,
     status: "Chờ duyệt",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -167,6 +182,7 @@ export const dataCVNV = [
     dateFinish: "28/09/2019",
     weight: 0.2,
     status: "Quá hạn",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -178,6 +194,7 @@ export const dataCVNV = [
     dateFinish: "28/11/2019",
     weight: 0.1,
     status: "Đang thực hiện",
+    divide:"Tạo công việc",
     detail: "Xem chi tiết"
   }
 ];
