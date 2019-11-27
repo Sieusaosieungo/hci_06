@@ -72,7 +72,7 @@ const rowSelection = {
   })
 };
 
-const ManageReport = ({}) => {
+const ManageReport = () => {
   return (
     <div className={`${prefixCls}`}>
       <div className={`${prefixCls}-list-report`}>Danh sách báo cáo</div>

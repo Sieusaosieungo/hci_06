@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import './style.css';
 import { Input, Button } from "antd";
 const { TextArea } = Input;
 
 const WorkReport = () => {
-  const [state, setState] = useState({
-  });
+  // const [state, setState] = useState({
+  // });
 
   return (
     <div className="work-report">

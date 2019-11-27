@@ -123,9 +123,11 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
+           {/* eslint-disable-next-line */}
             <a href></a>
           </div>
           <div className="header-center-item">
+           {/* eslint-disable-next-line */}
             <a href></a>
           </div>
         </div>

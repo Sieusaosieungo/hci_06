@@ -59,10 +59,8 @@ function Siders() {
           <Link to="/">
             <Icon type="area-chart" />
             Thống kê báo cáo
-=======
-            <Link to="/">KPI nhân viên</Link>
+          </Link>
           </Menu.Item>
-        </SubMenu>
         <Menu.Item key="sub4-1">
           <Link to="/manage-report">
             <Icon type="bar-chart" />

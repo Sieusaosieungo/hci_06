@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Icon, Descriptions, Badge, Button } from "antd";
+import { Icon, Descriptions,  Button } from "antd";
 import { Link } from "react-router-dom";
 
 export default function index() {
