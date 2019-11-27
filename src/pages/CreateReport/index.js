@@ -5,7 +5,6 @@ import {
   Button,
   DatePicker,
   Select,
-  // Progress,
   Upload,
   Icon
 } from "antd";

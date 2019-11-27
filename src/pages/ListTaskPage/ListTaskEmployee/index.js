@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 import ListTask from "../../../components/ListTask/ListTaskEmployee";
 import { Row, Col, Icon, Button } from "antd";
-// import { Popconfirm } from "antd";
 import CreateTaskEmployee from "../../../components/ListTask/CreateTaskEmployee/index";
 import { connect } from "react-redux";
 import { showModal } from "../../../actions/index";
