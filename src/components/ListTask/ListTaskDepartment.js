@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { showModal } from "../../actions/index";
 import CreateTaskEmployee from "../../components/ListTask/CreateTaskEmployee/index";
 
-
 // fake data
 import { dataCVPB } from "../../utils/data";
 
@@ -61,7 +60,6 @@ class EditableCell extends React.Component {
 }
 
 class EditableTable extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { data: dataCVPB, editingKey: "" }; //fake data
@@ -72,7 +70,7 @@ class EditableTable extends React.Component {
             <div className="title">Mã CV</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ), 
+        ),
         dataIndex: "index",
         width: "8%",
         editable: true
@@ -144,18 +142,27 @@ class EditableTable extends React.Component {
         editable: true
       },
       {
-        title: (
-            <div className="title">Phân chia công việc</div>
-        ),
+        title: <div className="title">Phân chia công việc</div>,
         dataIndex: "divide",
         width: "10%",
         editable: true,
         render: data => {
-          return <a href onClick={()=>this.props.dispatch(showModal({
-                  title: "Tạo mới công việc",
-                  Component: <CreateTaskEmployee />,
-                  width: "68vw",
-                }))}>{data}</a>;
+          return (
+            <a
+              href
+              onClick={() =>
+                this.props.dispatch(
+                  showModal({
+                    title: "Tạo mới công việc",
+                    Component: <CreateTaskEmployee />,
+                    width: "68vw"
+                  })
+                )
+              }
+            >
+              {data}
+            </a>
+          );
         }
       },
       {
@@ -241,5 +248,5 @@ class EditableTable extends React.Component {
   }
 }
 
-const EditableFormTable = connect()(Form.create()((EditableTable)));
+const EditableFormTable = connect()(Form.create()(EditableTable));
 export default EditableFormTable;

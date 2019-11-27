@@ -484,7 +484,7 @@ const Headers = () => {
               className="header-right-account header-tool-item"
             >
               <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-              <span>HCI 06</span>
+              <span>TP. ManhVD</span>
             </div>
             <Drawer
               title="Tài khoản của bạn"
