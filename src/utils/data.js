@@ -1,22 +1,22 @@
 export const dataCVPB = [
   {
     index: 1,
-    name: "Kiểm tra nguyên liệu đầu vào",
+    name: "Kiểm tra nguyên liệu đầu vào lô 125",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
+    weight: 0.3,
     status: "Đang thực hiện",
     divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
     index: 2,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 345",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
+    weight: 0.4,
     status: "Đã hoàn thành",
     divide:"Tạo công việc",
     detail: "Xem chi tiết"
@@ -24,22 +24,22 @@ export const dataCVPB = [
 
   {
     index: 3,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 234",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
+    weight: 0.3,
     status: "Đã hoàn thành",
     divide:"Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
     index: 4,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 145",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
+    weight: 0.1,
     status: "Đã hoàn thành",
     divide:"Tạo công việc",
     detail: "Xem chi tiết"
