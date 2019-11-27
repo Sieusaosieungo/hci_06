@@ -143,24 +143,25 @@ class EditableTable extends React.Component {
       },
       {
         title: <div className="title">Phân chia công việc</div>,
-        dataIndex: "divide",
+        // dataIndex: "divide",
         width: "10%",
         editable: true,
-        render: data => {
+        render: (text, data) => {
+          const name = data.name;
           return (
             <a
               href
               onClick={() =>
                 this.props.dispatch(
                   showModal({
-                    title: "Tạo mới công việc",
+                    title: name,
                     Component: <CreateTaskEmployee />,
                     width: "68vw"
                   })
                 )
               }
             >
-              {data}
+              {data.divide}
             </a>
           );
         }
