@@ -179,7 +179,7 @@ const Headers = ({ setAccount }) => {
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
                     <span className="notice-element-name">
-                      KT01 Vũ Duy Mạnh{" "}
+                      KT01 Vũ Duy Mạnh
                     </span>
                     <span className="notice-element-info">
                       báo cáo kiểm tra bộ phận SX02
@@ -484,7 +484,7 @@ const Headers = ({ setAccount }) => {
               className="header-right-account header-tool-item"
             >
               <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-              <span>HCI 06</span>
+              <span>TP. ManhVD</span>
             </div>
             <Drawer
               title="Tài khoản của bạn"

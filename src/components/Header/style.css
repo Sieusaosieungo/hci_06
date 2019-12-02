@@ -86,6 +86,7 @@
 
 /* RIGHT */
 .header-right {
+
   height: 100%;
   width: 35%;
   position: relative;
@@ -150,7 +151,7 @@
 }
 
 .header-right-account > span {
-  margin-left: 10px;
+  margin:0 10px;
   color: rgba(255, 255, 255, 0.8);
 }
 

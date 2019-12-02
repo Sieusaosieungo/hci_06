@@ -3,6 +3,8 @@ import "./styles.css";
 import { Table, Input, InputNumber, Form } from "antd";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { showModal } from "../../actions/index";
+import CreateTaskEmployee from "../../components/ListTask/CreateTaskEmployee/index";
 
 // fake data
 import { dataCVPB } from "../../utils/data";
@@ -68,7 +70,7 @@ class EditableTable extends React.Component {
             <div className="title">Mã CV</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ), 
+        ),
         dataIndex: "index",
         width: "8%",
         editable: true
@@ -81,7 +83,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "name",
-        width: "25%",
+        width: "20%",
         editable: true
       },
       {
@@ -136,8 +138,33 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "status",
-        width: "15%",
+        width: "10%",
         editable: true
+      },
+      {
+        title: <div className="title">Phân chia công việc</div>,
+        // dataIndex: "divide",
+        width: "10%",
+        editable: true,
+        render: (text, data) => {
+          const name = data.name;
+          return (
+            <a
+              href
+              onClick={() =>
+                this.props.dispatch(
+                  showModal({
+                    title: name,
+                    Component: <CreateTaskEmployee />,
+                    width: "68vw"
+                  })
+                )
+              }
+            >
+              {data.divide}
+            </a>
+          );
+        }
       },
       {
         title: <div>Xem chi tiết</div>,
@@ -222,5 +249,5 @@ class EditableTable extends React.Component {
   }
 }
 
-const EditableFormTable = Form.create()(connect()(EditableTable));
+const EditableFormTable = connect()(Form.create()(EditableTable));
 export default EditableFormTable;
