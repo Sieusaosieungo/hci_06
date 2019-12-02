@@ -5,8 +5,7 @@ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function Siders({ account }) {
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Sider collapsible width={200} style={{ background: "#fff" }}>
@@ -41,8 +40,13 @@ function Siders({ account }) {
           </SubMenu>
         ) : (
           <Menu.Item key="sub2-1">
-            <Icon type="laptop" />
-            <Link to="/list-task-employee">Quản lý công việc</Link>
+            <Link
+              to="/list-task-employee"
+              style={{ color: "rgba(0, 0, 0, 0.65)" }}
+            >
+              <Icon type="laptop" />
+              <span>Quản lý công việc</span>
+            </Link>
           </Menu.Item>
         )}
         <SubMenu
