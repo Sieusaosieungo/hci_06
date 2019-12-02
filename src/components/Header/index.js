@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 const { Header } = Layout;
 
-const Headers = () => {
+const Headers = ({ setAccount }) => {
   const [state, setState] = useState({
     visibleNotice: false,
     visibleSetting: false,
@@ -123,11 +123,11 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-           {/* eslint-disable-next-line */}
+            {/* eslint-disable-next-line */}
             <a href></a>
           </div>
           <div className="header-center-item">
-           {/* eslint-disable-next-line */}
+            {/* eslint-disable-next-line */}
             <a href></a>
           </div>
         </div>
@@ -510,7 +510,9 @@ const Headers = () => {
                       <Link to="/account" onClick={onCloseUser}>
                         Tài khoản
                       </Link>
-                      <a href>Đăng xuất</a>
+                      <a href="" onClick={() => setAccount({})}>
+                        Đăng xuất
+                      </a>
                     </div>
                   </div>
                 </div>

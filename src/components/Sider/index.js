@@ -4,42 +4,49 @@ import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
-function Siders() {
+function Siders({ account }) {
   return (
-    <Sider width={200} style={{ background: '#fff' }}>
+    <Sider width={200} style={{ background: "#fff" }}>
       <Menu
-        mode='inline'
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
-        style={{ height: '100%', borderRight: 0 }}
+        mode="inline"
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+        style={{ height: "100%", borderRight: 0 }}
       >
-        <Menu.Item key='11'>
-          <Link to='/'>
-            <Icon type='dashboard' />
+        <Menu.Item key="11">
+          <Link to="/">
+            <Icon type="dashboard" />
             Bảng điều khiển
           </Link>
         </Menu.Item>
+        {account.role ? (
+          <SubMenu
+            key="sub2"
+            title={
+              <span>
+                <Icon type="laptop" />
+                Quản lý công việc
+              </span>
+            }
+          >
+            <Menu.Item key="sub2-1">
+              <Link to="/list-task-department">Công việc phòng ban</Link>
+            </Menu.Item>
+            <Menu.Item key="sub2-2">
+              <Link to="/list-task-employee">Công việc nhân viên</Link>
+            </Menu.Item>
+          </SubMenu>
+        ) : (
+          <Menu.Item key="sub2-1">
+            <Icon type="laptop" />
+            <Link to="/list-task-employee">Quản lý công việc</Link>
+          </Menu.Item>
+        )}
         <SubMenu
-          key='sub2'
+          key="sub3"
           title={
             <span>
-              <Icon type='laptop' />
-              Quản lý công việc
-            </span>
-          }
-        >
-          <Menu.Item key='sub2-1'>
-            <Link to='/list-task-department'>Công việc phòng ban</Link>
-          </Menu.Item>
-          <Menu.Item key='sub2-2'>
-            <Link to='/list-task-employee'>Công việc nhân viên</Link>
-          </Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key='sub3'
-          title={
-            <span>
-              <Icon type='laptop' />
+              <Icon type="laptop" />
               Quản lý KPI
             </span>
           }

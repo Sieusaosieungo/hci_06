@@ -1,0 +1,35 @@
+.sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ant-modal-content {
+  margin: 0 auto;
+}
+
+.ant-form-item-control::after {
+  content: none;
+}
+.ant-form-item-control::before {
+  content: none;
+}
+
+.role {
+  margin: 0;
+}
+
+.sign-in .sign-in-form {
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgb(217, 217, 217);
+  border: 1px solid rgb(217, 217, 217);
+  padding: 20px 50px;
+  max-width: 350px;
+}
+.sign-in .sign-in-form-forgot {
+  float: right;
+}
+.sign-in .sign-in-form-button {
+  width: 100%;
+}
