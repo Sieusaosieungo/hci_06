@@ -20,12 +20,18 @@ const CreateReport = loadable(() => import("../pages/CreateReport"));
 const ReportDetail = loadable(() =>
   import("../pages/ManageReport/ReportDetail/index")
 );
+const DoahBoardEmployee = loadable(() => import('../pages/DashBoardEmployee/index'));
 
 export const routes = [
   {
     path: "/",
     exact: true,
     component: ({ history }) => <DashBoard history={history} />
+  },
+  {
+    path: "/doard-board-employee",
+    exact: true,
+    component: ({ history }) => <DoahBoardEmployee history={history} />
   },
   {
     path: "/list-task-department",

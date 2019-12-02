@@ -5,7 +5,7 @@ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function Siders({ account }) {
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <Sider collapsible width={200} style={{ background: "#fff" }}>
@@ -15,12 +15,13 @@ function Siders({ account }) {
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
-        <Menu.Item key="11">
-          <Link to="/">
+        {<Menu.Item key="11">
+          <Link to={account.role ? '/' : 'doard-board-employee'}>
             <Icon type="dashboard" />
             <span>Bảng điều khiển</span>
           </Link>
         </Menu.Item>
+        }
         {account.role ? (
           <SubMenu
             key="sub2"
@@ -39,16 +40,16 @@ function Siders({ account }) {
             </Menu.Item>
           </SubMenu>
         ) : (
-          <Menu.Item key="sub2-1">
-            <Link
-              to="/list-task-employee"
-              style={{ color: "rgba(0, 0, 0, 0.65)" }}
-            >
-              <Icon type="laptop" />
-              <span>Quản lý công việc</span>
-            </Link>
-          </Menu.Item>
-        )}
+            <Menu.Item key="sub2-1">
+              <Link
+                to="/list-task-employee"
+                style={{ color: "rgba(0, 0, 0, 0.65)" }}
+              >
+                <Icon type="laptop" />
+                <span>Quản lý công việc</span>
+              </Link>
+            </Menu.Item>
+          )}
         <SubMenu
           key="sub3"
           title={
