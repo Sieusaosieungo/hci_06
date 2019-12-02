@@ -13,7 +13,7 @@ import SignIn from "./components/SignIn";
 
 function App({ modal, children, dispatch }) {
   const [account, setAccount] = useState({});
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
 
   useEffect(() => {
     if (
