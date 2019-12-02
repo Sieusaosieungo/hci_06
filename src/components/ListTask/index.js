@@ -15,7 +15,7 @@ for (let i = 1; i < 100; i++) {
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đang thực hiện",
+    status: 33,
     detail: "Xem chi tiết"
   });
 }
@@ -28,7 +28,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đang thực hiện",
+    status: 50,
     detail: "Xem chi tiết"
   },
   {
@@ -38,7 +38,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 100,
     detail: "Xem chi tiết"
   },
 
@@ -49,7 +49,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 100,
     detail: "Xem chi tiết"
   },
   {
@@ -59,7 +59,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 45,
     detail: "Xem chi tiết"
   },
   {
@@ -69,7 +69,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 38,
     detail: "Xem chi tiết"
   },
   {
@@ -79,7 +79,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 77,
     detail: "Xem chi tiết"
   },
   {
@@ -89,7 +89,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 98,
     detail: "Xem chi tiết"
   },
   {
@@ -99,7 +99,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 100,
     detail: "Xem chi tiết"
   },
   {
@@ -109,7 +109,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 67,
     detail: "Xem chi tiết"
   },
   {
@@ -119,7 +119,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 24,
     detail: "Xem chi tiết"
   },
   {
@@ -129,7 +129,7 @@ const data2 = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 100,
     detail: "Xem chi tiết"
   }
 ];
@@ -171,8 +171,8 @@ class EditableCell extends React.Component {
             })(this.getInput())}
           </Form.Item>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   };

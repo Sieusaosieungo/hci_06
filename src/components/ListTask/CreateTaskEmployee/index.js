@@ -80,9 +80,9 @@ const CreateTaskEmployee = ({dispatch}) => {
               {children}
             </Select>
           </Form.Item>
-          <Form.Item label='Nhóm công việc lớn'>
+          <Form.Item label='Loại công việc'>
             <Select defaultValue='0' onChange={handleChangeSelect}>
-              <Option value='0'>Chọn nhóm công việc lớn</Option>
+              <Option value='0'>Chọn loại công việc</Option>
               <Option value='1'>
                 Kiểm tra chất lượng quy trình xưởng thuốc nước thú y
               </Option>

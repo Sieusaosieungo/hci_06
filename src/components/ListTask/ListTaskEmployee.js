@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Table, Input, InputNumber, Form } from "antd";
+import { Table, Input, InputNumber, Form, Progress } from "antd";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -44,8 +44,8 @@ class EditableCell extends React.Component {
             })(this.getInput())}
           </Form.Item>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   };
@@ -68,7 +68,7 @@ class EditableTable extends React.Component {
             <div className="title">Mã CV</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ), 
+        ),
         dataIndex: "index",
         width: "8%",
         editable: true
@@ -148,7 +148,10 @@ class EditableTable extends React.Component {
         ),
         dataIndex: "status",
         width: "15%",
-        editable: true
+        editable: true,
+        render: data => {
+          return <Progress type="circle" width={50} percent={data} />
+        }
       },
       {
         title: <div>Xem chi tiết</div>,

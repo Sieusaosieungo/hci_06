@@ -1,43 +1,47 @@
 export const dataCVPB = [
   {
     index: 1,
-    name: "Kiểm tra nguyên liệu đầu vào",
+    name: "Kiểm tra nguyên liệu đầu vào lô 125",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: "Đang thực hiện",
+    weight: 0.3,
+    status: 30,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
     index: 2,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 345",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: "Đã hoàn thành",
+    weight: 0.4,
+    status: 100,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
 
   {
     index: 3,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 234",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: "Đã hoàn thành",
+    weight: 0.3,
+    status: 18,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
     index: 4,
-    name: "Kiểm tra sản phẩm đầu ra",
+    name: "Kiểm tra sản phẩm đầu ra lô 145",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: "Đã hoàn thành",
+    weight: 0.1,
+    status: 100,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -47,7 +51,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 69,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -57,7 +62,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 45,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -67,7 +73,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 56,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -77,7 +84,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 89,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -87,7 +95,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 58,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -97,7 +106,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 78,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -107,7 +117,8 @@ export const dataCVPB = [
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.7,
-    status: "Đã hoàn thành",
+    status: 63,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   }
 ];
@@ -122,7 +133,8 @@ export const dataCVNV = [
     dateStart: `18/10/2019`,
     dateFinish: "28/11/2019",
     weight: 0.15,
-    status: "Đang thực hiện",
+    status: 100,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -133,7 +145,8 @@ export const dataCVNV = [
     dateStart: `20/10/2019`,
     dateFinish: "01/12/2019",
     weight: 0.2,
-    status: "Đang thực hiện",
+    status: 13,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -144,7 +157,8 @@ export const dataCVNV = [
     dateStart: `01/09/2019`,
     dateFinish: "11/11/2019",
     weight: 0.3,
-    status: "Đã hoàn thành",
+    status: 91,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -155,7 +169,8 @@ export const dataCVNV = [
     dateStart: `14/09/2019`,
     dateFinish: "11/10/2019",
     weight: 0.13,
-    status: "Chờ duyệt",
+    status: -1,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -166,7 +181,8 @@ export const dataCVNV = [
     dateStart: `09/08/2019`,
     dateFinish: "28/09/2019",
     weight: 0.2,
-    status: "Quá hạn",
+    status: 101,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
@@ -177,7 +193,8 @@ export const dataCVNV = [
     dateStart: `10/10/2019`,
     dateFinish: "28/11/2019",
     weight: 0.1,
-    status: "Đang thực hiện",
+    status: 38,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết"
   }
 ];

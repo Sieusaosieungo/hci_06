@@ -123,11 +123,11 @@ const Headers = () => {
       <div className="header-center">
         <div className="header-center-menu">
           <div className="header-center-item">
-           {/* eslint-disable-next-line */}
+            {/* eslint-disable-next-line */}
             <a href></a>
           </div>
           <div className="header-center-item">
-           {/* eslint-disable-next-line */}
+            {/* eslint-disable-next-line */}
             <a href></a>
           </div>
         </div>
@@ -147,7 +147,7 @@ const Headers = () => {
               onClose={onCloseNotice}
               visible={state.visibleNotice}
             >
-              <div className="notice-element">
+              <Link to="report-detail" className="notice-element" onClick={onCloseNotice}>
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
@@ -173,13 +173,13 @@ const Headers = () => {
                     <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
-              </div>
+              </Link>
               <div className="notice-element">
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
                     <span className="notice-element-name">
-                      KT01 Vũ Duy Mạnh{" "}
+                      KT01 Vũ Duy Mạnh
                     </span>
                     <span className="notice-element-info">
                       báo cáo kiểm tra bộ phận SX02
@@ -412,10 +412,6 @@ const Headers = () => {
                   <a href>Nhật ký thay đổi hoạt động</a>
                 </div>
                 <div className="sci">
-                  <Icon type="notification" />
-                  <a href>Thông báo</a>
-                </div>
-                <div className="sci">
                   <Icon type="team" />
                   <a href>Nhóm dự án</a>
                 </div>
@@ -484,7 +480,7 @@ const Headers = () => {
               className="header-right-account header-tool-item"
             >
               <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-              <span>HCI 06</span>
+              <span>TP. ManhVD</span>
             </div>
             <Drawer
               title="Tài khoản của bạn"
