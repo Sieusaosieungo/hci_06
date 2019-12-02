@@ -11,7 +11,7 @@ const SignIn = ({ form, form: { getFieldDecorator }, setAccount }) => {
     e.preventDefault();
     form.validateFields((err, values) => {
       if (!err) {
-        localStorage.setItem("account", JSON.parse(values));
+        localStorage.setItem("account", JSON.stringify(values));
         setAccount(values);
       }
     });

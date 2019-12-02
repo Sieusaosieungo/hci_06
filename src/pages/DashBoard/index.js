@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";
 
-const DashBoard = () => {
+const DashBoard = ({ history }) => {
   const salesData = [
     {
       x: `V.D Mạnh`,
@@ -76,6 +76,7 @@ const DashBoard = () => {
       y: 88
     }
   ];
+
   return (
     <div className="chartContainer">
       <div className="chartContainer-inner">

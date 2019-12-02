@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout, Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function Siders({ account }) {
+  useEffect(() => {
+  }, []);
+
   return (
-<<<<<<< HEAD
-    <Sider width={200} style={{ background: "#fff" }}>
-=======
-    <Sider collapsible width={200} style={{ background: '#fff' }}>
->>>>>>> a77b6db545b089439776e3fd8f8241b2b705ab0d
+    <Sider collapsible width={200} style={{ background: "#fff" }}>
       <Menu
         mode="inline"
         defaultSelectedKeys={["1"]}
@@ -20,9 +19,7 @@ function Siders({ account }) {
         <Menu.Item key="11">
           <Link to="/">
             <Icon type="dashboard" />
-            <span>
-            Bảng điều khiển
-          </span>
+            <span>Bảng điều khiển</span>
           </Link>
         </Menu.Item>
         {account.role ? (
@@ -51,17 +48,10 @@ function Siders({ account }) {
         <SubMenu
           key="sub3"
           title={
-<<<<<<< HEAD
-            <span>
-              <Icon type="laptop" />
-=======
             <>
-              <Icon type='laptop' />
-            <span>
->>>>>>> a77b6db545b089439776e3fd8f8241b2b705ab0d
-              Quản lý KPI
-            </span>
-          </>
+              <Icon type="laptop" />
+              <span>Quản lý KPI</span>
+            </>
           }
         >
           <Menu.Item key="sub3-1">
@@ -78,10 +68,7 @@ function Siders({ account }) {
         <Menu.Item key="sub4-1">
           <Link to="/manage-report">
             <Icon type="bar-chart" />
-            <span>
-            Quản lý báo cáo
-            </span>
-
+            <span>Quản lý báo cáo</span>
           </Link>
         </Menu.Item>
       </Menu>

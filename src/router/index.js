@@ -25,7 +25,7 @@ export const routes = [
   {
     path: "/",
     exact: true,
-    component: () => <DashBoard />
+    component: ({ history }) => <DashBoard history={history} />
   },
   {
     path: "/list-task-department",

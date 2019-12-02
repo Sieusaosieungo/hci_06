@@ -510,7 +510,13 @@ const Headers = ({ setAccount }) => {
                       <Link to="/account" onClick={onCloseUser}>
                         Tài khoản
                       </Link>
-                      <a href="" onClick={() => setAccount({})}>
+                      <a
+                        href=""
+                        onClick={() => {
+                          localStorage.clear();
+                          setAccount({});
+                        }}
+                      >
                         Đăng xuất
                       </a>
                     </div>
