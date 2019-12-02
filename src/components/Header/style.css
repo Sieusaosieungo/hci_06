@@ -194,6 +194,7 @@
   align-items: center;
   padding: 1rem;
   border: solid 0.3px rgb(214, 214, 214);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .notice-element > button {

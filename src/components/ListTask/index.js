@@ -1,13 +1,138 @@
 import React from "react";
 import "./styles.css";
-import { Table, Input, InputNumber, Form, Progress } from "antd";
+import { Table, Input, InputNumber, Form } from "antd";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { showModal } from "../../actions/index";
-import CreateTaskEmployee from "../../components/ListTask/CreateTaskEmployee/index";
+// import { showModal } from "../../actions/index";
+// import DetailTask from "../../pages/ListTaskPage/DetailTask/index";
 
-// fake data
-import { dataCVPB } from "../../utils/data";
+const data = [];
+for (let i = 1; i < 100; i++) {
+  data.push({
+    index: i.toString(),
+    name: "Công việc",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 33,
+    detail: "Xem chi tiết"
+  });
+}
+
+const data2 = [
+  {
+    index: 1,
+    name: "Kiểm tra nguyên liệu đầu vào",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 50,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 2,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 100,
+    detail: "Xem chi tiết"
+  },
+
+  {
+    index: 3,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 100,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 4,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 45,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 5,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 38,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 6,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 77,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 7,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 98,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 8,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 100,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 9,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 67,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 10,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 24,
+    detail: "Xem chi tiết"
+  },
+  {
+    index: 11,
+    name: "Kiểm tra sản phẩm đầu ra",
+    censor: "GĐ. Nguyễn Việt Hùng",
+    dateStart: `20/10/2019`,
+    dateFinish: "20/11/2019",
+    weight: 0.7,
+    status: 100,
+    detail: "Xem chi tiết"
+  }
+];
 
 const { Search } = Input;
 const EditableContext = React.createContext();
@@ -62,17 +187,17 @@ class EditableCell extends React.Component {
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: dataCVPB, editingKey: "" }; //fake data
+    this.state = { data: data2, editingKey: "" }; //fake data
     this.columns = [
       {
         title: (
           <div>
-            <div className="title">Mã CV</div>
+            <div className="title">STT</div>
             <Search placeholder="" onSearch={value => console.log(value)} />
           </div>
-        ),
+        ), // tên cv, người phụ trách, ngày giao, deadline, trạng thái , chi tiết xóa
         dataIndex: "index",
-        width: "8%",
+        width: "5%",
         editable: true
       },
       {
@@ -83,7 +208,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "name",
-        width: "20%",
+        width: "25%",
         editable: true
       },
       {
@@ -127,7 +252,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "weight",
-        width: "7%",
+        width: "10%",
         editable: true
       },
       {
@@ -138,36 +263,8 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "status",
-        width: "10%",
-        editable: true,
-        render: data => {
-          return <Progress type="circle" width={50} percent={data} />
-        }
-      },
-      {
-        title: <div className="title">Phân chia công việc</div>,
-        // dataIndex: "divide",
-        width: "10%",
-        editable: true,
-        render: (text, data) => {
-          const name = data.name;
-          return (
-            <a
-              href
-              onClick={() =>
-                this.props.dispatch(
-                  showModal({
-                    title: name,
-                    Component: <CreateTaskEmployee />,
-                    width: "68vw"
-                  })
-                )
-              }
-            >
-              {data.divide}
-            </a>
-          );
-        }
+        width: "15%",
+        editable: true
       },
       {
         title: <div>Xem chi tiết</div>,
@@ -252,5 +349,5 @@ class EditableTable extends React.Component {
   }
 }
 
-const EditableFormTable = connect()(Form.create()(EditableTable));
+const EditableFormTable = Form.create()(connect()(EditableTable));
 export default EditableFormTable;

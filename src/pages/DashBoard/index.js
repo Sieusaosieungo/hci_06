@@ -83,7 +83,7 @@ const DashBoard = ({ history }) => {
         <div className="dashboard-item item1">
           <Bar
             height={250}
-            title=" Top 5 nhân viên có KPI cao nhất"
+            title=" Top 5 nhân viên có KPI cao nhất trong tháng"
             data={salesData}
           />
         </div>
@@ -91,7 +91,7 @@ const DashBoard = ({ history }) => {
           <Bar
             height={250}
             color={"#1bf452a6"}
-            title=" Top 5 bộ phận có KPI cao nhất"
+            title=" Top 5 bộ phận có KPI cao nhất trong tháng"
             data={depart}
           />
         </div>
@@ -100,21 +100,25 @@ const DashBoard = ({ history }) => {
         <div className="dashboard-item item3">
           <Pie
             percent={88}
-            subTitle="KPI bộ phận Kiểm định chất lượng"
-            total="90%"
+            subTitle=""
+            total="90"
             height={200}
           />
+          <span>KPI bộ phận Kiểm định chất lượng hiện tại</span>
         </div>
         <div className="dashboard-item item4">
+          <MiniArea line color="#cceafe" height={200} data={visitData} />
           <span>KPI bộ phận Kiểm định chất lượng 6 tháng gần nhất</span>
-          <MiniArea line color="#cceafe" height={186} data={visitData} />
         </div>
         <div className="dashboard-item item5">
-          <WaterWave
-            height={200}
-            title="Tiến độ công việc hoàn thành"
-            percent={48}
-          />
+          <div className="item5-chart">
+            <WaterWave
+              height={200}
+              title=""
+              percent={48}
+            />
+          </div>
+          <span>Tiến độ hoàn thành công việc trong tháng của bộ phận</span>
         </div>
       </div>
     </div>

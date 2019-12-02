@@ -147,7 +147,7 @@ const Headers = ({ setAccount }) => {
               onClose={onCloseNotice}
               visible={state.visibleNotice}
             >
-              <div className="notice-element">
+              <Link to="report-detail" className="notice-element" onClick={onCloseNotice}>
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
@@ -173,7 +173,7 @@ const Headers = ({ setAccount }) => {
                     <Icon type="delete" style={{ fontSize: "18px" }} />
                   </Button>
                 </Popconfirm>
-              </div>
+              </Link>
               <div className="notice-element">
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
@@ -410,10 +410,6 @@ const Headers = ({ setAccount }) => {
                 <div className="sci">
                   <Icon type="form" />
                   <a href>Nhật ký thay đổi hoạt động</a>
-                </div>
-                <div className="sci">
-                  <Icon type="notification" />
-                  <a href>Thông báo</a>
                 </div>
                 <div className="sci">
                   <Icon type="team" />

@@ -57,5 +57,28 @@
   margin-left: 1%;
   box-shadow: rgb(199, 198, 198) 0px 0px 5px 0px;
   display: flex;
+  flex-direction: column;
+}
+
+.item5-chart{
+  width: 100%;
+  display: flex;
+  justify-items: center;
   justify-content: center;
+}
+
+.dashboard-item{
+  font-weight: bold;
+}
+
+.dashboard-item > span{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-item:hover>span{
+  overflow: normal;
+  text-overflow: normal;
+  white-space: normal;
 }
