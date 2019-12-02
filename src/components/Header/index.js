@@ -124,11 +124,11 @@ const Headers = ({ setAccount }) => {
         <div className="header-center-menu">
           <div className="header-center-item">
             {/* eslint-disable-next-line */}
-            <a href></a>
+            <a href="#"></a>
           </div>
           <div className="header-center-item">
             {/* eslint-disable-next-line */}
-            <a href></a>
+            <a href="#"></a>
           </div>
         </div>
       </div>
@@ -147,7 +147,11 @@ const Headers = ({ setAccount }) => {
               onClose={onCloseNotice}
               visible={state.visibleNotice}
             >
-              <Link to="report-detail" className="notice-element" onClick={onCloseNotice}>
+              <Link
+                to="report-detail"
+                className="notice-element"
+                onClick={onCloseNotice}
+              >
                 <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
                 <div className="notice-element-inner">
                   <div className="notice-element-content">
@@ -506,7 +510,13 @@ const Headers = ({ setAccount }) => {
                       <Link to="/account" onClick={onCloseUser}>
                         Tài khoản
                       </Link>
-                      <a href="" onClick={() => setAccount({})}>
+                      <a
+                        href=""
+                        onClick={() => {
+                          localStorage.clear();
+                          setAccount({});
+                        }}
+                      >
                         Đăng xuất
                       </a>
                     </div>

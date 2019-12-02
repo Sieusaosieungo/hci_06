@@ -12,15 +12,19 @@ import { hideModal } from "./actions/index";
 import SignIn from "./components/SignIn";
 
 function App({ modal, children, dispatch }) {
-  const [account, setAccount] = useState({});
-  const [isAuth, setIsAuth] = useState(true);
+  const [account, setAccount] = useState(
+    JSON.parse(localStorage.getItem("account")) || {}
+  );
+  const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    if (
-      account.email === "huynh123@gmail.com" &&
-      account.password === "huynh123"
-    ) {
-      setIsAuth(true);
+    if (Object.keys(account).length > 0) {
+      if (
+        account.email === "huynh123@gmail.com" &&
+        account.password === "huynh123"
+      ) {
+        setIsAuth(true);
+      }
     }
   }, [JSON.stringify(account)]);
 

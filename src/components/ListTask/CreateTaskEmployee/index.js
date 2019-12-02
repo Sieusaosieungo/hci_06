@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { Form, Select, DatePicker, Input, Button } from 'antd';
-import { Col,  Popconfirm, message } from "antd";
+import { Col, Popconfirm, message } from "antd";
 import TextArea from 'antd/lib/input/TextArea';
 import { hideModal } from '../../../actions/index';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-const CreateTaskEmployee = ({dispatch}) => {
+const CreateTaskEmployee = ({ dispatch }) => {
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState();
   const [messageCheckDevice, setMessageCheckDevice] = useState(
@@ -34,10 +34,10 @@ const CreateTaskEmployee = ({dispatch}) => {
   };
   const children = [];
 
-  children.push(<Option key='Vũ Duy Mạnh'>Vũ Duy Mạnh</Option>);
-  children.push(<Option key='Lê Đình Phúc'>Lê Đình Phúc</Option>);
-  children.push(<Option key='Vũ Văn Nam'>Vũ Văn Nam</Option>);
-  children.push(<Option key='Lê Minh Nguyễn'>Lê Minh Nguyễn</Option>);
+  children.push(<Option key='Vũ Duy Mạnh'>DBCL_01 - Vũ Duy Mạnh</Option>);
+  children.push(<Option key='Lê Đình Phúc'>DBCL_02 - Lê Đình Phúc</Option>);
+  children.push(<Option key='Vũ Văn Nam'>DBCL_03 - Vũ Văn Nam</Option>);
+  children.push(<Option key='Lê Minh Nguyễn'>DBCL_04 - Lê Minh Nguyễn</Option>);
 
   function handleChange(value) {
     console.log(`selected ${value}`);
@@ -68,6 +68,26 @@ const CreateTaskEmployee = ({dispatch}) => {
         <Col xl={24} lg={24} style={{ margin: '0 auto' }}>
           <Form.Item label='Tên công việc'>
             <Input placeholder='' />
+          </Form.Item>
+          <Form.Item label='Người giao việc'>
+            <Input placeholder='' disabled={true} value='Vũ Duy Mạnh' />
+          </Form.Item>
+          <Form.Item label='Chức vụ'>
+            <Input placeholder='' disabled={true} value='Trưởng phòng bộ phận đảm bảo chất lượng' />
+          </Form.Item>
+          <Form.Item label='Trọng số'>
+            <Input placeholder='0.0 <= Trọng số  <= 1.0' />
+          </Form.Item>
+          <Form.Item label='Giai đoạn kiểm tra'>
+            <Select
+              style={{ width: '100%' }}
+              placeholder='Chọn giai đoạn kiểm tra'
+              onChange={handleChange}
+            >
+              <Option key='1'>Kiểm tra nguyên liệu đầu vào</Option>
+              <Option key='2'>Kiểm tra quy trình sản xuất</Option>
+              <Option key='3'>Đảm bảo chất lượng đầu ra</Option>
+            </Select>
           </Form.Item>
 
           <Form.Item label='Người kiểm duyệt'>
@@ -150,23 +170,23 @@ const CreateTaskEmployee = ({dispatch}) => {
             </Form.Item>
           </Form.Item>
         </Col>
-        <Col  xl={24} lg={24} style={{ float: 'right' }}>
-        <Popconfirm placement="top" title={"Bạn có chắc muốn tạo mới công việc không ?"} onConfirm={confirm} okText="Yes" cancelText="No">
-        <Button
-          type='primary'
-          style={{ display: 'block', marginRight: '180px' ,float:"right"}}
-          htmlType='submit'
-     
-        >
-          Tạo mới
+        <Col xl={24} lg={24} style={{ float: 'right' }}>
+          <Popconfirm placement="top" title={"Bạn có chắc muốn tạo mới công việc không ?"} onConfirm={confirm} okText="Yes" cancelText="No">
+            <Button
+              type='primary'
+              style={{ display: 'block', marginRight: '180px', float: "right" }}
+              htmlType='submit'
+
+            >
+              Tạo mới
         </Button>
-        </Popconfirm>
-        <Button
-          type='danger'
-          style={{ float: 'right', marginRight: '10px'}}
-          onClick={()=>  dispatch(hideModal())}
-        >
-          Huỷ
+          </Popconfirm>
+          <Button
+            type='danger'
+            style={{ float: 'right', marginRight: '10px' }}
+            onClick={() => dispatch(hideModal())}
+          >
+            Huỷ
         </Button>
         </Col>
       </Form>

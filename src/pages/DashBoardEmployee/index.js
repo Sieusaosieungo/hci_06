@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
+import { Progress } from 'antd';
+import 'antd/dist/antd.css';
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";
 
-const DashBoard = ({ history }) => {
+const DashBoardEmployee = () => {
+
   const salesData = [
     {
       x: `V.D Mạnh`,
@@ -83,17 +86,43 @@ const DashBoard = ({ history }) => {
         <div className="dashboard-item item1">
           <Bar
             height={250}
-            title=" Top 5 nhân viên có KPI cao nhất trong tháng"
+            title=" Top 5 nhân viên có KPI cao nhất trong tháng của bộ phận DBCL"
             data={salesData}
           />
         </div>
         <div className="dashboard-item item2">
-          <Bar
+          <span>Độ hoàn thành công việc hiện tại</span>
+          <div className="item2-inner">
+            <div className="item2-element">
+              <div className="it2-title">
+                <span>Kiểm tra sản xuất thuốc viên</span>
+              </div>
+              <div className="it2-content">
+                <Progress width={100} type="circle" percent={75} />
+              </div>
+            </div>
+            <div className="item2-element">
+              <div className="it2-title">
+                <span>Kiểm tra chất lượng bao bì</span>
+              </div>
+              <div className="it2-content">
+                <Progress width={100} type="circle" percent={100} /></div>
+            </div>
+            <div className="item2-element">
+              <div className="it2-title">
+                <span>Kiểm tra sản xuất thuốc bột</span>
+              </div>
+              <div className="it2-content">
+                <Progress width={100} type="circle" percent={75} status="exception" />
+              </div>
+            </div>
+          </div>
+          {/* <Bar
             height={250}
             color={"#1bf452a6"}
             title=" Top 5 bộ phận có KPI cao nhất trong tháng"
             data={depart}
-          />
+          /> */}
         </div>
       </div>
       <div className="chartContainer-inner chart-below">
@@ -104,11 +133,11 @@ const DashBoard = ({ history }) => {
             total="90"
             height={200}
           />
-          <span>KPI bộ phận Kiểm định chất lượng hiện tại</span>
+          <span>KPI của Vũ Duy Mạnh tính đến hiện tại</span>
         </div>
         <div className="dashboard-item item4">
           <MiniArea line color="#cceafe" height={200} data={visitData} />
-          <span>KPI bộ phận Kiểm định chất lượng 6 tháng gần nhất</span>
+          <span>KPI của trưởng phòng Vũ Duy Mạnh 6 tháng gần nhất</span>
         </div>
         <div className="dashboard-item item5">
           <div className="item5-chart">
@@ -118,10 +147,12 @@ const DashBoard = ({ history }) => {
               percent={48}
             />
           </div>
-          <span>Tiến độ hoàn thành công việc trong tháng của bộ phận</span>
+          <span>Tiến độ hoàn thành công việc trong tháng của Vũ Duy Mạnh</span>
         </div>
       </div>
     </div>
   );
 };
-export default DashBoard;
+
+
+export default DashBoardEmployee;
