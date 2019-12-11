@@ -10,6 +10,7 @@ import { Modal } from "antd";
 import { connect } from "react-redux";
 import { hideModal } from "./actions/index";
 import SignIn from "./components/SignIn";
+import Footer from './components/Footer/index';
 
 function App({ modal, children, dispatch }) {
   const [account, setAccount] = useState(
@@ -49,6 +50,7 @@ function App({ modal, children, dispatch }) {
             <Layout style={{ padding: "0 24px 24px" }}>
               <BreadCrumb />
               <Contents>{children}</Contents>
+              <Footer />
             </Layout>
           </Layout>
         </Layout>
