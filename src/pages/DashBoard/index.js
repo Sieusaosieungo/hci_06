@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";
+import {Row, Col} from "antd";
+
 
 const DashBoard = ({ history }) => {
   const salesData = [
