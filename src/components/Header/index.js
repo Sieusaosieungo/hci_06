@@ -15,7 +15,7 @@ import "./style.css";
 import logo from "../../assets/images/logo.png";
 const { Header } = Layout;
 
-const Headers = ({ setAccount }) => {
+const Headers = ({ setAccount, account }) => {
   const [state, setState] = useState({
     visibleNotice: false,
     visibleSetting: false,
@@ -106,7 +106,7 @@ const Headers = ({ setAccount }) => {
       className="header"
       style={{ lineHeight: "55px", height: "55px", marginLeft: "-1.8em" }}
     >
-      <img className="logo" src={logo} alt="icon interface" style={{width:"120px"}}/>
+      <img className="logo" src={logo} alt="icon interface" style={{ width: "120px" }} />
       <div className="header-left">
         <div className="header-left-text">
           <span>Bộ phận đảm bảo chất lượng</span>
@@ -473,10 +473,23 @@ const Headers = ({ setAccount }) => {
           <div className="header-right-account header-tool-item">
             <div
               onClick={showDrawerUser}
-              className="header-right-account header-tool-item"
+              className="header-right-account-draw header-tool-item"
             >
               <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-              <span>TP. ManhVD</span>
+              {
+                account.role ? (
+                  <div>
+                    <span>Trưởng phòng</span>
+                    <span>Vũ Duy Mạnh</span>
+                  </div>
+                ) :
+                  (
+                    <div>
+                      <span>Nhân viên</span>
+                      <span>Trần Trung Huỳnh</span>
+                    </div>
+                  )
+              }
             </div>
             <Drawer
               title="Tài khoản của bạn"
