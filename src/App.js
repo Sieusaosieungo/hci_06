@@ -50,7 +50,7 @@ function App({ modal, children, dispatch }) {
           <Headers setAccount={setAccount} />
           <Layout>
             <Siders account={account} />
-            <Layout style={{ padding: "0 24px 24px" }}>
+            <Layout style={{ padding: "0 12px 12px" }}>
               <BreadCrumb />
               <Contents>{children}</Contents>
               <Footer style={{ textAlign: 'center' }}>Nhóm HCI_06 - Bộ phận đảm bảo chất lượng</Footer>

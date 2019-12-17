@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";
-import {Row, Col} from "antd";
-
+import { Row, Col } from "antd";
 
 const DashBoard = ({ history }) => {
   const salesData = [
@@ -81,48 +80,83 @@ const DashBoard = ({ history }) => {
 
   return (
     <div className="chartContainer">
-      <div className="chartContainer-inner">
-        <div className="dashboard-item item1">
+      <Row gutter={[40, 10]} type="flex" className="chartContainer-inner">
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={12}
+          className="dashboard-item item1"
+        >
           <Bar
-            height={250}
+            height={350}
             title=" Top 5 nhân viên có KPI cao nhất trong tháng"
             data={salesData}
           />
-        </div>
-        <div className="dashboard-item item2">
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={12}
+          className="dashboard-item item2"
+        >
           <Bar
-            height={250}
+            height={350}
             color={"#1bf452a6"}
             title=" Top 5 bộ phận có KPI cao nhất trong tháng"
             data={depart}
           />
-        </div>
-      </div>
-      <div className="chartContainer-inner chart-below">
-        <div className="dashboard-item item3">
-          <Pie
-            percent={88}
-            subTitle=""
-            total="90"
-            height={200}
-          />
+        </Col>
+      </Row>
+
+      <Row
+        gutter={[40, 10]}
+        type="flex"
+        className="chartContainer-inner chart-below"
+        style={{ marginTop: "20px" }}
+      >
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item3"
+        >
           <span>KPI bộ phận Kiểm định chất lượng hiện tại</span>
-        </div>
-        <div className="dashboard-item item4">
-          <MiniArea line color="#cceafe" height={200} data={visitData} />
+          <Pie percent={88} subTitle="" total="90" height={250} />
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item4"
+        >
           <span>KPI bộ phận Kiểm định chất lượng 6 tháng gần nhất</span>
-        </div>
-        <div className="dashboard-item item5">
-          <div className="item5-chart">
-            <WaterWave
-              height={200}
-              title=""
-              percent={48}
-            />
-          </div>
+          <MiniArea line color="#cceafe" height={250} data={visitData} />
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item5"
+        >
           <span>Tiến độ hoàn thành công việc trong tháng của bộ phận</span>
-        </div>
-      </div>
+          <div className="item5-chart">
+            <WaterWave height={250} title="" percent={48} />
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 };
