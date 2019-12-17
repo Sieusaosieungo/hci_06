@@ -16,8 +16,9 @@ function BreadCrumb() {
     pathTV = 'Tạo báo cáo';
   } else if (pathname === '/detail-task') {
     pathTV = 'Chi tiết công việc';
+  } else if (pathname === '/report-detail') {
+    pathTV = 'Chi tiết báo cáo';
   }
-
   pathname = pathname === '/' ? '' : pathname;
   // const [current, setCurrent] = useState(pathname);
 
