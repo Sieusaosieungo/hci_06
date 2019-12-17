@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { showModal } from "../../actions/index";
 import CreateTaskEmployee from "../../components/ListTask/CreateTaskEmployee/index";
-
+import { actSetTaskDetail } from "../../actions";
 // fake data
 import { dataCVPB } from "../../utils/data";
 
@@ -175,11 +175,18 @@ class EditableTable extends React.Component {
       },
       {
         title: <div>Xem chi tiết</div>,
-        dataIndex: "detail",
+        // dataIndex: "detail",
         width: "10%",
         editable: true,
         render: data => {
-          return <Link to="/detail-task">{data}</Link>;
+          return (
+            <Link
+              to="/detail-task-department"
+              onClick={() => this.props.dispatch(actSetTaskDetail(data))}
+            >
+              {data.detail}
+            </Link>
+          );
         }
       }
     ];
