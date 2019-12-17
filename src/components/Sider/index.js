@@ -5,23 +5,24 @@ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 function Siders({ account }) {
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   return (
     <Sider collapsible width={200} style={{ background: "#fff" }}>
       <Menu
+        theme="dark"
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
-        {<Menu.Item key="11">
-          <Link to={account.role ? '/' : 'doard-board-employee'}>
+        <Menu.Item key="11">
+          <Link to={account.role ? "/" : "doard-board-employee"}>
             <Icon type="dashboard" />
             <span>Bảng điều khiển</span>
           </Link>
         </Menu.Item>
-        }
+
         {account.role ? (
           <SubMenu
             key="sub2"
@@ -33,23 +34,22 @@ function Siders({ account }) {
             }
           >
             <Menu.Item key="sub2-1">
-              <Link to="/list-task-department">Công việc phòng ban</Link>
+              <span><Link to="/list-task-department">Công việc phòng ban</Link></span>
             </Menu.Item>
             <Menu.Item key="sub2-2">
-              <Link to="/list-task-employee">Công việc nhân viên</Link>
+              <span><Link to="/list-task-employee">Công việc nhân viên</Link></span>
             </Menu.Item>
           </SubMenu>
         ) : (
-            <Menu.Item key="sub2-1">
-              <Link
-                to="/list-task-employee"
-                style={{ color: "rgba(0, 0, 0, 0.65)" }}
-              >
-                <Icon type="laptop" />
-                <span>Quản lý công việc</span>
-              </Link>
-            </Menu.Item>
-          )}
+          <Menu.Item key="sub2-1">
+            <Link
+              to="/list-task-employee"
+            >
+              <Icon type="laptop" />
+              <span>Quản lý công việc</span>
+            </Link>
+          </Menu.Item>
+        )}
         <SubMenu
           key="sub3"
           title={

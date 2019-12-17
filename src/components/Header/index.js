@@ -112,11 +112,11 @@ const Headers = ({ setAccount }) => {
         </div>
         <div className="header-left-text">
           <div className="header-left-text-large">
-            <span>KeHoachA</span>
+            <span>ĐBCL</span>
             <Icon type="star" />
           </div>
           <div className="header-left-text-small">
-            <span>ThucThi</span>
+            <span></span>
           </div>
         </div>
       </div>
