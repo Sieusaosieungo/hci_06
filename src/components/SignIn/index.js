@@ -45,11 +45,14 @@ const SignIn = ({ form, form: { getFieldDecorator }, setAccount }) => {
             />
           )}
         </Form.Item>
+
         <Form.Item className='role'>
           {getFieldDecorator('role', {
-            valuePropName: 'checked'
+            valuePropName: 'checked',
+            initialValue: false
           })(<Checkbox>Bạn có phải là trưởng phòng?</Checkbox>)}
         </Form.Item>
+
         <Form.Item>
           {getFieldDecorator('remember', {
             valuePropName: 'checked',

@@ -1,4 +1,4 @@
-import { UPDATE_STATE } from '../constants/ActionTypes';
+import { UPDATE_STATE } from '../../constants/ActionTypes';
 
 const initialState = {
   lstReport: [

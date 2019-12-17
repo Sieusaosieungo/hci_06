@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 // fake data
 import { dataCVNV } from "../../utils/data";
+import { actSetTaskDetail } from "../../actions";
 
 const { Search } = Input;
 const EditableContext = React.createContext();
@@ -44,8 +45,8 @@ class EditableCell extends React.Component {
             })(this.getInput())}
           </Form.Item>
         ) : (
-            children
-          )}
+          children
+        )}
       </td>
     );
   };
@@ -161,16 +162,23 @@ class EditableTable extends React.Component {
         width: "15%",
         editable: true,
         render: data => {
-          return <Progress type="circle" width={50} percent={data} />
+          return <Progress type="circle" width={50} percent={data} />;
         }
       },
       {
         title: <div>Xem chi tiết</div>,
-        dataIndex: "detail",
+        // dataIndex: "detail",
         width: "10%",
         editable: true,
-        render: data => {
-          return <Link to="/detail-task">{data}</Link>;
+        render: (data) => {
+          return (
+            <Link
+              to="/detail-task"
+              onClick={() => this.props.dispatch(actSetTaskDetail(data))}
+            >
+              {data.detail}
+            </Link>
+          );
         }
       }
     ];

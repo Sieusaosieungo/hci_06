@@ -135,7 +135,6 @@ const DashBoard = ({ history }) => {
             style={{ marginTop: "15px" }}
           />
         </Col>
-
         <Col
           xs={24}
           sm={24}

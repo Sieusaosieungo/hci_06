@@ -13,6 +13,12 @@ export const hideModal = (payload) => {
     payload
   };
 };
+export const actSetTaskDetail = (payload) => {
+  return {
+    type: Types.SET_TASK_DETAIL,
+    payload
+  };
+};
 
 export const updateState = (payload) => {
   return {
