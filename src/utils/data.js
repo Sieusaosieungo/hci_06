@@ -72,6 +72,8 @@ export const dataCVNV = [
   {
     index: 'CVNV1',
     departmentCode: 'CVPB1',
+    departmentName:
+      'Kiểm tra nguyên liệu đầu vào cho sản xuất thuốc bột Hapacol 250 trong tháng 01/2020',
     name: 'Kiểm tra nguyên liệu Paracetamol: 55 Kg ',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Lê Đình Phúc',
@@ -85,6 +87,8 @@ export const dataCVNV = [
   {
     index: 'CVNV2',
     departmentCode: 'CVPB1',
+    departmentName:
+      'Kiểm tra nguyên liệu đầu vào cho sản xuất thuốc bột Hapacol 250 trong tháng 01/2020',
     name: 'Kiểm tra nguyên liệu Acid citric khan: 69 Kg ',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Vũ Duy Mạnh',
@@ -98,6 +102,8 @@ export const dataCVNV = [
   {
     index: 'CVNV3',
     departmentCode: 'CVPB1',
+    departmentName:
+      'Kiểm tra nguyên liệu đầu vào cho sản xuất thuốc bột Hapacol 250 trong tháng 01/2020',
     name: 'Kiểm tra nguyên liệu  Natri hydrocarbonat: 32 Kg ',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Trần Trung Huỳnh',
@@ -111,6 +117,8 @@ export const dataCVNV = [
   {
     index: 'CVNV4',
     departmentCode: 'CVPB3',
+    departmentName:
+      'Kiểm tra sản phẩm đầu ra thuốc Panadol Extra trong tháng 12/2020',
     name: 'Kiểm tra bao bì cấp 1 cho  thuốc  Panadol Extra ',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Phạm Đại Tài',
@@ -124,6 +132,8 @@ export const dataCVNV = [
   {
     index: 'CVNV5',
     departmentCode: 'CVPB3',
+    departmentName:
+      'Kiểm tra sản phẩm đầu ra thuốc Panadol Extra trong tháng 12/2020',
     name: 'Kiểm tra bao bì cấp 2 cho  thuốc  Panadol Extra ',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Lê Đình Phúc',
@@ -137,6 +147,7 @@ export const dataCVNV = [
   {
     index: 'CVNV6',
     departmentCode: 'CVPB4',
+    departmentName: 'Kiểm tra sản phẩm đầu ra lô 145',
     name: 'Kiểm tra chất lượng quy trình xưởng Thực phẩm chức năng',
     censor: 'Nguyễn Việt Hùng',
     worker: 'Vũ Duy Mạnh',
