@@ -1,29 +1,33 @@
 export const dataCVPB = [
   {
-    index: 1,
-    name: "Kiểm tra nguyên liệu đầu vào lô 125",
+    index: "CVPB1",
+    name: "Kiểm tra nguyên liệu đầu vào cho sản xuất thuốc bột Hapacol 250 trong tháng 01/2020",
     censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateStart: `20/11/2019`,
+    dateFinish: "20/12/2019",
     weight: 0.3,
     status: 30,
     divide: "Tạo công việc",
-    detail: "Xem chi tiết"
+    detail: "Xem chi tiết",
+    remainWeight:'0.5',
+    type:"Kiểm tra nguyên liệu đầu vào",
+    relatedDepartment:"Kho"
   },
   {
-    index: 2,
+    index: "CVPB2",
     name: "Kiểm tra sản phẩm đầu ra lô 345",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.4,
     status: 100,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
+    divide: "Đã hoàn thành",
+    detail: "Xem chi tiết",
+    remainWeight:'0.3'
   },
 
   {
-    index: 3,
+    index: "CVPB3",
     name: "Kiểm tra sản phẩm đầu ra lô 234",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
@@ -31,21 +35,23 @@ export const dataCVPB = [
     weight: 0.3,
     status: 18,
     divide: "Tạo công việc",
-    detail: "Xem chi tiết"
+    detail: "Xem chi tiết",
+    remainWeight:'0.6'
   },
   {
-    index: 4,
+    index: "CVPB4",
     name: "Kiểm tra sản phẩm đầu ra lô 145",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
     dateFinish: "20/11/2019",
     weight: 0.1,
     status: 100,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
+    divide: "Đã hoàn thành",
+    detail: "Xem chi tiết",
+    remainWeight:'0.4'
   },
   {
-    index: 5,
+    index: "CVPB5",
     name: "Kiểm tra sản phẩm đầu ra",
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/10/2019`,
@@ -53,80 +59,16 @@ export const dataCVPB = [
     weight: 0.7,
     status: 69,
     divide: "Tạo công việc",
-    detail: "Xem chi tiết"
+    detail: "Xem chi tiết",
+    remainWeight:'0'
   },
-  {
-    index: 6,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 45,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  },
-  {
-    index: 7,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 56,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  },
-  {
-    index: 8,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 89,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  },
-  {
-    index: 9,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 58,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  },
-  {
-    index: 10,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 78,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  },
-  {
-    index: 11,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.7,
-    status: 63,
-    divide: "Tạo công việc",
-    detail: "Xem chi tiết"
-  }
 ];
 
 
 export const dataCVNV = [
   {
-    index: 1,
+    index: "CVNV1",
+    departmentCode:"CVPB5",
     name: "Kiểm tra chất lượng quy trình xưởng thực phẩm chức năng",
     censor: "Nguyễn Việt Hùng",
     worker: "Lê Đình Phúc",
@@ -134,11 +76,12 @@ export const dataCVNV = [
     dateFinish: "28/11/2019",
     weight: 0.15,
     status: 100,
-    divide: "Tạo công việc",
+    divide: "Đã hoàn thành",
     detail: "Xem chi tiết"
   },
   {
-    index: 2,
+    index: "CVNV2",
+    departmentCode:"CVPB5",
     name: "Kiểm tra chất lượng quy trình xưởng thuốc nước thú y",
     censor: "Nguyễn Việt Hùng",
     worker: "Vũ Duy Mạnh",
@@ -150,7 +93,8 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 3,
+    index: "CVNV3",
+    departmentCode:"CVPB5",
     name: "Kiểm tra chất lượng quy trình xưởng xưởng thuốc bột thú y",
     censor: "Nguyễn Việt Hùng",
     worker: "Trần Trung Huỳnh",
@@ -162,7 +106,8 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 4,
+    index: "CVNV4",
+    departmentCode:"CVPB5",
     name: "Kiểm tra chất lượng bao bì cấp 2",
     censor: "Nguyễn Việt Hùng",
     worker: "Phạm Đại Tài",
@@ -174,19 +119,21 @@ export const dataCVNV = [
     detail: "Xem chi tiết"
   },
   {
-    index: 5,
+    index: "CVNV5",
+    departmentCode:"CVPB5",
     name: "Kiểm tra chất lượng bao bì cấp 1",
     censor: "Nguyễn Việt Hùng",
     worker: "Lê Đình Phúc",
     dateStart: `09/08/2019`,
     dateFinish: "28/09/2019",
     weight: 0.2,
-    status: 101,
+    status: 59,
     divide: "Tạo công việc",
     detail: "Xem chi tiết"
   },
   {
-    index: 6,
+    index: "CVNV6",
+    departmentCode:"CVPB6",
     name: "Kiểm tra chất lượng quy trình xưởng Thực phẩm chức năng",
     censor: "Nguyễn Việt Hùng",
     worker: "Vũ Duy Mạnh",

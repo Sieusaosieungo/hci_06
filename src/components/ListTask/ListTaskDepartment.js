@@ -46,8 +46,8 @@ class EditableCell extends React.Component {
             })(this.getInput())}
           </Form.Item>
         ) : (
-            children
-          )}
+          children
+        )}
       </td>
     );
   };
@@ -141,7 +141,7 @@ class EditableTable extends React.Component {
         width: "10%",
         editable: true,
         render: data => {
-          return <Progress type="circle" width={50} percent={data} />
+          return <Progress type="circle" width={50} percent={data} />;
         }
       },
       {
@@ -150,22 +150,26 @@ class EditableTable extends React.Component {
         width: "10%",
         editable: true,
         render: (text, data) => {
+          // console.log("TCL: EditableTable -> constructor -> text", text)
           const name = data.name;
+          const check = data.divide === "Đã hoàn thành";
           return (
-            <a
-              href
-              onClick={() =>
+            <span
+            className="divide"
+              style={{ color: check ? "gray" : "#1890ff" }}
+              onClick={() => {
+                if (check) return;
                 this.props.dispatch(
                   showModal({
                     title: name,
-                    Component: <CreateTaskEmployee />,
+                    Component: <CreateTaskEmployee remainWeight={text.remainWeight}  />,
                     width: "68vw"
                   })
-                )
-              }
+                );
+              }}
             >
-              {data.divide}
-            </a>
+              {check ? "Đã hoàn thành" : "Tạo công việc"}
+            </span>
           );
         }
       },

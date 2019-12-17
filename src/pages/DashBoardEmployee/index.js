@@ -30,28 +30,28 @@ const DashBoardEmployee = () => {
     }
   ];
 
-  const depart = [
-    {
-      x: `KĐCL`,
-      y: 98
-    },
-    {
-      x: `Sản xuất`,
-      y: 95
-    },
-    {
-      x: `Marketting`,
-      y: 92
-    },
-    {
-      x: `Kế toán`,
-      y: 87
-    },
-    {
-      x: `Tài chính`,
-      y: 85
-    }
-  ];
+  // const depart = [
+  //   {
+  //     x: `KĐCL`,
+  //     y: 98
+  //   },
+  //   {
+  //     x: `Sản xuất`,
+  //     y: 95
+  //   },
+  //   {
+  //     x: `Marketting`,
+  //     y: 92
+  //   },
+  //   {
+  //     x: `Kế toán`,
+  //     y: 87
+  //   },
+  //   {
+  //     x: `Tài chính`,
+  //     y: 85
+  //   }
+  // ];
 
   const visitData = [
     {
