@@ -5,6 +5,13 @@
   height: 26px;
 }
 
+.divide {
+  cursor: pointer;
+  color: #1890ff;
+}
+.divide:hover {
+  color: #40a9ff;
+}
 .ant-table-thead > tr > th {
   text-align: center !important;
   padding: 2px !important;

@@ -6,7 +6,7 @@ import TextArea from 'antd/lib/input/TextArea';
 import { hideModal } from '../../../actions/index';
 import { connect } from 'react-redux';
 
-const CreateTaskEmployee = ({ dispatch }) => {
+const CreateTaskEmployee = ({ dispatch, remainWeight }) => {
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState();
   const [messageCheckDevice, setMessageCheckDevice] = useState(
@@ -75,10 +75,10 @@ const CreateTaskEmployee = ({ dispatch }) => {
           <Form.Item label='Chức vụ'>
             <Input placeholder='' disabled={true} value='Trưởng phòng bộ phận đảm bảo chất lượng' />
           </Form.Item>
-          <Form.Item label='Trọng số'>
-            <Input placeholder='0.0 <= Trọng số  <= 1.0' />
+          <Form.Item label={`Trọng số (còn lại ${remainWeight})`}>
+            <Input placeholder={`0.0 <= Trọng số  <= ${remainWeight}`} />
           </Form.Item>
-          <Form.Item label='Giai đoạn kiểm tra'>
+          <Form.Item label='Loại công'>
             <Select
               style={{ width: '100%' }}
               placeholder='Chọn giai đoạn kiểm tra'

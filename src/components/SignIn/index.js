@@ -23,25 +23,25 @@ const SignIn = ({ form, form: { getFieldDecorator }, setAccount }) => {
         <Form.Item>
           {getFieldDecorator('email', {
             rules: [{ required: true, message: 'Please input your email!' }],
-            initialValue: 'huynh123@gmail.com'
+            initialValue: 'admin@gmail.com'
           })(
             <Input
-              value='huynh123@gmail.com'
+              value='admin@gmail.com'
               prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder='huynh123@gmail.com'
+              placeholder='admin@gmail.com'
             />
           )}
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('password', {
             rules: [{ required: true, message: 'Please input your Password!' }],
-            initialValue: 'huynh123'
+            initialValue: 'admin'
           })(
             <Input
-              value='huynh123'
+              value='admin'
               prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
               type='password'
-              placeholder='huynh123'
+              placeholder='admin'
             />
           )}
         </Form.Item>

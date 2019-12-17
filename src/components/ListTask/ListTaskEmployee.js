@@ -70,7 +70,18 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "index",
-        width: "8%",
+        width: "6%",
+        editable: true
+      },
+      {
+        title: (
+          <div>
+            <div className="title">Mã CVPB</div>
+            <Search placeholder="" onSearch={value => console.log(value)} />
+          </div>
+        ),
+        dataIndex: "departmentCode",
+        width: "6%",
         editable: true
       },
       {
@@ -81,7 +92,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "name",
-        width: "20%",
+        width: "16%",
         editable: true
       },
       {
