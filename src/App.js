@@ -26,7 +26,7 @@ function App({ modal, children, dispatch }) {
         setIsAuth(true);
       }
     }
-  }, [JSON.stringify(account)]);
+  }, [account]);
 
   if (isAuth) {
     return (
@@ -49,6 +49,7 @@ function App({ modal, children, dispatch }) {
             <Layout style={{ padding: "0 24px 24px" }}>
               <BreadCrumb />
               <Contents>{children}</Contents>
+        <div className="app-footer" style={{fontSize:"50px", backgroundColor:"red"}}>FOOTER</div>
             </Layout>
           </Layout>
         </Layout>
