@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Layout,
   Icon,
@@ -9,10 +9,10 @@ import {
   Button,
   message,
   Modal
-} from "antd";
-import { Link } from "react-router-dom";
-import "./style.css";
-import logo from "../../assets/images/logo.png";
+} from 'antd';
+import { Link } from 'react-router-dom';
+import './style.css';
+import logo from '../../assets/images/logo.png';
 const { Header } = Layout;
 
 const Headers = ({ setAccount, account }) => {
@@ -30,13 +30,13 @@ const Headers = ({ setAccount, account }) => {
     });
   };
 
-  const handleOkHelp = e => {
+  const handleOkHelp = (e) => {
     setState({
       visibleModalHelp: false
     });
   };
 
-  const handleCancelHelp = e => {
+  const handleCancelHelp = (e) => {
     setState({
       visible: false
     });
@@ -96,359 +96,364 @@ const Headers = ({ setAccount, account }) => {
   };
 
   function confirm() {
-    message.success("Đã xóa thông báo thành công");
+    message.success('Đã xóa thông báo thành công');
   }
 
-  const text = "Bạn có chắc chắn muốn xóa thông báo?";
+  const text = 'Bạn có chắc chắn muốn xóa thông báo?';
 
   return (
     <Header
-      className="header"
-      style={{ lineHeight: "55px", height: "55px", marginLeft: "-1.8em" }}
+      className='header'
+      style={{ lineHeight: '55px', height: '55px', marginLeft: '-1.8em' }}
     >
-      <img className="logo" src={logo} alt="icon interface" style={{ width: "120px" }} />
-      <div className="header-left">
-        <div className="header-left-text">
+      <img
+        className='logo'
+        src={logo}
+        alt='icon interface'
+        style={{ width: '120px' }}
+      />
+      <div className='header-left'>
+        <div className='header-left-text'>
           <span>Bộ phận đảm bảo chất lượng</span>
         </div>
       </div>
-      <div className="header-center">
-        <div className="header-center-menu">
-          <div className="header-center-item">
+      <div className='header-center'>
+        <div className='header-center-menu'>
+          <div className='header-center-item'>
             {/* eslint-disable-next-line */}
-            <a href="#"></a>
+            <a href='#'></a>
           </div>
-          <div className="header-center-item">
+          <div className='header-center-item'>
             {/* eslint-disable-next-line */}
-            <a href="#"></a>
+            <a href='#'></a>
           </div>
         </div>
       </div>
-      <div className="header-right">
-        <div className="header-tool">
-          <div className="header-tool-item notice">
-            <div className="notice-button" onClick={showDrawerNotice}>
-              <Icon type="bell" />
+      <div className='header-right'>
+        <div className='header-tool'>
+          <div className='header-tool-item notice'>
+            <div className='notice-button' onClick={showDrawerNotice}>
+              <Icon type='bell' />
               <Badge count={199} overflowCount={99}>
-                <Link to="" className="head-example" />
+                <Link to='' className='head-example' />
               </Badge>
             </div>
             <Drawer
-              title="Thông báo"
+              title='Thông báo'
               width={400}
               onClose={onCloseNotice}
               visible={state.visibleNotice}
             >
               <Link
-                to="report-detail"
-                className="notice-element"
+                to='report-detail'
+                className='notice-element'
                 onClick={onCloseNotice}
               >
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT02 Phạm Đại Tài{" "}
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT02 Phạm Đại Tài{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       nộp báo cáo tháng 10
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     11:21:40 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </Link>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
                       KT01 Vũ Duy Mạnh
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       báo cáo kiểm tra bộ phận SX02
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     11:19:29 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT03 Lê Đình Phúc{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT03 Lê Đình Phúc{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       cập nhật tiến độ kiểm tra bộ phận SX02
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     10:12:28 - 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT04 Nguyễn Việt Hùng{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT04 Nguyễn Việt Hùng{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       nộp báo cáo tháng 10
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     10:07:10 - 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT03 Lê Đình Phúc{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT03 Lê Đình Phúc{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       nộp báo cáo tháng 10
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     9:48:28 - 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT05 Trần Trung Huỳnh{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT05 Trần Trung Huỳnh{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       xin phép nghỉ làm ngày 31-10-2019
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     7:22:15 - 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT02 Phạm Đại Tài{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT02 Phạm Đại Tài{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       báo cáo kiểm tra bộ phận SX01
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     16:38:21 - 30/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT02 Phạm Đại Tài{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT02 Phạm Đại Tài{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       vừa nộp báo cáo tháng 10
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     11:21:40 - 31/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
-              <div className="notice-element">
-                <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-                <div className="notice-element-inner">
-                  <div className="notice-element-content">
-                    <span className="notice-element-name">
-                      KT03 Lê Đình Phúc{" "}
+              <div className='notice-element'>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+                <div className='notice-element-inner'>
+                  <div className='notice-element-content'>
+                    <span className='notice-element-name'>
+                      KT03 Lê Đình Phúc{' '}
                     </span>
-                    <span className="notice-element-info">
+                    <span className='notice-element-info'>
                       báo cáo kết quả kiểm tra bộ phận SX10
                     </span>
                   </div>
-                  <span className="notice-element-date">
+                  <span className='notice-element-date'>
                     11:21:40 - 29/10/2019
                   </span>
                 </div>
                 <Popconfirm
-                  placement="topRight"
+                  placement='topRight'
                   title={text}
                   onConfirm={confirm}
-                  okText="Yes"
-                  cancelText="No"
+                  okText='Yes'
+                  cancelText='No'
                 >
-                  <Button style={{ border: "0px" }}>
-                    <Icon type="delete" style={{ fontSize: "18px" }} />
+                  <Button style={{ border: '0px' }}>
+                    <Icon type='delete' style={{ fontSize: '18px' }} />
                   </Button>
                 </Popconfirm>
               </div>
             </Drawer>
           </div>
-          <div className="header-tool-item setting">
-            <div className="setting-element" onClick={showDrawerSetting}>
-              <Icon type="setting" />
+          <div className='header-tool-item setting'>
+            <div className='setting-element' onClick={showDrawerSetting}>
+              <Icon type='setting' />
             </div>
             <Drawer
-              title="Cài đặt"
+              title='Cài đặt'
               width={300}
               onClose={onCloseSetting}
               visible={state.visibleSetting}
             >
-              <div className="setting-content">
-                <div className="sci">
-                  <Icon type="insurance" />
+              <div className='setting-content'>
+                <div className='sci'>
+                  <Icon type='insurance' />
                   <a href>Cài đặt ngôn ngữ</a>
                 </div>
-                <div className="sci">
-                  <Icon type="form" />
+                <div className='sci'>
+                  <Icon type='form' />
                   <a href>Nhật ký thay đổi hoạt động</a>
                 </div>
-                <div className="sci">
-                  <Icon type="team" />
+                <div className='sci'>
+                  <Icon type='team' />
                   <a href>Nhóm dự án</a>
                 </div>
-                <div className="sci">
-                  <Icon type="tool" />
+                <div className='sci'>
+                  <Icon type='tool' />
                   <a href>Tiện ích</a>
                 </div>
               </div>
             </Drawer>
           </div>
-          <div className="header-tool-item help">
-            <div className="help-button" onClick={showDrawerHelp}>
-              <Icon type="question-circle" theme="twoTone" />
+          <div className='header-tool-item help'>
+            <div className='help-button' onClick={showDrawerHelp}>
+              <Icon type='question-circle' theme='twoTone' />
             </div>
             <Drawer
-              title="Trợ giúp & Hướng dẫn"
+              title='Trợ giúp & Hướng dẫn'
               width={300}
               onClose={onCloseHelp}
               visible={state.visibleHelp}
             >
-              <div className="help-content">
-                <div className="help-element" onClick={showModalHelp}>
-                  <Icon type="question" />
+              <div className='help-content'>
+                <div className='help-element' onClick={showModalHelp}>
+                  <Icon type='question' />
                   <a href>Làm thế nào để tạo công việc mới?</a>
                 </div>
-                <div className="help-element" onClick={showModalHelp}>
-                  <Icon type="question" />
+                <div className='help-element' onClick={showModalHelp}>
+                  <Icon type='question' />
                   <a href>Tôi có thể xem nhiệm vụ của mình ở đâu?</a>
                 </div>
-                <div className="help-element">
-                  <Icon type="team" />
+                <div className='help-element'>
+                  <Icon type='team' />
                   <a href>Chúng tôi có thể giúp gì cho bạn?</a>
                 </div>
-                <div className="help-element">
-                  <Icon type="mail" />
+                <div className='help-element'>
+                  <Icon type='mail' />
                   <a href>Đóng góp ý kiến của bạn về hệ thống?</a>
                 </div>
               </div>
             </Drawer>
             <Modal
-              title="Hướng dẫn tạo mới công việc"
+              title='Hướng dẫn tạo mới công việc'
               visible={state.visibleModalHelp}
               onOk={handleOkHelp}
               onCancel={handleCancelHelp}
@@ -459,64 +464,65 @@ const Headers = ({ setAccount, account }) => {
               <iframe
                 width={450}
                 height={309}
-                src="https://www.youtube.com/embed/lC6YhpnO_UQ"
+                src='https://www.youtube.com/embed/lC6YhpnO_UQ'
                 frameBorder={0}
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
               />
               <span>
-                Bạn thấy thông tin có hữu ích không? <a href>Có, </a>{" "}
+                Bạn thấy thông tin có hữu ích không? <a href>Có, </a>{' '}
                 <a href>Không</a>
               </span>
             </Modal>
           </div>
-          <div className="header-right-account header-tool-item">
+          <div className='header-right-account header-tool-item'>
             <div
               onClick={showDrawerUser}
-              className="header-right-account-draw header-tool-item"
+              className='header-right-account-draw header-tool-item'
             >
-              <Avatar style={{ backgroundColor: "#87d068" }} icon="user" />
-              {
-                account.role ? (
-                  <div>
-                    <span>Trưởng phòng</span>
-                    <span>Vũ Duy Mạnh</span>
+              <Avatar style={{ backgroundColor: '#87d068' }} icon='user' />
+              {account.role ? (
+                <div>
+                  <div style={{ fontSize: '14px' }}>Trưởng phòng</div>
+                  <div style={{ fontSize: '13px', fontWeight: 'bold' }}>
+                    Vũ Duy Mạnh
                   </div>
-                ) :
-                  (
-                    <div>
-                      <span>Nhân viên</span>
-                      <span>Trần Trung Huỳnh</span>
-                    </div>
-                  )
-              }
+                </div>
+              ) : (
+                <div>
+                  <div style={{ fontSize: '14px' }}>Nhân viên</div>
+                  <div style={{ fontSize: '13px', fontWeight: 'bold' }}>
+                    Trần Trung Huỳnh
+                  </div>
+                </div>
+              )}
             </div>
             <Drawer
-              title="Tài khoản của bạn"
+              title='Tài khoản của bạn'
               width={300}
               onClose={onCloseUser}
               visible={state.visibleUser}
             >
-              <div className="drawer-acount">
-                <div className="drawer-account-avatar">
-                  <div className="drawer-account-inner">
-                    <div className="drawer-account-avatar">
+              <div className='drawer-acount'>
+                <div className='drawer-account-avatar'>
+                  <div className='drawer-account-inner'>
+                    <div className='drawer-account-avatar'>
                       <Avatar
                         size={80}
-                        style={{ backgroundColor: "#87d068" }}
-                        icon="user"
+                        style={{ backgroundColor: '#87d068' }}
+                        icon='user'
                       />
                     </div>
-                    <div className="drawer-account-info">
-                      <span className="drawer-account-username">HCI 06</span>
-                      <span className="drawer-account-email">
+                    <div className='drawer-account-info'>
+                      <span className='drawer-account-username'>HCI 06</span>
+                      <span className='drawer-account-email'>
                         hci06@gmail.com
                       </span>
-                      <Link to="/account" onClick={onCloseUser}>
+                      <Link to='/account' onClick={onCloseUser}>
                         Tài khoản
                       </Link>
                       <a
-                        href=""
+                        href=''
                         onClick={() => {
                           localStorage.clear();
                           setAccount({});
