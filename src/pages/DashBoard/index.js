@@ -80,7 +80,7 @@ const DashBoard = ({ history }) => {
 
   return (
     <div className="chartContainer">
-      <Row gutter={[40, 10]} type="flex" className="chartContainer-inner">
+      <Row type="flex" className="chartContainer-inner">
         <Col
           xs={24}
           sm={24}
@@ -114,7 +114,6 @@ const DashBoard = ({ history }) => {
       </Row>
 
       <Row
-        gutter={[40, 10]}
         type="flex"
         className="chartContainer-inner chart-below"
         style={{ marginTop: "20px" }}
