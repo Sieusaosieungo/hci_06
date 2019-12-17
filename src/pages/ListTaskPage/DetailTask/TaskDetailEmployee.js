@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const TaskDetailEmployee = () => {
   const taskDetail = useSelector(state => state.taskDetail);
-  console.log("TCL: TaskDetail -> taskDetail", taskDetail)
 
   return (
     <div className="detail-task">

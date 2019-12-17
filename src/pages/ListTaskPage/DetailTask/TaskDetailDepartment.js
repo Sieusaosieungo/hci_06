@@ -2,11 +2,10 @@ import React from "react";
 import "./style.css";
 import { Icon, Descriptions, Button } from "antd";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const TaskDetailDepartment = () => {
   const taskDetail = useSelector(state => state.taskDetail);
-  console.log("TCL: TaskDetail -> taskDetail", taskDetail)
 
   return (
     <div className="detail-task">
