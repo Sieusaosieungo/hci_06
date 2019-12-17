@@ -1,9 +1,11 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import modal from "./reducers/modal";
+import modal from './reducers/modal';
+import global from './global';
 
 const rootReducer = combineReducers({
-  modal
+  modal,
+  global
 });
 
 export default rootReducer;
