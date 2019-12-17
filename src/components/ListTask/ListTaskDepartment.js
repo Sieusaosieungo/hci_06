@@ -161,8 +161,8 @@ class EditableTable extends React.Component {
                 if (check) return;
                 this.props.dispatch(
                   showModal({
-                    title: name,
-                    Component: <CreateTaskEmployee remainWeight={text.remainWeight}  />,
+                    title: "Phân chia công việc: "+name,
+                    Component: <CreateTaskEmployee text={text}  />,
                     width: "68vw"
                   })
                 );

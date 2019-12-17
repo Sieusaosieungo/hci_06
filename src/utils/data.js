@@ -15,15 +15,17 @@ export const dataCVPB = [
   },
   {
     index: "CVPB2",
-    name: "Kiểm tra sản phẩm đầu ra lô 345",
+    name: "Kiểm tra quy trình sản xuất thuốc bột CENDEMUC tháng 12/2019",
     censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.4,
-    status: 100,
-    divide: "Đã hoàn thành",
+    dateStart: `20/11/2019`,
+    dateFinish: "20/12/2019",
+    weight: 0.3,
+    status: 30,
+    divide: "Tạo công việc",
     detail: "Xem chi tiết",
-    remainWeight:'0.3'
+    remainWeight:'0.6',
+    type:"Kiểm tra quy trình sản xuất",
+    relatedDepartment:"Kho"
   },
 
   {
