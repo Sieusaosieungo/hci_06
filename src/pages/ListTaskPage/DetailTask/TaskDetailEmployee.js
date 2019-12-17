@@ -4,7 +4,7 @@ import { Icon, Descriptions, Button } from "antd";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const TaskDetail = () => {
+const TaskDetailEmployee = () => {
   const taskDetail = useSelector(state => state.taskDetail);
   console.log("TCL: TaskDetail -> taskDetail", taskDetail)
 
@@ -82,4 +82,4 @@ const TaskDetail = () => {
     </div>
   );
 };
-export default TaskDetail;
+export default TaskDetailEmployee;
