@@ -24,8 +24,8 @@ function App({ modal, children, dispatch }) {
   useEffect(() => {
     if (Object.keys(account).length > 0) {
       if (
-        account.email === "huynh123@gmail.com" &&
-        account.password === "huynh123"
+        account.email === "admin@gmail.com" &&
+        account.password === "admin"
       ) {
         setIsAuth(true);
       }

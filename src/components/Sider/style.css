@@ -1,0 +1,11 @@
+.ant-menu-item .ant-menu-item-selected span a {
+  color: white;
+}
+
+.ant-menu-item span a {
+  color: rgb(255, 255, 255, 0.65);
+}
+
+.ant-menu-item span a:hover {
+  color: white;
+}
