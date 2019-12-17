@@ -6,7 +6,7 @@ import Contents from "./components/Content/index";
 import "antd/dist/antd.css";
 import { Layout } from "antd";
 import "./App.css";
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import { connect } from "react-redux";
 import { hideModal } from "./actions/index";
 import SignIn from "./components/SignIn";
@@ -28,6 +28,15 @@ function App({ modal, children, dispatch }) {
         account.password === "admin"
       ) {
         setIsAuth(true);
+        if (account.role) {
+          message.success('Xin chào trưởng phòng Vũ Duy Mạnh');
+        }
+        else {
+          message.success('Xin chào nhân viên đảm bảo chất lượng Trần Trung Huỳnh');
+        }
+      }
+      else {
+        message.error('Tài khoản hoặc mật khẩu không đúng, vui lòng kiểm tra lại');
       }
     }
   }, [account]);
@@ -47,12 +56,12 @@ function App({ modal, children, dispatch }) {
           >
             {modal.Component}
           </Modal>
-          <Headers setAccount={setAccount} />
+          <Headers setAccount={setAccount} account={account} />
           <Layout>
             <Siders account={account} />
             <Layout style={{ padding: "0 12px 12px" }}>
               <BreadCrumb />
-              <Contents>{children}</Contents>
+              <Contents >{children}</Contents>
               <Footer style={{ textAlign: 'center' }}>Nhóm HCI_06 - Bộ phận đảm bảo chất lượng</Footer>
             </Layout>
           </Layout>

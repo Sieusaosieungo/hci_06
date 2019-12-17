@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button, Icon } from 'antd';
+import { Table } from 'antd';
 import { Link } from 'react-router-dom';
 import './style.css';
 import { connect } from 'react-redux';
