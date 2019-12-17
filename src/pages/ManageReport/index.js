@@ -1,88 +1,81 @@
-import React from "react";
-import { Table, Button, Icon } from "antd";
-import { Link } from "react-router-dom";
-import "./style.css";
+import React from 'react';
+import { Table, Button, Icon } from 'antd';
+import { Link } from 'react-router-dom';
+import './style.css';
+import { connect } from 'react-redux';
+import moment from 'moment';
 
-const prefixCls = "manage-report";
-
-const columns = [
-  {
-    title: "Mã báo cáo",
-    dataIndex: "codeReport"
-  },
-  {
-    title: "Tên báo cáo",
-    dataIndex: "name"
-  },
-  {
-    title: "Ngày báo cáo",
-    dataIndex: "finishDate"
-  },
-  {
-    title: "Người đánh giá",
-    dataIndex: "censor"
-  },
-  {
-    title: "Người thực hiện",
-    dataIndex: "worker"
-  },
-  {
-    title: "Bộ phận",
-    dataIndex: "department"
-  },
-  {
-    title: "Mức độ hoàn thành",
-    dataIndex: "completed"
-  },
-  {
-    title: "Xem chi tiết",
-    dataIndex: "detail",
-    render: () => {
-      return <Link to="report-detail">Xem chi tiết</Link>;
-    }
-  }
-];
-
-const data = [
-  {
-    codeReport: 1,
-    name: "Báo cáo kiểm tra chất lượng thuốc nén",
-    finishDate: "20-11-2019",
-    censor: "Trần Trung Huỳnh",
-    // codeCensor: "KT_01",
-    worker: "Phạm Đại Tài",
-    // codeWorker: "KT_02",
-    department: "Kiểm tra chất lượng",
-    completed: "85%"
-  }
-];
+const prefixCls = 'manage-report';
 
 // rowSelection object indicates the need for row selection
 const rowSelection = {
   onChange: (selectedRowKeys, selectedRows) => {
     console.log(
       `selectedRowKeys: ${selectedRowKeys}`,
-      "selectedRows: ",
+      'selectedRows: ',
       selectedRows
     );
   },
-  getCheckboxProps: record => ({
-    disabled: record.name === "Disabled User", // Column configuration not to be checked
+  getCheckboxProps: (record) => ({
+    disabled: record.name === 'Disabled User', // Column configuration not to be checked
     name: record.name
   })
 };
 
-const ManageReport = () => {
+const ManageReport = ({ lstReport }) => {
+  const columns = [
+    {
+      title: 'Mã báo cáo',
+      dataIndex: '_id'
+    },
+    {
+      title: 'Tên báo cáo',
+      dataIndex: 'name'
+    },
+    {
+      title: 'Ngày báo cáo',
+      dataIndex: 'finishDate',
+      render: (text) => {
+        return <span>{moment(new Date(text)).format('L')}</span>;
+      }
+    },
+    {
+      title: 'Người đánh giá',
+      dataIndex: 'censor'
+    },
+    {
+      title: 'Người thực hiện',
+      dataIndex: 'worker'
+    },
+    {
+      title: 'Bộ phận',
+      dataIndex: 'department'
+    },
+    {
+      title: 'Mức độ hoàn thành',
+      dataIndex: 'completed'
+    },
+    {
+      title: 'Xem chi tiết',
+      dataIndex: 'detail',
+      render: () => {
+        return <Link to='report-detail'>Xem chi tiết</Link>;
+      }
+    }
+  ];
+
   return (
     <div className={`${prefixCls}`}>
       <div className={`${prefixCls}-list-report`}>Danh sách báo cáo</div>
-      <Button type="primary" className={`${prefixCls}-btn`}>
-        <Icon type="plus-circle" />
-        <Link to="/create-report">Tạo báo cáo</Link>
-      </Button>
-      <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+      <Table
+        rowSelection={rowSelection}
+        columns={columns}
+        dataSource={lstReport}
+      />
     </div>
   );
 };
 
-export default ManageReport;
+const mapStateToProps = ({ global: { lstReport } }) => ({ lstReport });
+
+export default connect(mapStateToProps, null)(ManageReport);
