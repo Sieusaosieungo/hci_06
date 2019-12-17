@@ -5,7 +5,7 @@ export const dataCVPB = [
     censor: "GĐ. Nguyễn Việt Hùng",
     dateStart: `20/11/2019`,
     dateFinish: "20/12/2019",
-    weight: 0.3,
+    weight: 0.4,
     status: 30,
     divide: "Tạo công việc",
     detail: "Xem chi tiết",
@@ -20,25 +20,26 @@ export const dataCVPB = [
     dateStart: `20/11/2019`,
     dateFinish: "20/12/2019",
     weight: 0.3,
-    status: 30,
+    status: 20,
     divide: "Tạo công việc",
     detail: "Xem chi tiết",
     remainWeight:'0.6',
     type:"Kiểm tra quy trình sản xuất",
     relatedDepartment:"Kho"
   },
-
   {
     index: "CVPB3",
-    name: "Kiểm tra sản phẩm đầu ra lô 234",
+    name: "Kiểm tra sản phẩm đầu ra thuốc Panadol Extra trong tháng 12/2020",
     censor: "GĐ. Nguyễn Việt Hùng",
-    dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
-    weight: 0.3,
-    status: 18,
+    dateStart: `02/12/2019`,
+    dateFinish: "02/01/2020",
+    weight: 0.5,
+    status: 80,
     divide: "Tạo công việc",
     detail: "Xem chi tiết",
-    remainWeight:'0.6'
+    remainWeight:'0.6',
+    type:"Kiểm tra sản phẩm đầu ra",
+    relatedDepartment:"Kho"
   },
   {
     index: "CVPB4",

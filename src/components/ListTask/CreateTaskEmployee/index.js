@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { Form, Select, DatePicker, Input, Button } from "antd";
 import { Col, Popconfirm, message } from "antd";
@@ -7,9 +7,16 @@ import { hideModal } from "../../../actions/index";
 import { connect } from "react-redux";
 
 const CreateTaskEmployee = ({ dispatch, text }) => {
-  console.log("TCL: CreateTaskEmployee -> text", text)
   const { Option } = Select;
-  const [selectedTypeTask, setSelectedTypeTask] = useState();
+  const [selectedTypeTask, setSelectedTypeTask] = useState("0");
+
+  useEffect(() => {
+    setSelectedTypeTask("0");
+    return () => {
+      setSelectedTypeTask("0");
+    };
+  }, [text]);
+
   const [messageCheckDevice, setMessageCheckDevice] = useState(
     "Có đầy đủ thiết bị không? Các thiết bị cần đủ: Mã số thiết bị, tem"
   );
@@ -63,6 +70,7 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
     message.success("Bạn đã tạo công việc thành công !");
     dispatch(hideModal());
   }
+
   return (
     <div className="create-task-employee">
       <Form {...formItemLayout}>
@@ -100,27 +108,31 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
               {children}
             </Select>
           </Form.Item>
-          <Form.Item label="Nhóm quy trình">
-            <Select defaultValue="0" onChange={handleChangeSelect}>
-              <Option value="0">Nhóm quy trình</Option>
-              <Option value="1">
-                Kiểm tra chất lượng quy trình xưởng thuốc nước thú y
-              </Option>
-              <Option value="2">Kiểm tra chất lượng bao bì cấp 1</Option>
-              <Option value="3">
-                Kiểm tra chất lượng quy trình xưởng thuốc bột thú y
-              </Option>
-              <Option value="4">
-                Kiểm tra chất lượng quy trình xưởng thực phẩm chức năng
-              </Option>
 
-              <Option value="5">Kiểm tra chất lượng bao bì cấp 2</Option>
-              <Option value="6">Kiểm tra chất lượng nguyên liệu</Option>
-            </Select>
-          </Form.Item>
+          {text.type !== "Kiểm tra nguyên liệu đầu vào" && (
+            <Form.Item label="Nhóm quy trình">
+              <Select value={selectedTypeTask} onChange={handleChangeSelect}>
+                <Option value="0">Nhóm quy trình...</Option>
 
+                <Option value="1">
+                  {text.type === "Kiểm tra quy trình sản xuất"
+                    ? "KTCL quy trình xưởng thuốc nước thú y"
+                    : "KTCL bao bì cấp 1"}
+                </Option>
+                <Option value="2">
+                  {text.type === "Kiểm tra quy trình sản xuất"
+                    ? "KTCL quy trình xưởng thuốc bột thú y"
+                    : "KTCL bao bì cấp 2"}
+                </Option>
+                {text.type === "Kiểm tra quy trình sản xuất" && (
+                  <Option value="3">KTCL quy trình xưởng TPCN</Option>
+                )}
+              </Select>
+            </Form.Item>
+          )}
 
-          {selectedTypeTask === "1" ? (
+          {selectedTypeTask !== "0" &&
+          text.type === "Kiểm tra quy trình sản xuất" ? (
             <>
               <Form.Item label="Số lần kiểm tra định kỳ 1 tháng">
                 <Input placeholder="" />
@@ -156,14 +168,16 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
               </Form.Item>
             </>
           ) : null}
-          {selectedTypeTask === "2" ? (
+
+          {selectedTypeTask !== "0" &&
+          text.type === "Kiểm tra sản phẩm đầu ra" ? (
             <>
               <Form.Item label="Số bao bì sản phẩm cần kiểm tra">
                 <Input placeholder="" />
               </Form.Item>
             </>
           ) : null}
-          <Form.Item label="Deadline" style={{ marginBottom: 0 }}>
+          <Form.Item label="Ngày hết hạn" style={{ marginBottom: 0 }}>
             <Form.Item
               style={{ display: "inline-block", width: "calc(50% - 12px)" }}
             >
@@ -190,7 +204,10 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
           <Button
             type="danger"
             style={{ float: "right", marginRight: "10px" }}
-            onClick={() => dispatch(hideModal())}
+            onClick={() => {
+              setSelectedTypeTask(0);
+              dispatch(hideModal());
+            }}
           >
             Huỷ
           </Button>

@@ -155,14 +155,14 @@ class EditableTable extends React.Component {
           const check = data.divide === "Đã hoàn thành";
           return (
             <span
-            className="divide"
+              className="divide"
               style={{ color: check ? "gray" : "#1890ff" }}
               onClick={() => {
                 if (check) return;
                 this.props.dispatch(
                   showModal({
-                    title: "Phân chia công việc: "+name,
-                    Component: <CreateTaskEmployee text={text}  />,
+                    title: "Phân chia công việc: " + name,
+                    Component: <CreateTaskEmployee text={text}/>,
                     width: "68vw"
                   })
                 );
