@@ -44,7 +44,7 @@ export const routes = [
     component: () => <ListTaskEmployee />
   },
   {
-    path: '/detail-task-employee',
+    path: '/detail-task-department',
     component: () => <DetailTask />
   },
   {
