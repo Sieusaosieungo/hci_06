@@ -35,14 +35,14 @@ function Siders({ account }) {
             }
           >
             <Menu.Item key='sub2-1'>
-              <span>
-                <Link to='/list-task-department'>Công việc phòng ban</Link>
-              </span>
+              <Link to='/list-task-department'>
+                <span>Công việc phòng ban</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key='sub2-2'>
-              <span>
-                <Link to='/list-task-employee'>Công việc nhân viên</Link>
-              </span>
+              <Link to='/list-task-employee'>
+                <span>Công việc nhân viên</span>
+              </Link>
             </Menu.Item>
           </SubMenu>
         ) : (
