@@ -173,7 +173,7 @@ class EditableTable extends React.Component {
         render: (data) => {
           return (
             <Link
-              to="/detail-task"
+              to="/detail-task-employee"
               onClick={() => this.props.dispatch(actSetTaskDetail(data))}
             >
               {data.detail}
