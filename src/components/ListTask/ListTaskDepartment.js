@@ -162,7 +162,7 @@ class EditableTable extends React.Component {
                 this.props.dispatch(
                   showModal({
                     title: "Phân chia công việc: " + name,
-                    Component: <CreateTaskEmployee text={text}/>,
+                    Component: <CreateTaskEmployee text={text} />,
                     width: "68vw"
                   })
                 );
