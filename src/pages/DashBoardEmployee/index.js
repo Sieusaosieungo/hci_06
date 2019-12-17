@@ -1,12 +1,11 @@
 import React from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
-import { Progress } from 'antd';
-import 'antd/dist/antd.css';
+import { Progress, Row, Col } from "antd";
+import "antd/dist/antd.css";
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";
 
 const DashBoardEmployee = () => {
-
   const salesData = [
     {
       x: `V.D Mạnh`,
@@ -82,77 +81,105 @@ const DashBoardEmployee = () => {
 
   return (
     <div className="chartContainer">
-      <div className="chartContainer-inner">
-        <div className="dashboard-item item1">
+      <Row type="flex">
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={12}
+          className="dashboard-item item1"
+        >
           <Bar
-            height={250}
+            height={300}
             title=" Top 5 nhân viên có KPI cao nhất trong tháng của bộ phận DBCL"
             data={salesData}
           />
-        </div>
-        <div className="dashboard-item item2">
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={12}
+          className="dashboard-item item2"
+        >
           <span>Độ hoàn thành công việc hiện tại</span>
-          <div className="item2-inner">
-            <div className="item2-element">
+          <Row type="flex" className="item2-inner">
+            <Col xs={24} sm={24} md={8} lg={8} xl={8} className="item2-element">
               <div className="it2-title">
                 <span>Kiểm tra sản xuất thuốc viên</span>
               </div>
               <div className="it2-content">
-                <Progress width={100} type="circle" percent={75} />
+                <Progress width={150} type="circle" percent={75} />
               </div>
-            </div>
-            <div className="item2-element">
+            </Col>
+            <Col xs={24} sm={24} md={8} lg={8} xl={8} className="item2-element">
               <div className="it2-title">
                 <span>Kiểm tra chất lượng bao bì</span>
               </div>
               <div className="it2-content">
-                <Progress width={100} type="circle" percent={100} /></div>
-            </div>
-            <div className="item2-element">
+                <Progress width={150} type="circle" percent={100} />
+              </div>
+            </Col>
+            <Col xs={24} sm={24} md={8} lg={8} xl={8} className="item2-element">
               <div className="it2-title">
                 <span>Kiểm tra sản xuất thuốc bột</span>
               </div>
               <div className="it2-content">
-                <Progress width={100} type="circle" percent={75} status="exception" />
+                <Progress
+                  width={150}
+                  type="circle"
+                  percent={0}
+                  status="exception"
+                />
               </div>
-            </div>
-          </div>
-          {/* <Bar
-            height={250}
-            color={"#1bf452a6"}
-            title=" Top 5 bộ phận có KPI cao nhất trong tháng"
-            data={depart}
-          /> */}
-        </div>
-      </div>
-      <div className="chartContainer-inner chart-below">
-        <div className="dashboard-item item3">
-          <Pie
-            percent={88}
-            subTitle=""
-            total="90"
-            height={200}
-          />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row type="flex" className="chart-below">
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item3"
+        >
           <span>KPI của Vũ Duy Mạnh tính đến hiện tại</span>
-        </div>
-        <div className="dashboard-item item4">
-          <MiniArea line color="#cceafe" height={200} data={visitData} />
+          <Pie percent={88} subTitle="" total="90%" height={200} />
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item4"
+        >
           <span>KPI của trưởng phòng Vũ Duy Mạnh 6 tháng gần nhất</span>
-        </div>
-        <div className="dashboard-item item5">
-          <div className="item5-chart">
-            <WaterWave
-              height={200}
-              title=""
-              percent={48}
-            />
-          </div>
+          <MiniArea line color="#cceafe" height={200} data={visitData} />
+        </Col>
+
+        <Col
+          xs={24}
+          sm={24}
+          md={24}
+          lg={24}
+          xl={8}
+          className="dashboard-item item5"
+        >
           <span>Tiến độ hoàn thành công việc trong tháng của Vũ Duy Mạnh</span>
-        </div>
-      </div>
+          <div className="item5-chart">
+            <WaterWave height={200} title="" percent={48} />
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 };
-
 
 export default DashBoardEmployee;
