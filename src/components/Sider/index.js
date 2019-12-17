@@ -27,24 +27,26 @@ function Siders({ account }) {
           <SubMenu
             key="sub2"
             title={
-              <span>
+              <>
                 <Icon type="laptop" />
-                Quản lý công việc
-              </span>
+                <span>Quản lý công việc</span>
+              </>
             }
           >
             <Menu.Item key="sub2-1">
-              <span><Link to="/list-task-department">Công việc phòng ban</Link></span>
+              <span>
+                <Link to="/list-task-department">Công việc phòng ban</Link>
+              </span>
             </Menu.Item>
             <Menu.Item key="sub2-2">
-              <span><Link to="/list-task-employee">Công việc nhân viên</Link></span>
+              <span>
+                <Link to="/list-task-employee">Công việc nhân viên</Link>
+              </span>
             </Menu.Item>
           </SubMenu>
         ) : (
           <Menu.Item key="sub2-1">
-            <Link
-              to="/list-task-employee"
-            >
+            <Link to="/list-task-employee">
               <Icon type="laptop" />
               <span>Quản lý công việc</span>
             </Link>
