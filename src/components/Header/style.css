@@ -130,13 +130,25 @@
   padding: 0px 5px;
 }
 
-.header-right-account {
+.header-right-account-draw {
   cursor: pointer;
+  display: flex;
+  width: 180px;
+  height: 100%;
+  align-items: center;
 }
 
-.header-right-account > span {
+.header-right-account-draw > div {
   margin: 0 10px;
   color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  line-height: 20px;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.header-right-account-draw > div>span:first-child{
+  color: rgb(9, 92, 216);
 }
 
 .ant-drawer-content-wrapper {

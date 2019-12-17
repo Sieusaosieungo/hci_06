@@ -65,7 +65,7 @@ const SignIn = ({ form, form: { getFieldDecorator }, setAccount }) => {
           >
             Đăng nhập
           </Button>
-          Or <Link to='/account/sign-up'>Đăng kí ngay !</Link>
+          Hoặc <Link to='/account/sign-up'>Đăng kí ngay !</Link>
         </Form.Item>
       </Form>
     </div>
