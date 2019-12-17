@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Layout, Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
+import "./style.css";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 

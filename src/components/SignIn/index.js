@@ -1,6 +1,6 @@
 import React from "react";
-import { Form, Icon, Input, Button, Checkbox, message } from "antd";
-import { Link, Redirect } from "react-router-dom";
+import { Form, Icon, Input, Button, Checkbox } from "antd";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 

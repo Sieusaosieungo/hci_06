@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "ant-design-pro/dist/ant-design-pro.css";
 import { Bar, MiniArea, WaterWave, Pie } from "ant-design-pro/lib/Charts";
 import "./style.css";

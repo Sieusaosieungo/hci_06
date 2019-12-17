@@ -106,7 +106,7 @@ const Headers = ({ setAccount }) => {
       className="header"
       style={{ lineHeight: "55px", height: "55px", marginLeft: "-1.8em" }}
     >
-      <img className="logo" src={logo} alt="icon interface" />
+      <img className="logo" src={logo} alt="icon interface" style={{width:"120px"}}/>
       <div className="header-left">
         <div className="header-left-text">
           <span>Bộ phận đảm bảo chất lượng</span>
