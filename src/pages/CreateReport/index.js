@@ -1,6 +1,16 @@
 import React from "react";
-import { Form, Input, Button, DatePicker, Select, Upload, Icon } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  DatePicker,
+  Select,
+  Upload,
+  Icon,
+  message
+} from "antd";
 import { connect, useSelector, useDispatch } from "react-redux";
+import moment from "moment";
 
 import "./style.css";
 
@@ -33,8 +43,22 @@ const tailFormItemLayout = {
   }
 };
 
-const config = {
-  rules: [{ type: "object", required: true, message: "Please select time!" }]
+const props = {
+  name: "file",
+  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+  headers: {
+    authorization: "authorization-text"
+  },
+  onChange(info) {
+    if (info.file.status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === "done") {
+      message.success(`${info.file.name} file uploaded successfully`);
+    } else if (info.file.status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  }
 };
 
 const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
@@ -79,13 +103,11 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
     return e && e.fileList;
   };
 
-  const onChange = (event) => {
-    
-  }
+  const onChange = event => {};
 
   return (
     <div className="create-report">
-      <div className="create-report-title">Tạo cáo báo</div>
+      <div className="create-report-title">Tạo báo cáo</div>
       <Form {...formItemLayout} onSubmit={handleSubmit}>
         <Form.Item label="Tên báo cáo">
           {getFieldDecorator("name", {
@@ -94,18 +116,30 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
                 required: true,
                 message: "Cần nhập tên báo cáo !"
               }
-            ]
-          })(<Input value={taskDetail.name} onChange={onChange}/>)}
+            ],
+            initialValue: "Báo cáo " + taskDetail.name
+          })(<Input value={taskDetail.name} onChange={onChange} />)}
         </Form.Item>
         <Form.Item label="Ngày báo cáo">
-          {getFieldDecorator(
-            "finishDate",
-            config
-          )(<DatePicker placeholder={"YYYY/MM/DD"} />)}
+          {getFieldDecorator("dateFinish", {
+            rules: [
+              { type: "object", required: true, message: "Please select time!" }
+            ],
+            initialValue: moment(new Date("2019-10-18"))
+          })(<DatePicker disabled placeholder={"YYYY/MM/DD"} />)}
+        </Form.Item>
+        <Form.Item label="Ngày hết hạn">
+          {getFieldDecorator("finishDate", {
+            rules: [
+              { type: "object", required: true, message: "Please select time!" }
+            ],
+            initialValue: moment(new Date("2019-12-28"))
+          })(<DatePicker disabled placeholder={"YYYY/MM/DD"} />)}
         </Form.Item>
         <Form.Item label="Loại hình kiểm tra">
           {getFieldDecorator("gender", {
-            rules: [{ required: true, message: "Chọn loại hình kiểm tra !" }]
+            rules: [{ required: true, message: "Chọn loại hình kiểm tra !" }],
+            initialValue: taskDetail.type
           })(
             <Select
               onChange={handleSelectChange}
@@ -136,39 +170,31 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
                 required: true,
                 message: "Cần nhập tên người đánh giá !"
               }
-            ]
+            ],
+            initialValue: taskDetail.censor
           })(<Input />)}
         </Form.Item>
-        {/* <Form.Item label='Người thực hiện kiểm tra'>
-          {getFieldDecorator('worker', {
-            rules: [
-              {
-                required: true,
-                message: 'Cần nhập tên người thực hiện kiểm tra !'
-              }
-            ]
-          })(<Input />)}
-        </Form.Item> */}
         <Form.Item label="Các tiêu chí">
-          {getFieldDecorator("h", {
+          {getFieldDecorator("cac-tieu-chi", {
             rules: [
               {
                 required: true,
                 message: "Cần nhập các tiêu chí !"
               }
-            ]
+            ],
+            initialValue: taskDetail.name
           })(<TextArea />)}
         </Form.Item>
-        <Form.Item label="Kết quả đạt được">
-          {getFieldDecorator("s", {
+        {/* <Form.Item label="Kết quả đạt được">
+          {getFieldDecorator("ket-qua-dat-duoc  ", {
             rules: [
               {
                 required: true,
                 message: "Cần nhập các kết quả đạt được !"
               }
             ]
-          })(<TextArea />)}
-        </Form.Item>
+          })(<TextArea placeholder="Nhập kết quả đạt được" />)}
+        </Form.Item> */}
         <Form.Item label="Người thực hiện kiểm tra">
           {getFieldDecorator("worker", {
             rules: [
@@ -176,8 +202,9 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
                 required: true,
                 message: "Cần nhập tên người thực hiện kiểm tra !"
               }
-            ]
-          })(<Input />)}
+            ],
+            initialValue: taskDetail.worker
+          })(<Input disabled />)}
         </Form.Item>
         <Form.Item label="Mức độ hoàn thành">
           {getFieldDecorator("completed", {
@@ -186,25 +213,26 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
                 required: true,
                 message: "Cần nhập tên người thực hiện kiểm tra !"
               }
-            ]
+            ],
+            initialValue: taskDetail.status + "%"
           })(<Input placeholder="50%" />)}
         </Form.Item>
         <Form.Item label="Kết quả kiểm tra chất lượng">
-          {getFieldDecorator("k", {
+          {getFieldDecorator("ket-qua-kiem-tra-chat-luong", {
             rules: [
               {
                 required: true,
                 message: "Cần nhập các kết quả kiểm tra chất lượng !"
               }
             ]
-          })(<TextArea />)}
+          })(<TextArea placeholder="Nhập kết quả kiểm tra chất lượng" />)}
         </Form.Item>
         <Form.Item label="File đính kèm">
           {getFieldDecorator("upload", {
             valuePropName: "fileList",
             getValueFromEvent: normFile
           })(
-            <Upload name="logo" action="/upload.do" listType="picture">
+            <Upload {...props}>
               <Button>
                 <Icon type="upload" /> Click to upload
               </Button>
