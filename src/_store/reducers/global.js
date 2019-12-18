@@ -5,13 +5,13 @@ const initialState = {
     {
       _id: 1,
       codeReport: 1,
-      name: 'Báo cáo kiểm tra chất lượng thuốc nén',
+      name: 'Báo cáo đảm bảo chất lượng thuốc nén',
       finishDate: new Date(),
       censor: 'Trần Trung Huỳnh',
       // codeCensor: "KT_01",
       worker: 'Phạm Đại Tài',
       // codeWorker: "KT_02",
-      department: 'Kiểm tra chất lượng',
+      department: 'Đảm bảo chất lượng',
       completed: '85%'
     }
   ]

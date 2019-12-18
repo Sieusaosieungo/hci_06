@@ -54,7 +54,7 @@ const CreateReport = ({
               ...lstReport,
               {
                 ...values,
-                department: 'Kiểm tra chất lượng',
+                department: 'Đảm bảo chất lượng',
                 _id: lstReport.length && lstReport.length + 1
               }
             ]

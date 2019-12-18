@@ -126,7 +126,7 @@ const DashBoard = ({ history }) => {
           xl={8}
           className="dashboard-item item3"
         >
-          <span>KPI bộ phận Kiểm định chất lượng hiện tại</span>
+          <span>KPI bộ phận đảm bảo chất lượng hiện tại</span>
           <Pie
             percent={88}
             subTitle=""
@@ -143,7 +143,7 @@ const DashBoard = ({ history }) => {
           xl={8}
           className="dashboard-item item4"
         >
-          <span>KPI bộ phận Kiểm định chất lượng 6 tháng gần nhất</span>
+          <span>KPI bộ phận đảm bảo chất lượng 6 tháng gần nhất</span>
           <div style={{ marginTop: "15px" }}>
             <MiniArea line color="#cceafe" height={250} data={visitData} />
           </div>

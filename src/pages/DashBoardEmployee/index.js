@@ -111,7 +111,7 @@ const DashBoardEmployee = () => {
           <Row type='flex' className='item2-inner'>
             <Col xs={24} sm={24} md={8} lg={8} xl={8} className='item2-element'>
               <div className='it2-title'>
-                <span>Kiểm tra sản xuất thuốc viên</span>
+                <span>ĐBCL nguyên liệu đầu vào</span>
               </div>
               <div className='it2-content'>
                 <Progress width={150} type='circle' percent={75} />
@@ -119,7 +119,7 @@ const DashBoardEmployee = () => {
             </Col>
             <Col xs={24} sm={24} md={8} lg={8} xl={8} className='item2-element'>
               <div className='it2-title'>
-                <span>Kiểm tra chất lượng bao bì</span>
+                <span>ĐBCL quy trình</span>
               </div>
               <div className='it2-content'>
                 <Progress width={150} type='circle' percent={100} />
@@ -127,7 +127,7 @@ const DashBoardEmployee = () => {
             </Col>
             <Col xs={24} sm={24} md={8} lg={8} xl={8} className='item2-element'>
               <div className='it2-title'>
-                <span>Kiểm tra sản xuất thuốc bột</span>
+                <span>DBCL sản phẩm đầu ra</span>
               </div>
               <div className='it2-content'>
                 <Progress

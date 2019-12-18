@@ -183,7 +183,7 @@ const Headers = ({ setAccount, account }) => {
                       KT01 Vũ Duy Mạnh
                     </span>
                     <span className='notice-element-info'>
-                      báo cáo kiểm tra bộ phận SX02
+                      báo cáo Đảm bảo chất lượng bộ phận SX02
                     </span>
                   </div>
                   <span className='notice-element-date'>
@@ -210,7 +210,7 @@ const Headers = ({ setAccount, account }) => {
                       KT03 Lê Đình Phúc{' '}
                     </span>
                     <span className='notice-element-info'>
-                      cập nhật tiến độ kiểm tra bộ phận SX02
+                      cập nhật tiến độ ĐBCL bộ phận SX02
                     </span>
                   </div>
                   <span className='notice-element-date'>

@@ -23,114 +23,114 @@ for (let i = 1; i < 100; i++) {
 const data2 = [
   {
     index: 1,
-    name: "Kiểm tra nguyên liệu đầu vào",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL nguyên liệu đầu vào',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 50,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 2,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 100,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
 
   {
     index: 3,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 100,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 4,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 45,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 5,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 38,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 6,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 77,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 7,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 98,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 8,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 100,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 9,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 67,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 10,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 24,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   },
   {
     index: 11,
-    name: "Kiểm tra sản phẩm đầu ra",
-    censor: "GĐ. Nguyễn Việt Hùng",
+    name: 'DBCL sản phẩm đầu ra',
+    censor: 'GĐ. Nguyễn Việt Hùng',
     dateStart: `20/10/2019`,
-    dateFinish: "20/11/2019",
+    dateFinish: '20/11/2019',
     weight: 0.7,
     status: 100,
-    detail: "Xem chi tiết"
+    detail: 'Xem chi tiết'
   }
 ];
 

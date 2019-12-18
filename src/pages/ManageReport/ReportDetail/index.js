@@ -8,7 +8,7 @@ const ReportDetail = props => {
       <div className="report-detail-inner">
         <div className="rdi-element">
           <span className="rdi-title">Tên báo cáo</span>
-          <span className="rid-content">Báo cáo kiểm tra chất lượng thuốc nén</span>
+          <span className="rid-content">Báo cáo đảm bảo chất lượng thuốc nén</span>
         </div>
         <div className="rdi-element">
           <span className="rdi-title">Ngày báo cáo</span>

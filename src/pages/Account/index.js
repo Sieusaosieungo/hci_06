@@ -36,12 +36,12 @@ const Account = () => {
           </div>
           <div className="aii-element">
             <div className="aii-left"><span>Bộ phận</span></div>
-            <div className="aii-center"><span>Bộ phận kiểm tra quy trình sản xuất</span></div>
+            <div className="aii-center"><span>Bộ phận đảm bảo chất lượng quy trình sản xuất</span></div>
             <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
           </div>
           <div className="aii-element">
             <div className="aii-left"><span>Chức vụ</span></div>
-            <div className="aii-center"><span>Nhân viên kiểm tra</span></div>
+            <div className="aii-center"><span>Nhân viên DBCL</span></div>
             <div className="aii-right"><Icon type="edit" /> Chỉnh sửa</div>
           </div>
         </div>

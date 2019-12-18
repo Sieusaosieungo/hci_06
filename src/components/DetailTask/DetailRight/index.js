@@ -86,7 +86,7 @@ const DetailRight = props => {
       <div className="member-input">
         <Select defaultValue="Nhiệm vụ" style={{ width: '100%' }}>
           <Option value="jack">Bộ phận sản xuất</Option>
-          <Option value="lucy">Bộ phận kiểm định chất lượng</Option>
+          <Option value="lucy">Bộ phận đảm bảo chất lượng</Option>
         </Select>
       </div>
       <button onClick={() => closeFormTask()} className="button-success">Thêm</button>
