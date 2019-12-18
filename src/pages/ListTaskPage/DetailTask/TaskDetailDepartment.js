@@ -2,11 +2,13 @@ import React from 'react';
 import './style.css';
 import { Icon, Descriptions, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { actSetTaskDetail } from '../../../actions';
 
 const TaskDetailDepartment = () => {
   const taskDetail = useSelector((state) => state.taskDetail);
   const { relatedDepartment = '' } = taskDetail;
+  const dispatch = useDispatch();
   return (
     <div className='detail-task'>
       <Descriptions title='Chi tiết công việc phòng ban' bordered>
@@ -75,7 +77,7 @@ const TaskDetailDepartment = () => {
         }}
       >
         <Icon type='export' />
-        <Link to='/create-report' style={{ color: '#fff', marginLeft: '2px' }}>
+        <Link to='/create-report' onClick={()=> dispatch(actSetTaskDetail(taskDetail))} style={{ color: '#fff', marginLeft: '2px' }}>
           Tạo báo cáo
         </Link>
       </Button>

@@ -43,6 +43,8 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
   const { lstReport } = useSelector(state => state.global);
   const dispatch = useDispatch();
 
+  const { index = "", name = "" } = taskDetail;
+
   const handleSubmit = e => {
     e.preventDefault();
     form.validateFieldsAndScroll((err, values) => {
@@ -77,6 +79,10 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
     return e && e.fileList;
   };
 
+  const onChange = (event) => {
+    
+  }
+
   return (
     <div className="create-report">
       <div className="create-report-title">Tạo cáo báo</div>
@@ -89,7 +95,7 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
                 message: "Cần nhập tên báo cáo !"
               }
             ]
-          })(<Input />)}
+          })(<Input value={taskDetail.name} onChange={onChange}/>)}
         </Form.Item>
         <Form.Item label="Ngày báo cáo">
           {getFieldDecorator(
