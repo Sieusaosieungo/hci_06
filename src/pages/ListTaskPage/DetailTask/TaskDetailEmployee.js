@@ -2,10 +2,12 @@ import React from 'react';
 import './style.css';
 import { Icon, Descriptions, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { actSetTaskDetail } from '../../../actions';
 
 const TaskDetailEmployee = () => {
   const taskDetail = useSelector((state) => state.taskDetail);
+  const dispatch = useDispatch();
   console.log('TCL: TaskDetail -> taskDetail', taskDetail);
 
   return (
@@ -65,7 +67,7 @@ const TaskDetailEmployee = () => {
         }}
       >
         <Icon type='export' />
-        <Link to='/create-report' style={{ color: '#fff', marginLeft: '2px' }}>
+        <Link to='/create-report' onClick={()=> dispatch(actSetTaskDetail(taskDetail))} style={{ color: '#fff', marginLeft: '2px' }}>
           Tạo báo cáo
         </Link>
       </Button>
