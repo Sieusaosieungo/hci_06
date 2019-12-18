@@ -14,6 +14,7 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
   addTask.worker = 'Vũ Văn Nam';
   addTask.weight = '0.15';
   addTask.status = 0;
+  addTask.name = "Kiểm tra nguyên liệu đầu vào thuốc Hapacol";
 
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState('0');
