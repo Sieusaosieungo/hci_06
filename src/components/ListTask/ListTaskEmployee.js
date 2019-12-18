@@ -241,7 +241,7 @@ class EditableTable extends React.Component {
 
     let { data } = this.state;
     if (this.props.addTask) {
-      data.push(this.props.addTask);
+      data = [this.props.addTask,...data];
     }
 
     return (

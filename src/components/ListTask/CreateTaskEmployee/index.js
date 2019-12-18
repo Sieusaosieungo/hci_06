@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { Form, Select, DatePicker, Input, Button } from 'antd';
-import { Col, Popconfirm, message } from 'antd';
+import { Col, message } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 import { hideModal, updateState } from '../../../actions/index';
 import { connect } from 'react-redux';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const CreateTaskEmployee = ({ dispatch, text }) => {
   let addTask = { ...text };
-  addTask.index = 'CVNV6';
+  addTask.index = 'CVNV7';
   addTask.departmentCode = text.index;
   addTask.worker = 'Vũ Văn Nam';
   addTask.weight = '0.15';
@@ -77,9 +77,7 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
   function handleChangeCheckProduction(value) {
     setMessageCheckProduction(value.target.value);
   }
-  function confirm() {
-    
-  }
+
 
   return (
     <div className='create-task-employee'>

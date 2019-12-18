@@ -9,7 +9,7 @@ import {
   Icon,
   message
 } from "antd";
-import { connect, useSelector, useDispatch } from "react-redux";
+import {  useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import "./style.css";
@@ -66,8 +66,6 @@ const CreateReport = ({ form: { getFieldDecorator }, form, history }) => {
   console.log("TCL: taskDetail", taskDetail);
   const { lstReport } = useSelector(state => state.global);
   const dispatch = useDispatch();
-
-  const { index = "", name = "" } = taskDetail;
 
   const handleSubmit = e => {
     e.preventDefault();

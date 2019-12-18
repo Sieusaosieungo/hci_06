@@ -20,55 +20,56 @@ const SignIn = ({ form, form: { getFieldDecorator }, setAccount }) => {
   return (
     <div className={`${prefixCls}`}>
       <Form onSubmit={handleSubmit} className={`${prefixCls}-form`}>
+        <h1 style={{ textAlign: "center" }}>Công ty thuốc</h1>
         <Form.Item>
-          {getFieldDecorator('email', {
-            rules: [{ required: true, message: 'Please input your email!' }],
-            initialValue: 'admin@gmail.com'
+          {getFieldDecorator("email", {
+            rules: [{ required: true, message: "Please input your email!" }],
+            initialValue: "admin@gmail.com"
           })(
             <Input
-              value='admin@gmail.com'
-              prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder='admin@gmail.com'
+              value="admin@gmail.com"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="admin@gmail.com"
             />
           )}
         </Form.Item>
         <Form.Item>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-            initialValue: 'admin'
+          {getFieldDecorator("password", {
+            rules: [{ required: true, message: "Please input your Password!" }],
+            initialValue: "admin"
           })(
             <Input
-              value='admin'
-              prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type='password'
-              placeholder='admin'
+              value="admin"
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              type="password"
+              placeholder="admin"
             />
           )}
         </Form.Item>
 
-        <Form.Item className='role'>
-          {getFieldDecorator('role', {
-            valuePropName: 'checked',
+        <Form.Item className="role">
+          {getFieldDecorator("role", {
+            valuePropName: "checked",
             initialValue: false
           })(<Checkbox>Bạn có phải là trưởng phòng?</Checkbox>)}
         </Form.Item>
 
         <Form.Item>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
+          {getFieldDecorator("remember", {
+            valuePropName: "checked",
             initialValue: true
           })(<Checkbox>Nhớ mật khẩu</Checkbox>)}
-          <Link to='' className={`${prefixCls}-form-forgot`}>
+          <Link to="" className={`${prefixCls}-form-forgot`}>
             Quên mật khẩu ?
           </Link>
           <Button
-            type='primary'
-            htmlType='submit'
+            type="primary"
+            htmlType="submit"
             className={`${prefixCls}-form-button`}
           >
             Đăng nhập
           </Button>
-          Hoặc <Link to='/account/sign-up'>Đăng kí ngay !</Link>
+          Hoặc <Link to="/account/sign-up">Đăng kí ngay !</Link>
         </Form.Item>
       </Form>
     </div>

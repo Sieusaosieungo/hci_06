@@ -12,7 +12,7 @@ import {
 } from "antd";
 import { Link } from "react-router-dom";
 import "./style.css";
-import logo from "../../assets/images/logo.png";
+
 const { Header } = Layout;
 
 const Headers = ({ setAccount, account }) => {
