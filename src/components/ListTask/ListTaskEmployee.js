@@ -28,6 +28,7 @@ class EditableCell extends React.Component {
       record,
       index,
       children,
+      addTask,
       ...restProps
     } = this.props;
     return (
@@ -71,7 +72,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "index",
-        width: "6%",
+        width: "7%",
         editable: true
       },
       {
@@ -82,7 +83,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "departmentCode",
-        width: "6%",
+        width: "7%",
         editable: true
       },
       {
@@ -93,7 +94,7 @@ class EditableTable extends React.Component {
           </div>
         ),
         dataIndex: "name",
-        width: "16%",
+        width: "14%",
         editable: true
       },
       {
@@ -170,7 +171,7 @@ class EditableTable extends React.Component {
         // dataIndex: "detail",
         width: "10%",
         editable: true,
-        render: (data) => {
+        render: data => {
           return (
             <Link
               to="/detail-task-employee"
@@ -238,12 +239,17 @@ class EditableTable extends React.Component {
       };
     });
 
+    let { data } = this.state;
+    if (this.props.addTask) {
+      data.push(this.props.addTask);
+    }
+
     return (
       <EditableContext.Provider value={this.props.form}>
         <Table
           components={components}
           bordered
-          dataSource={this.state.data}
+          dataSource={[...data]}
           columns={columns}
           rowClassName="editable-row"
           pagination={{
@@ -255,5 +261,10 @@ class EditableTable extends React.Component {
   }
 }
 
-const EditableFormTable = Form.create()(connect()(EditableTable));
+const mapStateToProps = ({ global: { addTask } }) => ({ addTask });
+
+const EditableFormTable = Form.create()(
+  connect(mapStateToProps, null)(EditableTable)
+);
+
 export default EditableFormTable;

@@ -3,10 +3,16 @@ import "./styles.css";
 import { Form, Select, DatePicker, Input, Button } from "antd";
 import { Col, Popconfirm, message } from "antd";
 import TextArea from "antd/lib/input/TextArea";
-import { hideModal } from "../../../actions/index";
+import { hideModal, updateState } from "../../../actions/index";
 import { connect } from "react-redux";
 
 const CreateTaskEmployee = ({ dispatch, text }) => {
+  let addTask = { ...text };
+  addTask.index = "CVNV6";
+  addTask.departmentCode = text.index;
+  addTask.worker = "Vũ Văn Nam";
+  addTask.weight = "0.15";
+
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState("0");
 
@@ -46,6 +52,9 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
   children.push(<Option key="Lê Đình Phúc">DBCL_02 - Lê Đình Phúc</Option>);
   children.push(<Option key="Vũ Văn Nam">DBCL_03 - Vũ Văn Nam</Option>);
   children.push(<Option key="Lê Minh Nguyễn">DBCL_04 - Lê Minh Nguyễn</Option>);
+  children.push(
+    <Option key="GĐ. Nguyễn Việt Hùng">GĐ. Nguyễn Việt Hùng</Option>
+  );
 
   function handleChange(value) {
     console.log(`selected ${value}`);
@@ -98,11 +107,23 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
             <Input value={text.type} disabled></Input>
           </Form.Item>
 
+          <Form.Item label="Người phụ trách">
+            <Select
+              mode="tags"
+              style={{ width: "100%" }}
+              placeholder="Chọn người phụ trách"
+              name="worker"
+              onChange={handleChange}
+            >
+              {children}
+            </Select>
+          </Form.Item>
           <Form.Item label="Người kiểm duyệt">
             <Select
               mode="tags"
               style={{ width: "100%" }}
               placeholder="Chọn người kiểm duyệt"
+              name="censor"
               onChange={handleChange}
             >
               {children}
@@ -197,6 +218,7 @@ const CreateTaskEmployee = ({ dispatch, text }) => {
               type="primary"
               style={{ display: "block", marginRight: "180px", float: "right" }}
               htmlType="submit"
+              onClick={() => dispatch(updateState({ addTask }))}
             >
               Tạo mới
             </Button>
