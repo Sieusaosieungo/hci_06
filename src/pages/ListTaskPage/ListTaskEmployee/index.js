@@ -3,9 +3,7 @@ import "./styles.css";
 import ListTask from "../../../components/ListTask/ListTaskEmployee";
 import { Row, Col } from "antd";
 
-
-const ListTaskPage = ({ dispatch }) => {
-
+const ListTaskPage = ({ dispatch, history }) => {
   return (
     <Row type="flex" gutter={[20, 10]} className="list-task-page">
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
@@ -13,14 +11,12 @@ const ListTaskPage = ({ dispatch }) => {
           <h1 className="list-task">Danh sách công việc nhân viên</h1>
         </label>
       </Col>
+      <Col xs={24} sm={24} md={24} xl={24} lg={24}></Col>
       <Col xs={24} sm={24} md={24} xl={24} lg={24}>
-      
-      </Col>
-      <Col xs={24} sm={24} md={24} xl={24} lg={24}>
-        <ListTask />
+        <ListTask history={history} />
       </Col>
     </Row>
   );
 };
 
-export default (ListTaskPage);
+export default ListTaskPage;

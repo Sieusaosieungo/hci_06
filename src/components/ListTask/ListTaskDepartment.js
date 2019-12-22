@@ -162,7 +162,12 @@ class EditableTable extends React.Component {
                 this.props.dispatch(
                   showModal({
                     title: "Phân chia công việc: " + name,
-                    Component: <CreateTaskEmployee text={text} />,
+                    Component: (
+                      <CreateTaskEmployee
+                        history={this.props.history}
+                        text={text}
+                      />
+                    ),
                     width: "68vw"
                   })
                 );
@@ -264,4 +269,5 @@ class EditableTable extends React.Component {
 }
 
 const EditableFormTable = connect()(Form.create()(EditableTable));
+
 export default EditableFormTable;

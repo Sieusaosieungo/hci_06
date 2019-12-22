@@ -42,11 +42,11 @@ export const routes = [
   },
   {
     path: "/list-task-department",
-    component: () => <ListTaskDepartment />
+    component: ({ history }) => <ListTaskDepartment history={history} />
   },
   {
     path: "/list-task-employee",
-    component: () => <ListTaskEmployee />
+    component: ({ history }) => <ListTaskEmployee history={history} />
   },
   {
     path: "/detail-task-employee",
@@ -62,7 +62,7 @@ export const routes = [
   },
   {
     path: "/create-task",
-    component: () => <CreateTaskPage />
+    component: ({ history }) => <CreateTaskPage history={history} />
   },
   {
     path: "/workreport",
