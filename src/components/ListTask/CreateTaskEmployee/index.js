@@ -7,7 +7,12 @@ import { hideModal, updateState } from "../../../actions/index";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-const CreateTaskEmployee = ({ dispatch, text, history }) => {
+const CreateTaskEmployee = ({
+  dispatch,
+  text,
+  history,
+  form: { getFieldDecorator }
+}) => {
   let addTask = { ...text };
   addTask.index = "CVNV7";
   addTask.departmentCode = text.index;
@@ -80,13 +85,28 @@ const CreateTaskEmployee = ({ dispatch, text, history }) => {
 
   return (
     <div className="create-task-employee">
+      {/* {getFieldDecorator("name", {
+        rules: [
+          {
+            required: true,
+            message: "Cần nhập tên công việc !"
+          }
+        ]
+      })()} */}
       <Form {...formItemLayout}>
         <Col xl={24} lg={24} style={{ margin: "0 auto" }}>
           <Form.Item label="Mã công việc phòng ban">
             <Input value={text.index} disabled />
           </Form.Item>
           <Form.Item label="Tên công việc">
-            <Input placeholder="" />
+            {getFieldDecorator("name", {
+              rules: [
+                {
+                  required: true,
+                  message: "Cần nhập tên công việc !"
+                }
+              ]
+            })(<Input placeholder="" />)}
           </Form.Item>
           <Form.Item label="Người giao việc">
             <Input placeholder="" disabled={true} value="Vũ Duy Mạnh" />
@@ -240,4 +260,6 @@ const CreateTaskEmployee = ({ dispatch, text, history }) => {
   );
 };
 
-export default connect()(CreateTaskEmployee);
+export default connect()(
+  Form.create({ name: "create-task" })(CreateTaskEmployee)
+);
