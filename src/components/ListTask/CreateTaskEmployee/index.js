@@ -22,6 +22,9 @@ const CreateTaskEmployee = ({
 
   const { Option } = Select;
   const [selectedTypeTask, setSelectedTypeTask] = useState("0");
+  const [stateInput, setStateInput] = useState({});
+  const [stateSelect, setStateSelect] = useState([]);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     setSelectedTypeTask("0");
@@ -63,12 +66,12 @@ const CreateTaskEmployee = ({
     <Option key="GĐ. Nguyễn Việt Hùng">GĐ. Nguyễn Việt Hùng</Option>
   );
 
-  function handleChange(value) {
-    console.log(`selected ${value}`);
+  function handleChangeInput({ target: { name, value } }) {
+    setStateInput({ ...stateInput, [name]: value });
   }
 
-  function handleChangeSelect(value) {
-    setSelectedTypeTask(value);
+  function handleChangeSelectX(value) {
+    setStateSelect([...stateSelect, value]);
   }
 
   function handleChangeCheckDevice(value) {
@@ -83,30 +86,23 @@ const CreateTaskEmployee = ({
     setMessageCheckProduction(value.target.value);
   }
 
+  console.log("stateINput:", stateInput);
+  console.log("stateSelect:", stateSelect);
+
   return (
     <div className="create-task-employee">
-      {/* {getFieldDecorator("name", {
-        rules: [
-          {
-            required: true,
-            message: "Cần nhập tên công việc !"
-          }
-        ]
-      })()} */}
       <Form {...formItemLayout}>
         <Col xl={24} lg={24} style={{ margin: "0 auto" }}>
           <Form.Item label="Mã công việc phòng ban">
             <Input value={text.index} disabled />
           </Form.Item>
           <Form.Item label="Tên công việc">
-            {getFieldDecorator("name", {
-              rules: [
-                {
-                  required: true,
-                  message: "Cần nhập tên công việc !"
-                }
-              ]
-            })(<Input placeholder="" />)}
+            <Input
+              placeholder=""
+              required
+              onChange={handleChangeInput}
+              name="name"
+            />
           </Form.Item>
           <Form.Item label="Người giao việc">
             <Input placeholder="" disabled={true} value="Vũ Duy Mạnh" />
@@ -119,7 +115,11 @@ const CreateTaskEmployee = ({
             />
           </Form.Item>
           <Form.Item label={`Trọng số (còn lại ${text.remainWeight})`}>
-            <Input placeholder={`0.0 <= Trọng số  <= ${text.remainWeight}`} />
+            <Input
+              placeholder={`0.0 <= Trọng số  <= ${text.remainWeight}`}
+              onChange={handleChangeInput}
+              name="weight"
+            />
           </Form.Item>
           <Form.Item label="Loại công việc">
             <Input value={text.type} disabled></Input>
@@ -131,7 +131,7 @@ const CreateTaskEmployee = ({
               style={{ width: "100%" }}
               placeholder="Chọn người phụ trách"
               name="worker"
-              onChange={handleChange}
+              onChange={handleChangeSelectX}
             >
               {children}
             </Select>
@@ -142,7 +142,7 @@ const CreateTaskEmployee = ({
               style={{ width: "100%" }}
               placeholder="Chọn người kiểm duyệt"
               name="censor"
-              onChange={handleChange}
+              onChange={handleChangeSelectX}
             >
               {children}
             </Select>
@@ -150,9 +150,8 @@ const CreateTaskEmployee = ({
 
           {text.type !== "Kiểm tra nguyên liệu đầu vào" && (
             <Form.Item label="Nhóm quy trình">
-              <Select value={selectedTypeTask} onChange={handleChangeSelect}>
+              <Select value={selectedTypeTask} onChange={handleChangeSelectX}>
                 <Option value="0">Nhóm quy trình...</Option>
-
                 <Option value="1">
                   {text.type === "Kiểm tra quy trình sản xuất"
                     ? "KTCL quy trình xưởng thuốc nước thú y"
@@ -239,6 +238,11 @@ const CreateTaskEmployee = ({
                 message.success("Bạn đã tạo công việc thành công !");
                 dispatch(hideModal());
               }}
+              disabled={
+                Object.keys(stateInput).length === 2 && stateSelect.length >= 3
+                  ? false
+                  : true
+              }
             >
               Tạo mới
             </Button>

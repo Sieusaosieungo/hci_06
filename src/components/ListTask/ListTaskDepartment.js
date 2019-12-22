@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Table, Input, InputNumber, Form, Progress } from "antd";
+import { Table, Input, InputNumber, Form, Progress, message } from "antd";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { showModal } from "../../actions/index";
@@ -170,6 +170,9 @@ class EditableTable extends React.Component {
                     ),
                     width: "68vw"
                   })
+                );
+                message.info(
+                  "Cần nhập đủ các trường để có thể tạo công việc !"
                 );
               }}
             >
